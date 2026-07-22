@@ -1,0 +1,163 @@
+{
+  "$schema": "urn:hdos:ui-api-contract:1.0",
+  "schema_version": "1.0",
+  "path": "ui-api-contract.json",
+  "contract_id": "media-ad-coach-http-v1",
+  "revision": 1,
+  "status": "frozen",
+  "authority": "SUPPORTING_EVIDENCE_ONLY",
+  "authoritative_links": {
+    "run_revision_or_event": "media-ad-coach-completion@DISCOVERY_TARGET_LOCK",
+    "mvp_revision": 1,
+    "fixture_revision": 1,
+    "demo_revision": 1
+  },
+  "classification": {
+    "claim_status": "FACT",
+    "allowed_claim_statuses": ["FACT", "ASSUMPTION", "UNKNOWN"],
+    "allowed_execution_modes": ["LIVE", "LOCAL_DETERMINISTIC", "REPLAY", "HANDOFF_REQUIRED"],
+    "allowed_truth_statuses": ["observed", "synthetic", "assumed", "user_feedback"]
+  },
+  "ownership": {
+    "contract_owner": "mission-control",
+    "frontend_owner": "frontend-builder-session-2",
+    "backend_owner": "backend-integrator",
+    "owned_paths": [
+      "code/media-ad-coach/lib/schemas.ts",
+      "code/media-ad-coach/app/api/audits/**"
+    ],
+    "acceptance_commands": [
+      "pnpm exec tsc --noEmit",
+      "pnpm test",
+      "pnpm build"
+    ]
+  },
+  "transport": {
+    "applicable": true,
+    "rationale": "The judge-visible Next.js client creates, analyzes, improves, polls or streams, and previews persisted audits through local HTTP endpoints.",
+    "kind": "HTTP_JSON_MULTIPART_AND_SSE",
+    "base_path": "/api/audits",
+    "timeout_ms": 120000,
+    "request_id_header": "x-request-id"
+  },
+  "operations": [
+    {
+      "capability_id": "CAP-AUDIT",
+      "operation_id": "create-audit",
+      "description": "Create a persisted audit from the frozen BusinessInput contract, optionally selecting replay mode.",
+      "method": "POST",
+      "path": "/api/audits",
+      "supported_modes": ["LIVE", "REPLAY"],
+      "request_schema": {
+        "type": "object",
+        "required": ["brand_name", "trade", "presence"],
+        "properties": {
+          "brand_name": { "type": "string" },
+          "trade": { "type": "string" },
+          "presence": { "type": "object" },
+          "mode": { "enum": ["replay"] }
+        }
+      },
+      "response_schema": {
+        "type": "object",
+        "required": ["auditId"],
+        "properties": { "auditId": { "type": "string" } }
+      }
+    },
+    {
+      "capability_id": "CAP-AUDIT",
+      "operation_id": "analyze-audit",
+      "description": "Run the five-stage audit pipeline asynchronously and persist truthful progress and results.",
+      "method": "POST",
+      "path": "/api/audits/:id/analyze",
+      "supported_modes": ["LIVE", "REPLAY"],
+      "request_schema": { "type": "object", "properties": {} },
+      "response_schema": {
+        "type": "object",
+        "required": ["status"],
+        "properties": { "status": { "const": "analyzing" } }
+      }
+    },
+    {
+      "capability_id": "CAP-IMPROVE",
+      "operation_id": "improve-audit",
+      "description": "Rewrite selected channels, generate or edit up to three image concepts, and assemble the optimized preview.",
+      "method": "POST",
+      "path": "/api/audits/:id/improve",
+      "supported_modes": ["LIVE", "REPLAY", "HANDOFF_REQUIRED"],
+      "request_schema": {
+        "type": "object",
+        "required": ["channels"],
+        "properties": { "channels": { "oneOf": [{ "const": "all" }, { "type": "array", "items": { "type": "string" } }] } }
+      },
+      "response_schema": {
+        "type": "object",
+        "required": ["status"],
+        "properties": { "status": { "const": "improving" } }
+      }
+    },
+    {
+      "capability_id": "CAP-PROGRESS",
+      "operation_id": "read-audit",
+      "description": "Read the persisted status, progress, report, channels, preview readiness, and score.",
+      "method": "GET",
+      "path": "/api/audits/:id",
+      "supported_modes": ["LIVE", "REPLAY"],
+      "request_schema": { "type": "object", "properties": { "id": { "type": "string" } } },
+      "response_schema": {
+        "type": "object",
+        "required": ["status", "execution_mode", "progress", "report", "preview_ready"],
+        "properties": {
+          "status": { "type": "string" },
+          "execution_mode": { "enum": ["LIVE", "REPLAY"] },
+          "progress": { "type": "array" },
+          "report": { "type": ["object", "null"] },
+          "preview_ready": { "type": "boolean" }
+        }
+      }
+    },
+    {
+      "capability_id": "CAP-PROGRESS",
+      "operation_id": "stream-audit-progress",
+      "description": "Stream ordered progress snapshots and a terminal event while preserving GET polling as fallback.",
+      "method": "GET",
+      "path": "/api/audits/:id/events",
+      "supported_modes": ["LIVE", "REPLAY"],
+      "request_schema": { "type": "object", "properties": { "id": { "type": "string" } } },
+      "response_schema": {
+        "type": "text/event-stream",
+        "events": ["snapshot", "progress", "complete", "error"]
+      }
+    }
+  ],
+  "error_contract": [
+    {
+      "code": "AUDIT_NOT_FOUND",
+      "condition": "The requested audit id does not exist.",
+      "transport_status": 404,
+      "retryable": false,
+      "ui_state": "error",
+      "fallback_mode": "HANDOFF_REQUIRED"
+    },
+    {
+      "code": "PROVIDER_UNAVAILABLE",
+      "condition": "A LIVE provider lacks credentials or fails after bounded retry.",
+      "transport_status": 503,
+      "retryable": true,
+      "ui_state": "degraded",
+      "fallback_mode": "REPLAY"
+    }
+  ],
+  "ui_state_mapping": {
+    "idle": "No request has started",
+    "loading": "An analysis or improvement is pending and progress is visible",
+    "golden": "The scored report and ordered recommendations are visible",
+    "pivot": "A single recommendation can be improved independently",
+    "empty": "The request has no usable evidence and explains the required next input",
+    "error": "The request failed with a safe, actionable error",
+    "degraded": "A partial result is labelled and remains useful",
+    "replay": "The frozen Sanitär Krause result is visibly marked REPLAY SAMPLE",
+    "handoff": "Credentials, deployment, or organizer submission explicitly requires a human"
+  },
+  "compatibility_rule": "Frontend and backend may build in parallel against this exact revision. Any breaking change returns to Mission Control for a revision bump and coordinated handoff."
+}

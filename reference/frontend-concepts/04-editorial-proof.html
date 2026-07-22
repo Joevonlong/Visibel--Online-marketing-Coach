@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Editorial Proof frontend concept for Visibel.">
+  <title>04 · Editorial Proof — Visibel</title>
+  <link rel="stylesheet" href="base.css">
+  <style>
+    :root { --paper:#f5f1e8; --white:#fffdf8; --ink:#151513; --muted:#706e67; --red:#e5422d; --line:rgba(21,21,19,.16); }
+    body { background:var(--paper); color:var(--ink); }
+    .button { display:inline-flex; align-items:center; justify-content:center; gap:9px; min-height:48px; padding:0 21px; border:1px solid var(--ink); border-radius:0; background:var(--ink); color:#fff; font-size:12px; font-weight:850; letter-spacing:.035em; text-transform:uppercase; transition:transform 140ms ease,background 220ms ease,color 220ms ease; }
+    .button:hover { background:var(--red); border-color:var(--red); } .button:active { transform:scale(.975); }
+    .button.outline { min-height:38px; padding:0 13px; background:transparent; color:var(--ink); font-size:9px; }
+    .button.outline:hover { background:var(--ink); border-color:var(--ink); color:#fff; }
+    .button.is-done { background:#17754d; border-color:#17754d; }
+    .masthead { position:absolute; z-index:8; top:0; left:50%; transform:translateX(-50%); display:grid; grid-template-columns:1fr auto 1fr; align-items:center; width:min(1200px,calc(100% - 40px)); height:75px; border-bottom:1px solid var(--line); }
+    .masthead a { color:inherit; font-size:12px; font-weight:900; letter-spacing:.08em; text-decoration:none; text-transform:uppercase; }
+    .edition { justify-self:center; color:var(--muted); font-family:Georgia,serif; font-size:10px; font-style:italic; } .masthead .issue { justify-self:end; color:var(--muted); font-size:9px; font-weight:750; letter-spacing:.08em; text-transform:uppercase; }
+    .landing { position:relative; padding:127px 20px 91px; background:var(--paper); }
+    .landing-shell { width:min(1200px,100%); margin:auto; }
+    .hero-grid { display:grid; grid-template-columns:1.08fr .92fr; gap:clamp(36px,7vw,92px); align-items:end; }
+    .kicker { margin:0 0 18px; color:var(--red); font-size:10px; font-weight:900; letter-spacing:.15em; text-transform:uppercase; }
+    h1 { max-width:760px; margin:0; font-family:Georgia,"Times New Roman",serif; font-size:clamp(58px,8.6vw,112px); font-weight:500; line-height:.83; letter-spacing:-.065em; }
+    h1 em { color:var(--red); font-weight:400; }
+    .hero-side { padding:0 0 8px 28px; border-left:1px solid var(--ink); }
+    .dropcap { margin:0; color:#43423e; font-family:Georgia,serif; font-size:clamp(19px,2.1vw,25px); line-height:1.45; }
+    .dropcap::first-letter { float:left; margin:4px 8px 0 0; color:var(--red); font-size:60px; line-height:.72; }
+    .hero-actions { display:flex; flex-wrap:wrap; gap:10px; margin-top:27px; }
+    .headline-rule { display:grid; grid-template-columns:repeat(3,1fr); margin-top:68px; border-top:3px solid var(--ink); border-bottom:1px solid var(--ink); }
+    .proof { min-height:140px; padding:20px 20px 20px 0; }
+    .proof + .proof { padding-left:20px; border-left:1px solid var(--line); }
+    .proof small { color:var(--red); font-size:9px; font-weight:900; letter-spacing:.12em; text-transform:uppercase; } .proof h3 { margin:17px 0 7px; font-family:Georgia,serif; font-size:22px; font-weight:500; line-height:1.05; } .proof p { margin:0; color:var(--muted); font-size:10px; line-height:1.45; }
+    .report { padding:100px 20px 126px; background:var(--white); }
+    .shell { width:min(1160px,100%); margin:auto; }
+    .report-head { display:grid; grid-template-columns:1fr auto; align-items:end; gap:30px; padding-bottom:22px; border-bottom:3px solid var(--ink); }
+    h2 { max-width:850px; margin:0; font-family:Georgia,serif; font-size:clamp(43px,6vw,76px); font-weight:500; line-height:.92; letter-spacing:-.055em; }
+    .mode { color:var(--muted); font-size:9px; font-weight:800; letter-spacing:.1em; text-transform:uppercase; }
+    .report-layout { display:grid; grid-template-columns:300px minmax(0,1fr); }
+    .score-column { position:relative; padding:27px 29px 45px 0; border-right:1px solid var(--line); }
+    .score-column small { font-size:9px; font-weight:850; letter-spacing:.12em; text-transform:uppercase; }
+    .score { margin:20px 0 10px; font-family:Georgia,serif; font-size:118px; line-height:.74; letter-spacing:-.09em; } .score sup { color:var(--muted); font-family:var(--system-font); font-size:18px; }
+    .verdict { display:inline-block; margin-top:9px; padding:6px 8px; background:var(--red); color:#fff; font-size:9px; font-weight:850; letter-spacing:.11em; text-transform:uppercase; }
+    .pullquote { margin:52px 0 0; padding-top:18px; border-top:1px solid var(--line); font-family:Georgia,serif; font-size:21px; line-height:1.28; }
+    .metrics { display:flex; gap:25px; margin-top:28px; } .metrics span { color:var(--muted); font-size:9px; text-transform:uppercase; } .metrics strong { display:block; margin-top:5px; color:var(--ink); font-size:19px; }
+    .recommendations { padding-left:30px; }
+    .action-strip { display:flex; align-items:center; justify-content:space-between; gap:18px; padding:19px 0; border-bottom:1px solid var(--ink); }
+    .action-strip strong { font-family:Georgia,serif; font-size:18px; font-weight:500; } .action-strip span { display:block; margin-top:3px; color:var(--muted); font-size:9px; }
+    .recommendation { display:grid; grid-template-columns:46px minmax(0,1fr) auto; gap:16px; align-items:start; padding:24px 0; border-bottom:1px solid var(--line); transition:padding 240ms cubic-bezier(.22,1,.36,1),background 220ms ease; }
+    .recommendation:hover { padding-left:10px; padding-right:10px; background:#faf6ed; }
+    .recommendation.is-improved { background:#f0f8f2; }
+    .rank { color:var(--red); font-family:Georgia,serif; font-size:25px; }
+    .recommendation h3 { margin:0 0 7px; font-family:Georgia,serif; font-size:23px; font-weight:500; line-height:1.05; } .recommendation p { margin:0; color:var(--muted); font-size:10px; line-height:1.5; }
+    .swap { display:grid; grid-template-columns:1fr 22px 1.2fr; gap:10px; align-items:center; margin-top:12px; color:#56554f; font-size:10px; line-height:1.4; } .swap strong { color:var(--ink); } .arrow { color:var(--red); font-weight:900; }
+    .outcome { padding:96px 20px 128px; background:var(--paper); }
+    .outcome-head { display:grid; grid-template-columns:1fr .65fr; gap:45px; align-items:end; padding-bottom:24px; border-bottom:3px solid var(--ink); }
+    .dek { margin:0; padding-left:25px; border-left:1px solid var(--ink); color:#52514b; font-family:Georgia,serif; font-size:18px; line-height:1.42; }
+    .proof-stage { display:grid; grid-template-columns:300px minmax(0,1fr); min-height:590px; margin-top:20px; border:1px solid var(--ink); background:var(--white); }
+    .before-column { display:flex; flex-direction:column; padding:26px; border-right:1px solid var(--ink); background:#e4e0d8; }
+    .stage-label { font-size:9px; font-weight:900; letter-spacing:.13em; text-transform:uppercase; } .before-column h3 { margin:auto 0; color:#66645e; font-family:Georgia,serif; font-size:58px; font-weight:500; line-height:.88; letter-spacing:-.055em; } .before-column p { margin:0; color:#77746c; font-size:10px; }
+    .after-site { display:grid; grid-template-columns:1.1fr .9fr; overflow:hidden; }
+    .after-copy { display:flex; flex-direction:column; justify-content:center; padding:clamp(30px,5vw,65px); }
+    .after-copy h3 { max-width:530px; margin:39px 0 18px; font-family:Georgia,serif; font-size:clamp(40px,5.5vw,72px); font-weight:500; line-height:.91; letter-spacing:-.058em; } .after-copy p { max-width:410px; margin:0 0 25px; color:var(--muted); font-size:12px; line-height:1.5; }
+    .call { align-self:flex-start; padding:12px 14px; background:var(--red); color:#fff; font-size:9px; font-weight:900; letter-spacing:.06em; text-transform:uppercase; }
+    .after-image { position:relative; background:url('../../code/media-ad-coach/public/fixtures/sanitaer-krause-berlin/after-hero.jpg') center/cover; }
+    .ai { position:absolute; right:11px; bottom:11px; padding:6px 8px; background:var(--white); color:var(--muted); font-size:8px; font-weight:850; letter-spacing:.1em; text-transform:uppercase; }
+    .approval { display:flex; align-items:center; justify-content:space-between; gap:20px; padding:20px 0 0; } .approval h3 { margin:0 0 4px; font-family:Georgia,serif; font-size:20px; font-weight:500; } .approval p { margin:0; color:var(--muted); font-size:9px; }
+    @media (max-width:820px) { .hero-grid,.outcome-head { grid-template-columns:1fr; } .hero-side { padding-top:24px; } .report-layout,.proof-stage { grid-template-columns:1fr; } .score-column { border-right:0; border-bottom:1px solid var(--ink); } .recommendations { padding-left:0; } .proof-stage { min-height:0; } .before-column { min-height:300px; border-right:0; border-bottom:1px solid var(--ink); } }
+    @media (max-width:600px) { .masthead { grid-template-columns:1fr auto; } .edition { display:none; } .headline-rule { grid-template-columns:1fr; } .proof + .proof { padding-left:0; border-left:0; border-top:1px solid var(--line); } .report-head,.approval { align-items:flex-start; display:flex; flex-direction:column; } .recommendation { grid-template-columns:34px 1fr; } .recommendation .button { grid-column:2; justify-self:start; } .swap { grid-template-columns:1fr; } .arrow { transform:rotate(90deg); } .after-site { grid-template-columns:1fr; } .after-image { min-height:250px; grid-row:1; } }
+  </style>
+</head>
+<body>
+  <span class="prototype-note">Concept 04 · Editorial Proof</span>
+  <nav class="journey-dock" aria-label="Prototype journey"><button data-step="1"><span>1</span> <span class="step-label">Story</span></button><button data-step="2"><span>2</span> <span class="step-label">Priorities</span></button><button data-step="3"><span>3</span> <span class="step-label">Proof</span></button></nav>
+
+  <section class="screen landing" data-screen="1"><header class="masthead"><a href="index.html">Visibel</a><span class="edition">The local business edition</span><span class="issue">Issue 01 · Berlin</span></header><div class="landing-shell"><div class="hero-grid"><div><p class="kicker">What customers see is what customers believe</p><h1>Your business is already good. Make that <em>obvious.</em></h1></div><div class="hero-side"><p class="dropcap">Show us your business. We read the words and images like a customer would—then turn every missed signal into a clear, useful action.</p><div class="hero-actions"><button class="button" data-next>Read the sample report →</button><button class="button outline">Start my audit</button></div></div></div><div class="headline-rule"><article class="proof"><small>01 · Score</small><h3>An honest first impression.</h3><p>Words and visuals, measured in one glance.</p></article><article class="proof"><small>02 · Act</small><h3>Priorities, not a lecture.</h3><p>Fix the signals that change customer behavior first.</p></article><article class="proof"><small>03 · Prove</small><h3>Before and after.</h3><p>See the transformation before anything is published.</p></article></div></div></section>
+
+  <section class="screen report" data-screen="2"><div class="shell"><header class="report-head"><div><p class="kicker">Sanitär Krause · Customer perception brief</p><h2>The work looks dependable.<br>The page does not—yet.</h2></div><span class="mode">Replay sample · Verified fixture</span></header><div class="report-layout"><aside class="score-column"><small>Customer-facing score</small><div class="score">39<sup>/100</sup></div><span class="verdict">Weak · high opportunity</span><p class="pullquote">“The trust is real. Customers just can’t see it yet.”</p><div class="metrics"><span>Words<strong>34</strong></span><span>Images<strong>43</strong></span></div></aside><div class="recommendations"><div class="action-strip"><div><strong>Four edits stand between Zero and Hero.</strong><span>You approve. We do the work.</span></div><button class="button" data-do-all><span data-all-label>Do It For You</span></button></div><article class="recommendation" data-action-card><span class="rank">01</span><div><h3>Lead with a customer promise.</h3><p>The first line only repeats the business name.</p><div class="swap"><span>Sanitär Krause</span><span class="arrow">→</span><strong>Ihr Meisterbetrieb für Bad, Heizung & Rohrreinigung in Berlin</strong></div></div><button class="button outline" data-action data-idle="Approve edit" data-done="Approved"><span data-action-label>Approve edit</span></button></article><article class="recommendation" data-action-card><span class="rank">02</span><div><h3>Give the customer one next step.</h3><p>No visible action tells a ready-to-buy visitor what to do.</p><div class="swap"><span>Number in footer</span><span class="arrow">→</span><strong>Jetzt anrufen — wir sind in 24 Stunden bei Ihnen</strong></div></div><button class="button outline" data-action data-idle="Add CTA" data-done="Approved"><span data-action-label>Add CTA</span></button></article><article class="recommendation" data-action-card><span class="rank">03</span><div><h3>Make the craft the hero image.</h3><p>A finished bathroom sells the outcome better than a parked van.</p></div><button class="button outline" data-action data-idle="Create concept" data-done="Ready"><span data-action-label>Create concept</span></button></article><article class="recommendation" data-action-card><span class="rank">04</span><div><h3>Publish one source of contact truth.</h3><p>The phone number differs across the site and directory.</p></div><button class="button outline" data-action data-idle="Correct" data-done="Corrected"><span data-action-label>Correct</span></button></article><button class="button" data-next>See the final proof →</button></div></div></div></section>
+
+  <section class="screen outcome" data-screen="3"><div class="shell"><header class="outcome-head"><div><p class="kicker">Before / After · The evidence</p><h2>A stronger first impression,<br>without changing who you are.</h2></div><p class="dek">Seven approved improvements turn an anonymous listing into a clear promise, a reason to believe, and one obvious next step.</p></header><div class="proof-stage"><aside class="before-column"><span class="stage-label">Before · What customers saw</span><h3>Sanitär<br>Krause</h3><p>Heizung · Bad · Rohrreinigung</p></aside><article class="after-site"><div class="after-copy"><span class="stage-label">After · Customer-ready preview</span><h3>Meisterarbeit.<br>Wenn es zählt.</h3><p>Bad, Heizung & Rohrreinigung in Berlin. Familiengeführt seit 1998.</p><span class="call">Jetzt anrufen · 030 1234567</span></div><div class="after-image"><span class="ai">AI concept image</span></div></article></div><div class="approval"><div><h3>Approve this direction?</h3><p>This is a preview, not a deployed website. You remain in control.</p></div><button class="button">Prepare my page →</button></div></div></section>
+  <script src="prototype.js"></script>
+</body>
+</html>

@@ -1,0 +1,585 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-07-18T16:10:51.371Z",
+  "lastSeq": 30,
+  "lastHash": "be9f3c0c6a47a6cf209b3eb32445bc717c4f96452c85e8f0fec89f0ecb5972da",
+  "state": {
+    "schemaVersion": 1,
+    "runId": "media-ad-coach-completion",
+    "runStatus": "active",
+    "phase": "REVIEW",
+    "createdAt": "2026-07-18T14:28:41.515Z",
+    "lastSeq": 30,
+    "lastHash": "be9f3c0c6a47a6cf209b3eb32445bc717c4f96452c85e8f0fec89f0ecb5972da",
+    "tasks": {
+      "BACKEND-P1": {
+        "id": "BACKEND-P1",
+        "title": "Implement non-Lane-A TODO backend capabilities: real-browser capture, image edit, SSE progress, and truthful Cognee adapter",
+        "status": "done",
+        "priority": "P1",
+        "ownedPaths": [
+          "projects/AI-Hackthon-2026-07-18/code/media-ad-coach/lib/pipeline/screenshot.ts",
+          "projects/AI-Hackthon-2026-07-18/code/media-ad-coach/lib/improve/image.ts",
+          "projects/AI-Hackthon-2026-07-18/code/media-ad-coach/lib/memory/cognee.ts",
+          "projects/AI-Hackthon-2026-07-18/code/media-ad-coach/app/api/audits/[id]/events/route.ts",
+          "projects/AI-Hackthon-2026-07-18/code/media-ad-coach/tests",
+          "projects/AI-Hackthon-2026-07-18/code/media-ad-coach/package.json",
+          "projects/AI-Hackthon-2026-07-18/code/media-ad-coach/pnpm-lock.yaml"
+        ],
+        "acceptance": [
+          "pnpm exec tsc --noEmit",
+          "pnpm test",
+          "pnpm build"
+        ],
+        "tokenBudget": 20000,
+        "owner": {
+          "kind": "agent",
+          "id": "backend-integrator"
+        },
+        "progress": [],
+        "outputs": [
+          {
+            "path": "projects/AI-Hackthon-2026-07-18/runs/media-ad-coach-completion/evidence/local-verification-2026-07-18.md",
+            "sha256": "f206896e26d576544e6b27c4cf7017455deb2043b641d67f53c990e49429d69d",
+            "bytes": 2530
+          }
+        ],
+        "blockedReason": null,
+        "startedAt": "2026-07-18T14:39:34.776Z",
+        "completedAt": "2026-07-18T15:22:46.829Z"
+      },
+      "EVIDENCE-P1": {
+        "id": "EVIDENCE-P1",
+        "title": "Produce replay seed, repeatability, release-gate, tracker, and truthful handoff evidence without unauthorized publication",
+        "status": "done",
+        "priority": "P1",
+        "ownedPaths": [
+          "projects/AI-Hackthon-2026-07-18/runs/media-ad-coach-completion/evidence",
+          "projects/AI-Hackthon-2026-07-18/runs/media-ad-coach-completion/demo.md",
+          "projects/AI-Hackthon-2026-07-18/docs/team-idea/final-implement-plan/FEATURE-TRACKER.md"
+        ],
+        "acceptance": [
+          "pnpm verify",
+          "pnpm secret:scan"
+        ],
+        "tokenBudget": 20000,
+        "owner": {
+          "kind": "agent",
+          "id": "mission-control"
+        },
+        "progress": [],
+        "outputs": [
+          {
+            "path": "projects/AI-Hackthon-2026-07-18/runs/media-ad-coach-completion/handoff.md",
+            "sha256": "76f32e682d314bfc4d6434994cbc98342a369205533959773a960064b2348d50",
+            "bytes": 6642
+          },
+          {
+            "path": "projects/AI-Hackthon-2026-07-18/runs/media-ad-coach-completion/evidence/local-verification-2026-07-18.md",
+            "sha256": "f206896e26d576544e6b27c4cf7017455deb2043b641d67f53c990e49429d69d",
+            "bytes": 2530
+          }
+        ],
+        "blockedReason": null,
+        "startedAt": "2026-07-18T14:39:34.824Z",
+        "completedAt": "2026-07-18T15:22:46.887Z"
+      },
+      "FRONTEND-UX-R2": {
+        "id": "FRONTEND-UX-R2",
+        "title": "Implement the frozen premium editorial frontend across every judge-visible route",
+        "status": "done",
+        "priority": "P0",
+        "ownedPaths": [
+          "projects/AI-Hackthon-2026-07-18/code/media-ad-coach/app/**",
+          "projects/AI-Hackthon-2026-07-18/code/media-ad-coach/components/**"
+        ],
+        "acceptance": [
+          "No blue or purple styling, synthetic glow, or dense low-value microcopy remains in judge-visible surfaces.",
+          "Landing, audit input, progress, report, preview, history, sample, errors, empty states, and narrow viewport remain fully usable.",
+          "Typecheck, focused tests, and production build pass without changing the frozen UI/API schema."
+        ],
+        "tokenBudget": 20000,
+        "owner": {
+          "kind": "agent",
+          "id": "mission-control"
+        },
+        "progress": [],
+        "outputs": [
+          {
+            "path": "projects/AI-Hackthon-2026-07-18/code/media-ad-coach/app/globals.css",
+            "sha256": "d3ee1f06dad6d5b080165a56a4b258a4aeddd96896ccaa630447b29b7d13bfad",
+            "bytes": 5167
+          },
+          {
+            "path": "projects/AI-Hackthon-2026-07-18/code/media-ad-coach/app/page.tsx",
+            "sha256": "7088a1c4e2e9b78cfc78e29b1926328d5a212187724c758cd1e08804049c86ba",
+            "bytes": 3319
+          },
+          {
+            "path": "projects/AI-Hackthon-2026-07-18/code/media-ad-coach/components/report/ReportView.tsx",
+            "sha256": "bae984f9f8abb0db32f932e4688eb86d58ca5a91363e8be95f01ef7476693403",
+            "bytes": 6489
+          },
+          {
+            "path": "projects/AI-Hackthon-2026-07-18/code/media-ad-coach/tmp/frontend-ux-r2-rehearsal-final.json",
+            "sha256": "ebeab1294326b06fb4128d5c59b1fb5df7382360c6122be6b07c505ab2812b04",
+            "bytes": 1559
+          },
+          {
+            "path": "projects/AI-Hackthon-2026-07-18/code/media-ad-coach/tmp/frontend-ux-r2-visuals/landing-desktop.png",
+            "sha256": "2959a85bdb96ac9840ed5f0f205bb6c513f66f49bcba0d0429f7d1d953c04fb0",
+            "bytes": 50500
+          },
+          {
+            "path": "projects/AI-Hackthon-2026-07-18/code/media-ad-coach/tmp/frontend-ux-r2-visuals/landing-mobile.png",
+            "sha256": "e6282098ba6c6eab5e1aebd5e353a3838b783e51d916e178a023246a7f38414e",
+            "bytes": 39040
+          }
+        ],
+        "blockedReason": null,
+        "startedAt": "2026-07-18T15:35:08.024Z",
+        "completedAt": "2026-07-18T15:58:42.563Z"
+      }
+    },
+    "handoffs": {},
+    "gates": [
+      {
+        "from": "INTAKE",
+        "to": "SPEC",
+        "status": "passed",
+        "checked_at": "2026-07-18T14:39:03.802Z",
+        "event_sequence": 2,
+        "event_id": "f2904f66-d526-4937-91c4-2ce9871075a2",
+        "legacy": false,
+        "checks": {
+          "mode": "LOCAL_DETERMINISTIC",
+          "mvpRevision": 1,
+          "mvpChecksum": "09e48556342582fe04429ce93efe92d3ff8e4d4601f8c0df72190d4c7d7c7b3d",
+          "replay": {
+            "fresh": true,
+            "status": "FRESH_UNVERIFIED",
+            "revisionMatches": true,
+            "checksumMatches": true
+          },
+          "evidence": {
+            "status": "MISSING",
+            "count": 0,
+            "replayVerified": false
+          }
+        }
+      },
+      {
+        "from": "SPEC",
+        "to": "PLAN",
+        "status": "passed",
+        "checked_at": "2026-07-18T14:39:08.304Z",
+        "event_sequence": 4,
+        "event_id": "1c84d7d3-dd97-43a1-bf3d-22596bab282c",
+        "legacy": false,
+        "checks": {
+          "mode": "LOCAL_DETERMINISTIC",
+          "mvpRevision": 1,
+          "mvpChecksum": "09e48556342582fe04429ce93efe92d3ff8e4d4601f8c0df72190d4c7d7c7b3d",
+          "replay": {
+            "fresh": true,
+            "status": "FRESH_UNVERIFIED",
+            "revisionMatches": true,
+            "checksumMatches": true
+          },
+          "evidence": {
+            "status": "MISSING",
+            "count": 0,
+            "replayVerified": false
+          }
+        }
+      },
+      {
+        "from": "PLAN",
+        "to": "IMPLEMENT",
+        "status": "passed",
+        "checked_at": "2026-07-18T14:39:34.723Z",
+        "event_sequence": 7,
+        "event_id": "6c9840c6-916d-4ea3-9e74-f4b362b090d1",
+        "legacy": false,
+        "checks": {
+          "mode": "LOCAL_DETERMINISTIC",
+          "mvpRevision": 1,
+          "mvpChecksum": "09e48556342582fe04429ce93efe92d3ff8e4d4601f8c0df72190d4c7d7c7b3d",
+          "replay": {
+            "fresh": true,
+            "status": "FRESH_UNVERIFIED",
+            "revisionMatches": true,
+            "checksumMatches": true
+          },
+          "evidence": {
+            "status": "MISSING",
+            "count": 0,
+            "replayVerified": false
+          }
+        }
+      },
+      {
+        "from": "IMPLEMENT",
+        "to": "SELF_TEST",
+        "status": "passed",
+        "checked_at": "2026-07-18T15:23:13.682Z",
+        "event_sequence": 12,
+        "event_id": "41ba8b36-2271-43ce-bdf8-f5e745413fdc",
+        "legacy": false,
+        "checks": {
+          "mode": "LOCAL_DETERMINISTIC",
+          "mvpRevision": 1,
+          "mvpChecksum": "09e48556342582fe04429ce93efe92d3ff8e4d4601f8c0df72190d4c7d7c7b3d",
+          "replay": {
+            "fresh": true,
+            "status": "FRESH_UNVERIFIED",
+            "revisionMatches": true,
+            "checksumMatches": true
+          },
+          "evidence": {
+            "status": "MISSING",
+            "count": 0,
+            "replayVerified": false
+          }
+        }
+      },
+      {
+        "from": "SELF_TEST",
+        "to": "REVIEW",
+        "status": "passed",
+        "checked_at": "2026-07-18T15:25:59.777Z",
+        "event_sequence": 15,
+        "event_id": "55679d23-f0f7-486a-aaff-a8713ea5307e",
+        "legacy": false,
+        "checks": {
+          "mode": "LOCAL_DETERMINISTIC",
+          "mvpRevision": 1,
+          "mvpChecksum": "09e48556342582fe04429ce93efe92d3ff8e4d4601f8c0df72190d4c7d7c7b3d",
+          "replay": {
+            "fresh": true,
+            "status": "FRESH_UNVERIFIED",
+            "revisionMatches": true,
+            "checksumMatches": true
+          },
+          "evidence": {
+            "status": "AVAILABLE",
+            "count": 2,
+            "replayVerified": false
+          }
+        }
+      },
+      {
+        "from": "REVIEW",
+        "to": "SPEC",
+        "status": "passed",
+        "checked_at": "2026-07-18T15:32:42.369Z",
+        "event_sequence": 17,
+        "event_id": "a9c46709-8d19-434e-acf9-f945ef746090",
+        "legacy": false,
+        "checks": {
+          "mode": "LOCAL_DETERMINISTIC",
+          "mvpRevision": 1,
+          "mvpChecksum": "09e48556342582fe04429ce93efe92d3ff8e4d4601f8c0df72190d4c7d7c7b3d",
+          "replay": {
+            "fresh": true,
+            "status": "FRESH_UNVERIFIED",
+            "revisionMatches": true,
+            "checksumMatches": true
+          },
+          "evidence": {
+            "status": "AVAILABLE",
+            "count": 2,
+            "replayVerified": false
+          }
+        }
+      },
+      {
+        "from": "SPEC",
+        "to": "PLAN",
+        "status": "passed",
+        "checked_at": "2026-07-18T15:35:00.714Z",
+        "event_sequence": 20,
+        "event_id": "e7966c55-cfaa-4b85-addc-590f21585eff",
+        "legacy": false,
+        "checks": {
+          "mode": "LOCAL_DETERMINISTIC",
+          "mvpRevision": 2,
+          "mvpChecksum": "d3eace21a7b52e11f465d678332bd95bf8148d465c818e7b024925bc30453af0",
+          "replay": {
+            "fresh": false,
+            "status": "STALE",
+            "revisionMatches": false,
+            "checksumMatches": false
+          },
+          "evidence": {
+            "status": "AVAILABLE",
+            "count": 2,
+            "replayVerified": false
+          }
+        }
+      },
+      {
+        "from": "PLAN",
+        "to": "IMPLEMENT",
+        "status": "passed",
+        "checked_at": "2026-07-18T15:35:08.082Z",
+        "event_sequence": 23,
+        "event_id": "c960f0b0-681f-44b4-bf77-23ba5a86f1ec",
+        "legacy": false,
+        "checks": {
+          "mode": "LOCAL_DETERMINISTIC",
+          "mvpRevision": 2,
+          "mvpChecksum": "d3eace21a7b52e11f465d678332bd95bf8148d465c818e7b024925bc30453af0",
+          "replay": {
+            "fresh": false,
+            "status": "STALE",
+            "revisionMatches": false,
+            "checksumMatches": false
+          },
+          "evidence": {
+            "status": "AVAILABLE",
+            "count": 2,
+            "replayVerified": false
+          }
+        }
+      },
+      {
+        "from": "IMPLEMENT",
+        "to": "SELF_TEST",
+        "status": "passed",
+        "checked_at": "2026-07-18T15:58:42.625Z",
+        "event_sequence": 26,
+        "event_id": "52ba3168-6307-4b07-9fea-82163592471f",
+        "legacy": false,
+        "checks": {
+          "mode": "LOCAL_DETERMINISTIC",
+          "mvpRevision": 3,
+          "mvpChecksum": "3adc819532b817f7227318ce338d99a11c9788589588af5961a9b3f73fd4f3e6",
+          "replay": {
+            "fresh": true,
+            "status": "FRESH_UNVERIFIED",
+            "revisionMatches": true,
+            "checksumMatches": true
+          },
+          "evidence": {
+            "status": "AVAILABLE",
+            "count": 2,
+            "replayVerified": false
+          }
+        }
+      },
+      {
+        "from": "SELF_TEST",
+        "to": "REVIEW",
+        "status": "passed",
+        "checked_at": "2026-07-18T16:10:51.366Z",
+        "event_sequence": 30,
+        "event_id": "98d8499d-9b7c-4e49-be53-550ea9c146df",
+        "legacy": false,
+        "checks": {
+          "mode": "LOCAL_DETERMINISTIC",
+          "mvpRevision": 3,
+          "mvpChecksum": "3adc819532b817f7227318ce338d99a11c9788589588af5961a9b3f73fd4f3e6",
+          "replay": {
+            "fresh": true,
+            "status": "FRESH_UNVERIFIED",
+            "revisionMatches": true,
+            "checksumMatches": true
+          },
+          "evidence": {
+            "status": "AVAILABLE",
+            "count": 5,
+            "replayVerified": false
+          }
+        }
+      }
+    ],
+    "decisions": [
+      {
+        "at": "2026-07-18T14:39:03.849Z",
+        "actor": {
+          "kind": "human",
+          "id": "mission-control"
+        },
+        "classification": "FACT",
+        "summary": "Human selected the inherited Media Ad Coach completion slice and excluded TEAM-SPLIT Lane A from this session.",
+        "evidence": "run.json@2,mvp.json@1,TEAM-SPLIT.md",
+        "nextAction": "Freeze the inherited experience and technical contracts."
+      },
+      {
+        "at": "2026-07-18T15:31:27.085Z",
+        "actor": {
+          "kind": "human",
+          "id": "user"
+        },
+        "classification": "FACT",
+        "summary": "Human selected the Luminous Focus frontend concept as the structural foundation and authorized a full frontend implementation, with a premium editorial monochrome palette, no blue or purple styling, and less tiny supporting copy.",
+        "evidence": "User goal on 2026-07-18; reference/frontend-concepts/01-luminous-focus.html#step-1 and supplied screenshot image-1.png.",
+        "nextAction": "Return to SPEC, freeze experience contract revision 2, then implement the frontend without changing the frozen UI/API schema."
+      },
+      {
+        "at": "2026-07-18T15:35:00.410Z",
+        "actor": {
+          "kind": "agent",
+          "id": "mission-control"
+        },
+        "classification": "FACT",
+        "summary": "EXPERIENCE_CONTRACT_FROZEN at mvp.json revision 2: Luminous Focus structure, premium ink-and-paper palette, no blue or purple, reduced microcopy, full-route responsive coverage.",
+        "evidence": "mvp.json@2; experience-brief.md@2; human selection recorded at event 16",
+        "nextAction": "Advance SPEC to PLAN and create FRONTEND-UX-R2."
+      },
+      {
+        "at": "2026-07-18T15:35:00.610Z",
+        "actor": {
+          "kind": "agent",
+          "id": "mission-control"
+        },
+        "classification": "FACT",
+        "summary": "TECH_BLUEPRINT_FROZEN remains compatible at mvp.json revision 2: existing Next.js stack, schemas, API routes, persistence, replay, provider, and preview behavior remain unchanged.",
+        "evidence": "mvp.json@2; ui-api-contract.json@1; impelemet-plan.md@1",
+        "nextAction": "Implement only the frozen judge-visible frontend surface."
+      },
+      {
+        "at": "2026-07-18T15:39:28.257Z",
+        "actor": {
+          "kind": "human",
+          "id": "user"
+        },
+        "classification": "FACT",
+        "summary": "Human renamed the product to Visibel and authorized updating every current project-facing reference and the frontend implementation; the stable internal repository path, Run ID, fixture ID, official verbatim challenge sources, and append-only history remain unchanged.",
+        "evidence": "User instruction on 2026-07-18; mvp.json@3; fixture.json@2; demo.md@2; frontend brand surfaces.",
+        "nextAction": "Verify current contracts, residual references, frontend build, and deterministic tests without changing the frozen UI/API boundary."
+      }
+    ],
+    "supervision": {
+      "blockers": {},
+      "lastCheckpoint": null,
+      "nextAction": "Execute the REVIEW gate.",
+      "recentTraces": [
+        {
+          "at": "2026-07-18T15:23:21.560Z",
+          "eventSequence": 13,
+          "source": "verification",
+          "operation": "pnpm verify:record",
+          "outcome": "SUCCEEDED",
+          "mode": null,
+          "provider": "node-test",
+          "evidence": "runtime contract, secret scan, focused tests, and active run validation passed",
+          "errorCode": null,
+          "durationMs": 7473,
+          "verifiedPhase": "SELF_TEST",
+          "binding": {
+            "gitHead": "615e692381e82542dd8830a78e97bf9428894cde",
+            "sourceFingerprint": "5853a9d6cec177ba62b8c6601648f45037fd2e3cbf8b6b54c65dd6ecd8477747",
+            "mvpChecksum": "09e48556342582fe04429ce93efe92d3ff8e4d4601f8c0df72190d4c7d7c7b3d",
+            "fixtureChecksum": "9922241991034f0924667083808be7871543fcac64e7960ff7d3762efe47cfed",
+            "demoChecksum": "135adc7d9dc4de0b18be212cea07687bdf403ccb0f0f58f1e5477988db72c08f",
+            "uiApiChecksum": "c5742b36468d49be50c239389639837bcaa7d8c19426a7ffd1b515a1c1c1547d",
+            "submissionContractChecksum": "771213d3d39db9a19fa50b030bfd786990e10a8a01297eaac75c1d81fe8981fc"
+          }
+        },
+        {
+          "at": "2026-07-18T15:25:59.158Z",
+          "eventSequence": 14,
+          "source": "verification",
+          "operation": "pnpm verify:record",
+          "outcome": "SUCCEEDED",
+          "mode": null,
+          "provider": "node-test",
+          "evidence": "runtime contract, secret scan, focused tests, and active run validation passed",
+          "errorCode": null,
+          "durationMs": 7217,
+          "verifiedPhase": "SELF_TEST",
+          "binding": {
+            "gitHead": "615e692381e82542dd8830a78e97bf9428894cde",
+            "sourceFingerprint": "97ade162e5cf51c61eb1b941cc8af3c76c17393cf9f61503dc5c14bab867f183",
+            "mvpChecksum": "09e48556342582fe04429ce93efe92d3ff8e4d4601f8c0df72190d4c7d7c7b3d",
+            "fixtureChecksum": "9922241991034f0924667083808be7871543fcac64e7960ff7d3762efe47cfed",
+            "demoChecksum": "135adc7d9dc4de0b18be212cea07687bdf403ccb0f0f58f1e5477988db72c08f",
+            "uiApiChecksum": "c5742b36468d49be50c239389639837bcaa7d8c19426a7ffd1b515a1c1c1547d",
+            "submissionContractChecksum": "771213d3d39db9a19fa50b030bfd786990e10a8a01297eaac75c1d81fe8981fc"
+          }
+        },
+        {
+          "at": "2026-07-18T15:59:46.419Z",
+          "eventSequence": 27,
+          "source": "verification",
+          "operation": "pnpm verify:record",
+          "outcome": "SUCCEEDED",
+          "mode": null,
+          "provider": "node-test",
+          "evidence": "runtime contract, secret scan, focused tests, and active run validation passed",
+          "errorCode": null,
+          "durationMs": 6537,
+          "verifiedPhase": "SELF_TEST",
+          "binding": {
+            "gitHead": "03ab74f08ba5983d4745ee502193a713161485d0",
+            "sourceFingerprint": "f7eef1a6594a5791939872c051493afe082379f43e14dc238f7e344c3434e648",
+            "mvpChecksum": "3adc819532b817f7227318ce338d99a11c9788589588af5961a9b3f73fd4f3e6",
+            "fixtureChecksum": "0a6034a19d02fc4338f942e5adb60275a391ba370d62a79cacaf9bf63ef8efd9",
+            "demoChecksum": "a6aa2ab41ed7dd91a94c867fddd94e1f9c017eae49747b9014cc3f04779765e5",
+            "uiApiChecksum": "c5742b36468d49be50c239389639837bcaa7d8c19426a7ffd1b515a1c1c1547d",
+            "submissionContractChecksum": "46b3b410372bbe5406983584f8f1f8f41609e2bdb94b77f2ced5154e27e8404f"
+          }
+        },
+        {
+          "at": "2026-07-18T16:08:59.128Z",
+          "eventSequence": 28,
+          "source": "verification",
+          "operation": "pnpm verify:record",
+          "outcome": "SUCCEEDED",
+          "mode": null,
+          "provider": "node-test",
+          "evidence": "runtime contract, secret scan, focused tests, and active run validation passed",
+          "errorCode": null,
+          "durationMs": 16115,
+          "verifiedPhase": "SELF_TEST",
+          "binding": {
+            "gitHead": "3083293a123cf0e23c55987f7abb4e1d77cf288e",
+            "sourceFingerprint": "c3e2f8f2c73146cb78c1410db89a1fe7cbcc5f3dedd6d559ec8052144a1a37ed",
+            "mvpChecksum": "3adc819532b817f7227318ce338d99a11c9788589588af5961a9b3f73fd4f3e6",
+            "fixtureChecksum": "0a6034a19d02fc4338f942e5adb60275a391ba370d62a79cacaf9bf63ef8efd9",
+            "demoChecksum": "a6aa2ab41ed7dd91a94c867fddd94e1f9c017eae49747b9014cc3f04779765e5",
+            "uiApiChecksum": "c5742b36468d49be50c239389639837bcaa7d8c19426a7ffd1b515a1c1c1547d",
+            "submissionContractChecksum": "46b3b410372bbe5406983584f8f1f8f41609e2bdb94b77f2ced5154e27e8404f"
+          }
+        },
+        {
+          "at": "2026-07-18T16:10:50.781Z",
+          "eventSequence": 29,
+          "source": "verification",
+          "operation": "pnpm verify:record",
+          "outcome": "SUCCEEDED",
+          "mode": null,
+          "provider": "node-test",
+          "evidence": "runtime contract, secret scan, focused tests, and active run validation passed",
+          "errorCode": null,
+          "durationMs": 7581,
+          "verifiedPhase": "SELF_TEST",
+          "binding": {
+            "gitHead": "3083293a123cf0e23c55987f7abb4e1d77cf288e",
+            "sourceFingerprint": "1f2dd6ff0ffb13235343d270aa07e685a41267d6249443dcf0e1abd6a7d7a1dc",
+            "mvpChecksum": "3adc819532b817f7227318ce338d99a11c9788589588af5961a9b3f73fd4f3e6",
+            "fixtureChecksum": "0a6034a19d02fc4338f942e5adb60275a391ba370d62a79cacaf9bf63ef8efd9",
+            "demoChecksum": "a6aa2ab41ed7dd91a94c867fddd94e1f9c017eae49747b9014cc3f04779765e5",
+            "uiApiChecksum": "c5742b36468d49be50c239389639837bcaa7d8c19426a7ffd1b515a1c1c1547d",
+            "submissionContractChecksum": "46b3b410372bbe5406983584f8f1f8f41609e2bdb94b77f2ced5154e27e8404f"
+          }
+        }
+      ]
+    },
+    "usage": {
+      "actual": {
+        "inputTokens": 0,
+        "outputTokens": 0,
+        "cachedInputTokens": 0
+      },
+      "estimated": {
+        "inputTokens": 0,
+        "outputTokens": 0,
+        "cachedInputTokens": 0
+      },
+      "byTask": {}
+    }
+  }
+}

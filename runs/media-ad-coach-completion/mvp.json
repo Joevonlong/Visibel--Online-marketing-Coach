@@ -1,0 +1,262 @@
+{
+  "$schema": "urn:hdos:mvp:1.2",
+  "schema_version": "1.2",
+  "revision": 3,
+  "status": "frozen",
+  "problem": "Local service businesses publish inconsistent, generic media and advertising without an affordable expert who can audit the whole presence and turn findings into usable improvements.",
+  "target_user": "Owner or marketing operator of a German local service business",
+  "one_sentence_value": "Visibel turns one business profile into an evidence-backed media audit, prioritized fixes, and an improved cross-channel preview in under two minutes.",
+  "input": [
+    "Business name and trade",
+    "Website URL or uploaded screenshot",
+    "Google Business and Instagram URLs when available",
+    "Optional brand notes and logo"
+  ],
+  "happy_path": [
+    "Create a LIVE or visibly labelled REPLAY audit",
+    "Run research, screenshot, vision, scoring, and recommendation stages with persisted progress",
+    "Inspect the score, findings, evidence, and prioritized recommendations",
+    "Improve all or selected channels and compare the optimized preview"
+  ],
+  "wow_moment": "A weak, fragmented local-business presence becomes a concrete, evidence-linked cross-channel campaign preview while the score visibly improves.",
+  "business_metric": [
+    "Time from input to actionable audit",
+    "Number of recommendations accepted for improvement",
+    "Audit-to-preview completion rate"
+  ],
+  "evidence_policy": {
+    "claim_statuses": ["FACT", "ASSUMPTION", "UNKNOWN"],
+    "execution_modes": ["LIVE", "LOCAL_DETERMINISTIC", "REPLAY", "HANDOFF_REQUIRED"],
+    "truth_statuses": ["observed", "synthetic", "assumed", "user_feedback"],
+    "supporting_artifact_rule": "Plans, contracts, reports, and handoffs support this revision but never replace the four authoritative Run artifacts."
+  },
+  "judging_map": [
+    {
+      "criterion": "Innovation and agentic use of partner technology",
+      "source_status": "FACT",
+      "must_id": "MUST-001",
+      "hero_timestamp": "00:25",
+      "visible_evidence": "Five named pipeline stages, truthful provider provenance, and ordered progress produce one scored audit."
+    },
+    {
+      "criterion": "Business value and impact",
+      "source_status": "FACT",
+      "must_id": "MUST-002",
+      "hero_timestamp": "01:05",
+      "visible_evidence": "Prioritized findings lead directly to channel-specific improved assets and a score delta."
+    },
+    {
+      "criterion": "Technical execution and completeness",
+      "source_status": "FACT",
+      "must_id": "MUST-003",
+      "hero_timestamp": "01:30",
+      "visible_evidence": "Persisted audit history, evidence links, image assets, deterministic replay, and fallback remain usable end to end."
+    }
+  ],
+  "experience_contract": {
+    "ten_second_takeaway": "See what customers see, fix what costs trust, and compare the result in one clear flow.",
+    "visual_direction": "Use the selected Luminous Focus composition with premium editorial restraint: near-black ink, warm white paper, muted stone neutrals, generous whitespace, and large confident type. Blue, purple, synthetic glows, generic gradient effects, and dense microcopy are excluded.",
+    "hero_interaction": "Enter the business, run the audit, inspect the prioritized result, then improve the presence and compare the preview.",
+    "target_viewport": "1440x900",
+    "hero_max_actions": 4,
+    "hero_max_seconds": 60,
+    "information_story": ["input", "live pipeline", "scored evidence", "prioritized fixes", "improved preview", "business value"],
+    "required_states": ["golden", "pivot", "loading", "empty", "error", "degraded", "replay"],
+    "experience_foundation": {
+      "brief_path": "experience-brief.md",
+      "brief_revision": 3,
+      "claim_status": "FACT",
+      "selected_foundation": "The human-selected 01-luminous-focus.html composition, implemented through the existing Next.js 15 shell and local primitives",
+      "selection_rationale": "The reference supplies the approved hierarchy and spacious composition. Existing components preserve working application behavior while the new token system removes blue-purple AI styling and reduces low-value microcopy.",
+      "license_verified": true,
+      "design_system_owner": "mission-control"
+    },
+    "component_reuse_plan": [
+      "Reuse the existing application shell, form logic, report cards, preview components, polling, downloads, uploads, and navigation",
+      "Restyle the shared primitives and route shells with the frozen monochrome editorial tokens",
+      "Reuse the frozen Zod schemas as the frontend/backend boundary",
+      "Keep GET polling as a fallback when SSE is unavailable"
+    ],
+    "design_tokens_path": "../../../code/media-ad-coach/app/globals.css",
+    "ui_api_contract_path": "ui-api-contract.json",
+    "ui_api_contract": {
+      "path": "ui-api-contract.json",
+      "revision": 1,
+      "checksum": "c5742b36468d49be50c239389639837bcaa7d8c19426a7ffd1b515a1c1c1547d",
+      "owner": "mission-control",
+      "status": "frozen"
+    },
+    "fixture_revision": 2
+  },
+  "provider_release_contract": {
+    "applicable": true,
+    "rationale": "OpenAI, Tavily, and Cognee are partner capabilities required by the approved concept; the runnable proof is local and falls back to a visibly labelled replay when credentials or venue connectivity are unavailable.",
+    "not_applicable_rule": "Not applicable because external capability is part of the approved hero; public hosting remains a human-authorized handoff.",
+    "owner": "backend-integrator",
+    "owned_paths": [
+      "code/media-ad-coach/lib/providers/**",
+      "code/media-ad-coach/lib/memory/**",
+      "code/media-ad-coach/lib/pipeline/**",
+      "code/media-ad-coach/lib/improve/**",
+      "code/media-ad-coach/app/api/audits/**"
+    ],
+    "plan_path": "../../../docs/team-idea/final-implement-plan/impelemet-plan.md",
+    "plan_revision": 1,
+    "claim_status": "FACT",
+    "providers": ["OpenAI Responses/Vision/Images", "Tavily Search", "Cognee Memory"],
+    "secret_names": ["OPENAI_API_KEY", "TAVILY_API_KEY", "COGNEE_API_KEY"],
+    "supported_modes": ["LIVE", "REPLAY", "HANDOFF_REQUIRED"],
+    "live_mode_requires": [
+      "Provider credentials supplied outside the repository",
+      "Passing local health and primary-operation smoke tests",
+      "Explicit human approval before any public deployment or organizer submission"
+    ],
+    "release_target": {
+      "provider": "Local Next.js process; public host HANDOFF_REQUIRED",
+      "environment": "Event operator laptop",
+      "deployment_url": "http://localhost:3000",
+      "build_revision": "working-tree-unfrozen",
+      "healthcheck_path": "/api/health",
+      "operation_smoke_path": "/api/audits"
+    },
+    "fallback_order": ["REPLAY", "HANDOFF_REQUIRED"],
+    "acceptance_commands": ["pnpm exec tsc --noEmit", "pnpm test", "pnpm build", "pnpm secret:scan"]
+  },
+  "tech_blueprint_contract": {
+    "frozen_gate": "TECH_BLUEPRINT_FROZEN",
+    "blueprint_path": "../../../docs/team-idea/final-implement-plan/impelemet-plan.md",
+    "blueprint_revision": 1,
+    "claim_status": "FACT",
+    "owner": "system-architect",
+    "rule": "This completion Run adopts the already human-selected implementation plan and frozen schemas; breaking contract changes require a new revision.",
+    "stack_recipe": {
+      "frontend": "Next.js 15 App Router, React 19, TypeScript, Tailwind CSS",
+      "backend": "Next.js route handlers and a staged TypeScript audit pipeline",
+      "persistence": "better-sqlite3 with deterministic fixture-derived replay records",
+      "deployment": "Local Node.js process for the event; public deployment requires explicit human authorization"
+    },
+    "persistence": {
+      "applicable": true,
+      "rationale": "Audit history, stage progress, reports, evidence, memory context, and generated assets must survive route requests and support replay.",
+      "engine": "SQLite via better-sqlite3",
+      "data_owner": "backend-integrator",
+      "seed_strategy": "Replay and rehearsal records derive from fixture.json and the frozen sample audit."
+    },
+    "open_source_references": ["Next.js", "React", "Zod", "better-sqlite3", "Vitest"],
+    "repository_layout": [
+      "code/media-ad-coach/app — UI and HTTP routes",
+      "code/media-ad-coach/components — teammate-owned judge-visible components",
+      "code/media-ad-coach/lib — schemas, persistence, providers, pipeline, and improvement logic",
+      "code/media-ad-coach/tests — focused contract and integration tests"
+    ],
+    "parallel_build_order": [
+      "Preserve the frozen schema and shared package surfaces",
+      "Mission Control owns the human-authorized frontend refresh as one serialized implementation task",
+      "Backend Integrator owns non-overlapping screenshot, streaming, image-edit, memory, and API paths",
+      "Mission Control integrates and Reviewer independently verifies"
+    ]
+  },
+  "feature_budget": {
+    "max_active_build_features": 2,
+    "admission_rule": "Only approved features that improve judging evidence, the hero interaction, or demo recovery are admitted; the frontend refresh must not alter frozen schemas or provider semantics.",
+    "features": [
+      {
+        "feature_id": "BACKEND-P1",
+        "status": "approved",
+        "owner": "backend-integrator",
+        "judging_contribution": "Completes real screenshot evidence, image edit, SSE progress, and truthful Cognee interoperability.",
+        "visible_payoff": "The existing frontend can show real progress and evidence while retaining replay fallback.",
+        "acceptance_command": "pnpm exec tsc --noEmit && pnpm test && pnpm build",
+        "owned_paths": ["code/media-ad-coach/lib/pipeline/**", "code/media-ad-coach/lib/improve/**", "code/media-ad-coach/lib/memory/**", "code/media-ad-coach/app/api/audits/**", "code/media-ad-coach/tests/**"]
+      },
+      {
+        "feature_id": "EVIDENCE-P1",
+        "status": "approved",
+        "owner": "mission-control",
+        "judging_contribution": "Produces repeatable seeded audits, Wi-Fi-off replay rehearsals, and a truthful delivery handoff.",
+        "visible_payoff": "Judges can see the complete product even when venue providers are unavailable.",
+        "acceptance_command": "pnpm verify && pnpm secret:scan",
+        "owned_paths": ["runs/media-ad-coach-completion/**", "docs/team-idea/final-implement-plan/FEATURE-TRACKER.md", "code/media-ad-coach/docs/**"]
+      },
+      {
+        "feature_id": "FRONTEND-UX-R2",
+        "status": "approved",
+        "owner": "mission-control",
+        "judging_contribution": "Makes the complete product immediately legible and visually distinctive across the input, report, history, and preview flow.",
+        "visible_payoff": "A premium monochrome editorial interface with concise copy, responsive layouts, and all existing actions intact.",
+        "acceptance_command": "pnpm exec tsc --noEmit && pnpm test && pnpm build",
+        "owned_paths": ["code/media-ad-coach/app/**", "code/media-ad-coach/components/**"]
+      }
+    ]
+  },
+  "required_capabilities": [
+    {
+      "capability_id": "CAP-AUDIT",
+      "name": "Evidence-backed staged media audit",
+      "required_for_hero": true,
+      "claim_status": "FACT",
+      "acceptance_evidence": "Persisted stage progress, report evidence, and score are returned by the audit routes in LIVE or labelled REPLAY mode."
+    },
+    {
+      "capability_id": "CAP-IMPROVE",
+      "name": "Channel copy and image improvement",
+      "required_for_hero": true,
+      "claim_status": "FACT",
+      "acceptance_evidence": "Selected recommendations create persisted improved assets and an optimized preview, capped at three image operations."
+    },
+    {
+      "capability_id": "CAP-RECOVERY",
+      "name": "Deterministic replay and provider fallback",
+      "required_for_hero": true,
+      "claim_status": "FACT",
+      "acceptance_evidence": "The same frozen sample completes with a visible REPLAY label and no live-provider claim."
+    }
+  ],
+  "request_schema": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["brand_name", "trade", "presence"],
+    "properties": {
+      "brand_name": {"type": "string"},
+      "trade": {"type": "string"},
+      "presence": {"type": "object"},
+      "mode": {"enum": ["live", "replay"]}
+    }
+  },
+  "response_schema": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["status", "execution_mode", "progress", "report", "preview_ready"],
+    "properties": {
+      "status": {"type": "string"},
+      "execution_mode": {"enum": ["LIVE", "REPLAY"]},
+      "progress": {"type": "array"},
+      "report": {"type": ["object", "null"]},
+      "preview_ready": {"type": "boolean"}
+    }
+  },
+  "must": [
+    "MUST-001: Complete an evidence-backed audit in LIVE or visibly labelled REPLAY mode.",
+    "MUST-002: Turn prioritized recommendations into judge-visible improved channel assets.",
+    "MUST-003: Persist audits, progress, assets, provenance, and recovery state.",
+    "MUST-004: Implement the human-approved frontend refresh without changing the frozen UI/API schema or provider semantics."
+  ],
+  "wont": [
+    "Do not change frozen schemas, API semantics, persistence, or provider responsibilities as part of the visual refresh.",
+    "Do not start P2 F-110/F-111 before P0 and P1 are green.",
+    "Do not provision, spend, publish, or submit without explicit human authorization.",
+    "Do not present replay, missing credentials, or failed providers as LIVE."
+  ],
+  "acceptance": [
+    "All admitted code paths pass typecheck, focused tests, and production build.",
+    "The full input-to-report-to-preview flow remains usable at 1440x900 and a narrow mobile viewport.",
+    "The visible interface uses no blue or purple styling, avoids synthetic glow effects, and keeps primary explanatory copy at a readable size.",
+    "Replay completes without network access and remains visibly labelled.",
+    "The frozen GET polling route remains compatible while SSE is additive.",
+    "No secrets are committed or sent to the client.",
+    "Tracker status distinguishes implemented work from venue-only and human-only handoffs."
+  ],
+  "fallback_modes": ["LIVE", "REPLAY", "HANDOFF_REQUIRED"],
+  "approved_by": "human:user",
+  "approved_at": "2026-07-18T15:31:27.095Z"
+}

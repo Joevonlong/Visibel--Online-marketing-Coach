@@ -1,0 +1,1555 @@
+{
+  "business": {
+    "brand_name": "Rohrfuchs Berlin",
+    "trade": "plumber",
+    "city": "Berlin",
+    "presence": {
+      "website": "https://www.rohrfuchs-berlin.example/"
+    }
+  },
+  "report": {
+    "overall_score": 43,
+    "band": "Weak",
+    "text": {
+      "score": 24,
+      "criteria": [
+        {
+          "id": "T1",
+          "score": 2,
+          "evidence": "Unsere Sanitär-Leistungen für Berlin: Rohrreinigung und Abfluss-Service Sanitär-Notdienst rund um die Uhr Beseitigung von Rohrverstopfungen Leckortung und Dichtheitsprüfung Raumtrocknung nach Wasserschäden Bad- und Sanitärinstallation Heizungswartung und Thermen-Service Klempner-Service für Berlin und Umgebung",
+          "source": "fetched"
+        },
+        {
+          "id": "T2",
+          "score": 0,
+          "evidence": "No call-to-action found — the site never invites visitors to call or book.",
+          "source": "absent"
+        },
+        {
+          "id": "T3",
+          "score": 0,
+          "evidence": "No trust elements found — no reviews, guarantees, or certifications anywhere on the site.",
+          "source": "absent"
+        },
+        {
+          "id": "T4",
+          "score": 4,
+          "evidence": "Unsere Sanitär-Leistungen für Berlin: Rohrreinigung und Abfluss-Service Sanitär-Notdienst rund um die Uhr Beseitigung von Rohrverstopfungen Leckortung und Dichtheitsprüfung Raumtrocknung nach Wasserschäden Bad- und Sanitärinstallation Heizungswartung und Thermen-Service Klempner-Service für Berlin und Umgebung",
+          "source": "fetched"
+        },
+        {
+          "id": "T5",
+          "score": 0,
+          "evidence": "No contact path found — no phone number, form, or booking option on the page.",
+          "source": "absent"
+        },
+        {
+          "id": "T6",
+          "score": 2,
+          "evidence": "Unsere Sanitär-Leistungen für Berlin: Rohrreinigung und Abfluss-Service Sanitär-Notdienst rund um die Uhr Beseitigung von Rohrverstopfungen Leckortung und Dichtheitsprüfung Raumtrocknung nach Wasserschäden Bad- und Sanitärinstallation Heizungswartung und Thermen-Service Klempner-Service für Berlin und Umgebung",
+          "source": "fetched"
+        },
+        {
+          "id": "T7",
+          "score": 0,
+          "evidence": "No service claims present on the site to verify.",
+          "source": "absent"
+        },
+        {
+          "id": "T8",
+          "score": 0,
+          "evidence": "No legal footer found — Impressum and Datenschutz are missing.",
+          "source": "absent"
+        }
+      ]
+    },
+    "images": {
+      "score": 62,
+      "criteria_by_asset": {
+        "779a434f-7a17-4b13-8c43-ff318ca39ad2": [
+          {
+            "id": "I1",
+            "score": 3,
+            "evidence": "Low resolution, not very sharp.",
+            "source": "vision"
+          },
+          {
+            "id": "I2",
+            "score": 4,
+            "evidence": "Real person with company branding on van.",
+            "source": "tavily"
+          },
+          {
+            "id": "I3",
+            "score": 2,
+            "evidence": "No job process shown, just branding.",
+            "source": "vision"
+          },
+          {
+            "id": "I4",
+            "score": 3,
+            "evidence": "Cluttered composition, logo partially visible.",
+            "source": "vision"
+          },
+          {
+            "id": "I5",
+            "score": 3,
+            "evidence": "Aspect ratio suitable, but excessive text overlay.",
+            "source": "vision"
+          },
+          {
+            "id": "I6",
+            "score": 4,
+            "evidence": "Company branding present on van.",
+            "source": "vision"
+          }
+        ],
+        "b84efbf5-9b08-4b58-926f-43feea8849d4": [
+          {
+            "id": "I1",
+            "score": 3,
+            "evidence": "Moderate resolution, clear image.",
+            "source": "vision"
+          },
+          {
+            "id": "I2",
+            "score": 2,
+            "evidence": "Image of a dog, not related to plumbing work.",
+            "source": "vision"
+          },
+          {
+            "id": "I3",
+            "score": 1,
+            "evidence": "No job process or proof related to plumbing.",
+            "source": "vision"
+          },
+          {
+            "id": "I4",
+            "score": 4,
+            "evidence": "Well-framed and focused image of the dog.",
+            "source": "vision"
+          },
+          {
+            "id": "I5",
+            "score": 3,
+            "evidence": "Aspect ratio appropriate, subject not pertinent.",
+            "source": "vision"
+          },
+          {
+            "id": "I6",
+            "score": 2,
+            "evidence": "No company branding or relevant content.",
+            "source": "vision"
+          }
+        ],
+        "fab437da-1d99-49a1-b934-e96aa9bda662": [
+          {
+            "id": "I1",
+            "score": 4,
+            "evidence": "Clear image, suitable resolution.",
+            "source": "vision"
+          },
+          {
+            "id": "I2",
+            "score": 2,
+            "evidence": "Contains product listings, not related to team or work.",
+            "source": "vision"
+          },
+          {
+            "id": "I3",
+            "score": 2,
+            "evidence": "No job process, only product and price listing.",
+            "source": "vision"
+          },
+          {
+            "id": "I4",
+            "score": 4,
+            "evidence": "Well-organized layout, clear presentation.",
+            "source": "vision"
+          },
+          {
+            "id": "I5",
+            "score": 3,
+            "evidence": "Text-heavy, may not fit well in image contexts.",
+            "source": "vision"
+          },
+          {
+            "id": "I6",
+            "score": 3,
+            "evidence": "Brand name not clearly included, focus on products.",
+            "source": "vision"
+          }
+        ],
+        "5e5975d4-1ea8-41a6-b50f-e159dfa87ec4": [
+          {
+            "id": "I1",
+            "score": 4,
+            "evidence": "Good resolution, focused image.",
+            "source": "vision"
+          },
+          {
+            "id": "I2",
+            "score": 3,
+            "evidence": "Shows a task common in plumbing but no human presence.",
+            "source": "vision"
+          },
+          {
+            "id": "I3",
+            "score": 2,
+            "evidence": "No before/after or job completion shown.",
+            "source": "vision"
+          },
+          {
+            "id": "I4",
+            "score": 4,
+            "evidence": "Well-composed and focused on task.",
+            "source": "vision"
+          },
+          {
+            "id": "I5",
+            "score": 4,
+            "evidence": "Appropriate aspect ratio and clear focus.",
+            "source": "vision"
+          },
+          {
+            "id": "I6",
+            "score": 2,
+            "evidence": "No branding visible.",
+            "source": "vision"
+          }
+        ],
+        "ae0fbb3f-72de-42f1-af98-38af7b0c416f": [
+          {
+            "id": "I1",
+            "score": 5,
+            "evidence": "Sharp, high-resolution image.",
+            "source": "vision"
+          },
+          {
+            "id": "I2",
+            "score": 4,
+            "evidence": "Shows a plumber at work, human presence.",
+            "source": "vision"
+          },
+          {
+            "id": "I3",
+            "score": 4,
+            "evidence": "Visual demonstration of work in progress, relevant to service.",
+            "source": "vision"
+          },
+          {
+            "id": "I4",
+            "score": 5,
+            "evidence": "Well-composed, clear focus on the worker.",
+            "source": "vision"
+          },
+          {
+            "id": "I5",
+            "score": 5,
+            "evidence": "Appropriate aspect ratio, subject clearly focused.",
+            "source": "vision"
+          },
+          {
+            "id": "I6",
+            "score": 5,
+            "evidence": "Uniform shows company branding.",
+            "source": "vision"
+          }
+        ],
+        "fdb8cffd-0da1-4126-bd6d-0c8c771b579e": [
+          {
+            "id": "I1",
+            "score": 4,
+            "evidence": "Image is clear with appropriate resolution.",
+            "source": "vision"
+          },
+          {
+            "id": "I2",
+            "score": 3,
+            "evidence": "Shows equipment in a job setting, but no human presence.",
+            "source": "vision"
+          },
+          {
+            "id": "I3",
+            "score": 3,
+            "evidence": "Depicts equipment for water damage drying.",
+            "source": "vision"
+          },
+          {
+            "id": "I4",
+            "score": 3,
+            "evidence": "Decent composition but slightly cluttered with cables.",
+            "source": "vision"
+          },
+          {
+            "id": "I5",
+            "score": 4,
+            "evidence": "Suitable aspect ratio, context slightly unclear.",
+            "source": "vision"
+          },
+          {
+            "id": "I6",
+            "score": 2,
+            "evidence": "No visible branding or identity.",
+            "source": "vision"
+          }
+        ],
+        "94360d3e-ed9f-4fc1-8fd5-a6ba2588aabb": [
+          {
+            "id": "I1",
+            "score": 3,
+            "evidence": "Moderate resolution, straightforward image.",
+            "source": "vision"
+          },
+          {
+            "id": "I2",
+            "score": 2,
+            "evidence": "Text only, no human interaction or work depiction.",
+            "source": "vision"
+          },
+          {
+            "id": "I3",
+            "score": 1,
+            "evidence": "No job process or outcome depicted, just text.",
+            "source": "vision"
+          },
+          {
+            "id": "I4",
+            "score": 3,
+            "evidence": "Simple layout of text with limited context.",
+            "source": "vision"
+          },
+          {
+            "id": "I5",
+            "score": 3,
+            "evidence": "Text-based image, limited context applicability.",
+            "source": "vision"
+          },
+          {
+            "id": "I6",
+            "score": 3,
+            "evidence": "Text implies quality but lacks direct branding.",
+            "source": "vision"
+          }
+        ],
+        "67fd590c-750c-40cc-9eed-44ba67a29d2d": [
+          {
+            "id": "I1",
+            "score": 3,
+            "evidence": "Low resolution, somewhat blurry.",
+            "source": "vision"
+          },
+          {
+            "id": "I2",
+            "score": 3,
+            "evidence": "Shows a plumbing scenario with cleaning equipment.",
+            "source": "vision"
+          },
+          {
+            "id": "I3",
+            "score": 3,
+            "evidence": "Displayed a maintenance scenario but no clear process depiction.",
+            "source": "vision"
+          },
+          {
+            "id": "I4",
+            "score": 2,
+            "evidence": "Cluttered and poorly framed shot.",
+            "source": "vision"
+          },
+          {
+            "id": "I5",
+            "score": 3,
+            "evidence": "Standard ratio, but unclear to the viewer.",
+            "source": "vision"
+          },
+          {
+            "id": "I6",
+            "score": 2,
+            "evidence": "No visible branding, lacks context.",
+            "source": "vision"
+          }
+        ]
+      },
+      "coverage_gaps": [
+        "hero_shot",
+        "team_shot",
+        "work_proof_shot"
+      ]
+    },
+    "findability": {
+      "status": "not_found",
+      "results": [
+        {
+          "title": "Berlin, NJ Plumbers – Example Plumbing and Heating Inc.",
+          "url": "https://us-plumbing.example/service-area/berlin-nj-plumbers"
+        },
+        {
+          "title": "Plumber Berlin – 24/7 available",
+          "url": "https://klempner-portal.example/berlin"
+        },
+        {
+          "title": "Berlin Plumbing Repair Services",
+          "url": "https://franchise-plumbing.example/areas-we-service/berlin-md"
+        },
+        {
+          "title": "Plumber in Berlin, NJ – 24/7 Plumbing Services",
+          "url": "https://drain-rooter.example/berlin-nj"
+        },
+        {
+          "title": "Looking for a reliable plumber in Berlin – any recommendations?",
+          "url": "https://forum.example/berlin/reliable-plumber-recommendations"
+        }
+      ],
+      "source": "tavily"
+    },
+    "presence_coverage": {
+      "website": true,
+      "maps": false,
+      "yellow_pages": false,
+      "other_count": 0,
+      "nap_consistent": null
+    },
+    "reputation_chips": null,
+    "findings": [
+      {
+        "id": "f-t1",
+        "lane": "text",
+        "criterion": "T1",
+        "severity": "medium",
+        "evidence_quote": "Unsere Sanitär-Leistungen für Berlin: Rohrreinigung und Abfluss-Service Sanitär-Notdienst rund um die Uhr",
+        "asset_ref": null
+      },
+      {
+        "id": "f-t2",
+        "lane": "text",
+        "criterion": "T2",
+        "severity": "high",
+        "evidence_quote": "No call-to-action anywhere on the site",
+        "asset_ref": null
+      },
+      {
+        "id": "f-t3",
+        "lane": "text",
+        "criterion": "T3",
+        "severity": "high",
+        "evidence_quote": "No reviews, guarantees, or certifications shown",
+        "asset_ref": null
+      },
+      {
+        "id": "f-t5",
+        "lane": "text",
+        "criterion": "T5",
+        "severity": "high",
+        "evidence_quote": "No phone number or contact form on the page",
+        "asset_ref": null
+      },
+      {
+        "id": "f-t6",
+        "lane": "text",
+        "criterion": "T6",
+        "severity": "low",
+        "evidence_quote": "Unsere Sanitär-Leistungen für Berlin: Rohrreinigung und Abfluss-Service Sanitär-Notdienst rund um die Uhr",
+        "asset_ref": null
+      },
+      {
+        "id": "f-t7",
+        "lane": "text",
+        "criterion": "T7",
+        "severity": "high",
+        "evidence_quote": "No service claims present to verify",
+        "asset_ref": null
+      },
+      {
+        "id": "f-t8",
+        "lane": "text",
+        "criterion": "T8",
+        "severity": "high",
+        "evidence_quote": "Impressum and Datenschutz pages are missing",
+        "asset_ref": null
+      },
+      {
+        "id": "f-i3-779a434f-7a17-4b13-8c43-ff318ca39ad2",
+        "lane": "image",
+        "criterion": "I3",
+        "severity": "medium",
+        "evidence_quote": "No job process shown, just branding.",
+        "asset_ref": "779a434f-7a17-4b13-8c43-ff318ca39ad2"
+      },
+      {
+        "id": "f-i2-b84efbf5-9b08-4b58-926f-43feea8849d4",
+        "lane": "image",
+        "criterion": "I2",
+        "severity": "medium",
+        "evidence_quote": "Image of a dog, not related to plumbing work.",
+        "asset_ref": "b84efbf5-9b08-4b58-926f-43feea8849d4"
+      },
+      {
+        "id": "f-i3-b84efbf5-9b08-4b58-926f-43feea8849d4",
+        "lane": "image",
+        "criterion": "I3",
+        "severity": "high",
+        "evidence_quote": "No job process or proof related to plumbing.",
+        "asset_ref": "b84efbf5-9b08-4b58-926f-43feea8849d4"
+      },
+      {
+        "id": "f-i6-b84efbf5-9b08-4b58-926f-43feea8849d4",
+        "lane": "image",
+        "criterion": "I6",
+        "severity": "medium",
+        "evidence_quote": "No company branding or relevant content.",
+        "asset_ref": "b84efbf5-9b08-4b58-926f-43feea8849d4"
+      },
+      {
+        "id": "f-i2-fab437da-1d99-49a1-b934-e96aa9bda662",
+        "lane": "image",
+        "criterion": "I2",
+        "severity": "medium",
+        "evidence_quote": "Contains product listings, not related to team or work.",
+        "asset_ref": "fab437da-1d99-49a1-b934-e96aa9bda662"
+      },
+      {
+        "id": "f-i3-fab437da-1d99-49a1-b934-e96aa9bda662",
+        "lane": "image",
+        "criterion": "I3",
+        "severity": "medium",
+        "evidence_quote": "No job process, only product and price listing.",
+        "asset_ref": "fab437da-1d99-49a1-b934-e96aa9bda662"
+      },
+      {
+        "id": "f-i3-5e5975d4-1ea8-41a6-b50f-e159dfa87ec4",
+        "lane": "image",
+        "criterion": "I3",
+        "severity": "medium",
+        "evidence_quote": "No before/after or job completion shown.",
+        "asset_ref": "5e5975d4-1ea8-41a6-b50f-e159dfa87ec4"
+      },
+      {
+        "id": "f-i6-5e5975d4-1ea8-41a6-b50f-e159dfa87ec4",
+        "lane": "image",
+        "criterion": "I6",
+        "severity": "medium",
+        "evidence_quote": "No branding visible.",
+        "asset_ref": "5e5975d4-1ea8-41a6-b50f-e159dfa87ec4"
+      },
+      {
+        "id": "f-i6-fdb8cffd-0da1-4126-bd6d-0c8c771b579e",
+        "lane": "image",
+        "criterion": "I6",
+        "severity": "medium",
+        "evidence_quote": "No visible branding or identity.",
+        "asset_ref": "fdb8cffd-0da1-4126-bd6d-0c8c771b579e"
+      },
+      {
+        "id": "f-i2-94360d3e-ed9f-4fc1-8fd5-a6ba2588aabb",
+        "lane": "image",
+        "criterion": "I2",
+        "severity": "medium",
+        "evidence_quote": "Text only, no human interaction or work depiction.",
+        "asset_ref": "94360d3e-ed9f-4fc1-8fd5-a6ba2588aabb"
+      },
+      {
+        "id": "f-i3-94360d3e-ed9f-4fc1-8fd5-a6ba2588aabb",
+        "lane": "image",
+        "criterion": "I3",
+        "severity": "high",
+        "evidence_quote": "No job process or outcome depicted, just text.",
+        "asset_ref": "94360d3e-ed9f-4fc1-8fd5-a6ba2588aabb"
+      },
+      {
+        "id": "f-i4-67fd590c-750c-40cc-9eed-44ba67a29d2d",
+        "lane": "image",
+        "criterion": "I4",
+        "severity": "medium",
+        "evidence_quote": "Cluttered and poorly framed shot.",
+        "asset_ref": "67fd590c-750c-40cc-9eed-44ba67a29d2d"
+      },
+      {
+        "id": "f-i6-67fd590c-750c-40cc-9eed-44ba67a29d2d",
+        "lane": "image",
+        "criterion": "I6",
+        "severity": "medium",
+        "evidence_quote": "No visible branding, lacks context.",
+        "asset_ref": "67fd590c-750c-40cc-9eed-44ba67a29d2d"
+      },
+      {
+        "id": "f-coverage-hero-shot",
+        "lane": "image",
+        "criterion": "coverage_hero_shot",
+        "severity": "medium",
+        "evidence_quote": "No hero shot found in the harvested/uploaded image set.",
+        "asset_ref": null
+      },
+      {
+        "id": "f-coverage-team-shot",
+        "lane": "image",
+        "criterion": "coverage_team_shot",
+        "severity": "medium",
+        "evidence_quote": "No team shot found in the harvested/uploaded image set.",
+        "asset_ref": null
+      },
+      {
+        "id": "f-coverage-work-proof-shot",
+        "lane": "image",
+        "criterion": "coverage_work_proof_shot",
+        "severity": "medium",
+        "evidence_quote": "No work proof shot found in the harvested/uploaded image set.",
+        "asset_ref": null
+      }
+    ],
+    "channels": [
+      {
+        "id": "optimized_site",
+        "lane": "site",
+        "title": "Your optimized website",
+        "one_liner": "Website needs optimization for better visibility.",
+        "priority": 999,
+        "severity": "high",
+        "status": "todo",
+        "finding_ids": [],
+        "before": null,
+        "after": null
+      },
+      {
+        "id": "legal_footer",
+        "lane": "text",
+        "title": "Legal footer (Impressum/Datenschutz)",
+        "one_liner": "Missing legal footer could lead to compliance issues.",
+        "priority": 12.5,
+        "severity": "high",
+        "status": "todo",
+        "finding_ids": [
+          "f-t8"
+        ],
+        "before": {
+          "excerpts": [
+            "No legal footer on the site — Impressum and Datenschutz are missing."
+          ]
+        },
+        "after": {
+          "channel_id": "legal_footer",
+          "before_excerpt": "No legal footer on the site — Impressum and Datenschutz are missing.",
+          "after": {
+            "checklist": [
+              "Clear and honest terms of service",
+              "Accurate professional credentials",
+              "Transparent pricing structure",
+              "Local service area coverage",
+              "Data privacy acknowledgment"
+            ],
+            "footer_text": "Rohrfuchs Berlin operates as a straightforward plumbing service around the Berlin area. No unexpected costs – we stick to our quotes. We're qualified to handle regular issues and uncommon surprises in plumbing. We'll always be upfront about what needs doing and aim to use materials responsibly. Our work doesn't come with empty promises; just solid craftsmanship you can trust. Any personal details you share with us will be handled respectfully and kept safe. You're in steady hands with us."
+          },
+          "rationale_one_liner": "Crafted a footer that reflects the trustworthy reputation and honest service of a local Berlin plumber, ensuring plain communication with customers."
+        }
+      },
+      {
+        "id": "work_proof_images",
+        "lane": "image",
+        "title": "Work & before/after photos",
+        "one_liner": "Missing work proof images weaken trust and credibility.",
+        "priority": 12.5,
+        "severity": "high",
+        "status": "todo",
+        "finding_ids": [
+          "f-coverage-work-proof-shot",
+          "f-i3-5e5975d4-1ea8-41a6-b50f-e159dfa87ec4",
+          "f-i3-779a434f-7a17-4b13-8c43-ff318ca39ad2",
+          "f-i3-94360d3e-ed9f-4fc1-8fd5-a6ba2588aabb",
+          "f-i3-b84efbf5-9b08-4b58-926f-43feea8849d4",
+          "f-i3-fab437da-1d99-49a1-b934-e96aa9bda662"
+        ],
+        "before": {
+          "asset_refs": [
+            "779a434f-7a17-4b13-8c43-ff318ca39ad2",
+            "b84efbf5-9b08-4b58-926f-43feea8849d4",
+            "fab437da-1d99-49a1-b934-e96aa9bda662",
+            "5e5975d4-1ea8-41a6-b50f-e159dfa87ec4",
+            "94360d3e-ed9f-4fc1-8fd5-a6ba2588aabb"
+          ],
+          "notes": [
+            "No job process shown, just branding.",
+            "No job process or proof related to plumbing.",
+            "No job process, only product and price listing.",
+            "No before/after or job completion shown.",
+            "No job process or outcome depicted, just text.",
+            "No work proof shot found in the harvested/uploaded image set."
+          ]
+        },
+        "after": {
+          "shot_brief": "10-shot list tailored to a plumber:\n1. Before: the exact leak/fault as first found\n2. After: the same angle, completed repair\n3. Close-up of new fittings/pipework installed\n4. Wide shot of the finished bathroom/kitchen/utility area\n5. Tools and materials laid out neatly, van branding visible\n6. Technician mid-task, PPE and branded workwear visible\n7. Boiler/fixture nameplate or install detail for authenticity\n8. Customer's space left tidy and protected (drop cloths, floor protection)\n9. Service van parked outside the job site\n10. A finished-job handshake or sign-off moment (only with customer permission)",
+          "best_existing_asset_id": "779a434f-7a17-4b13-8c43-ff318ca39ad2",
+          "generated_asset_id": "eff5a52a-fcc0-4a04-b534-98a60dc7de8a",
+          "generation_error": null
+        }
+      },
+      {
+        "id": "business_description",
+        "lane": "text",
+        "title": "About / business description",
+        "one_liner": "Lack of business description leads to unclear service identity.",
+        "priority": 8.333333333333334,
+        "severity": "high",
+        "status": "todo",
+        "finding_ids": [
+          "f-t3",
+          "f-t6"
+        ],
+        "before": {
+          "excerpts": [
+            "Unsere Sanitär-Leistungen für Berlin: Rohrreinigung und Abfluss-Service Sanitär-Notdienst rund um die Uhr Beseitigung von Rohrverstopfungen Leckortung und Dichtheitsprüfung Raumtrocknung nach Wasserschäden Bad- und Sanitärinstallation Heizungswartung und Thermen-Service Klempner-Service für Berlin und Umgebung"
+          ]
+        },
+        "after": {
+          "channel_id": "business_description",
+          "before_excerpt": "Unsere Sanitär-Leistungen für Berlin: Rohrreinigung und Abfluss-Service Sanitär-Notdienst rund um die Uhr Beseitigung von Rohrverstopfungen Leckortung und Dichtheitsprüfung Raumtrocknung nach Wasserschäden Bad- und Sanitärinstallation Heizungswartung und Thermen-Service Klempner-Service für Berlin und Umgebung",
+          "after": {
+            "about_paragraph": "Rohrfuchs Berlin bietet fachkundige Klempnerarbeiten in der Region Berlin an. Wir sind hier, um bei Wasserschäden, Rohrbrüchen oder anderen sanitären Notfällen zu helfen. Ganz gleich, ob es um die Beseitigung von Rohrverstopfungen geht oder um die Reinigung von Dachrinnen und Rohren – wir stehen an Ihrer Seite. Mit einer TV-Inspektion der Rohre und Kanäle können wir Probleme genau feststellen. Auch nach Wasserschäden sorgen wir mit Raum- und Gebäudetrocknung dafür, dass Ihr Zuhause trocknet. Muff und Schimmel entfernen wir ebenfalls gründlich und zuverlässig. Zusatzleistungen wie Dichtheitsprüfung, Leckortung, Heizungssupport sowie Gasthermen- und Ölheizungswartungen gehören auch zu unseren Angeboten. Wir sind Berlinern mit unserer Klempnerarbeit zur Stelle.",
+            "gbp_description_de": "Rohrfuchs ist Ihr Ansprechpartner für alle Klempner- und Heizungsfragen in Berlin. Wir beseitigen Wasserschäden, reparieren Rohrbrüche und beheben Verstopfungen im Handumdrehen. Mit TV-Inspektionen und Leckortungen gehen wir Problemen auf den Grund. Heizungs- und Gasthermenwartungen bringen wir ebenfalls in Schuss. Bei uns erhalten Sie einen ehrlichen Service, der hält, was er verspricht.",
+            "gbp_description_en": "Rohrfuchs is your go-to for plumbing and heating issues in Berlin. We handle water damage, repair burst pipes, and quickly clear blockages. With TV inspections and leak detections, we troubleshoot thoroughly. We also maintain heating systems and gas boilers. Expect straightforward service that delivers on its promise."
+          },
+          "rationale_one_liner": "The rewrite makes the description trustworthy and local-focused, eliminating marketing jargon while clearly stating services offered."
+        }
+      },
+      {
+        "id": "cta_contact",
+        "lane": "text",
+        "title": "Call-to-action & contact path",
+        "one_liner": "Missing call-to-action confuses user paths.",
+        "priority": 8.333333333333334,
+        "severity": "high",
+        "status": "todo",
+        "finding_ids": [
+          "f-t2",
+          "f-t5"
+        ],
+        "before": {
+          "excerpts": [
+            "No existing content for this channel on the site."
+          ]
+        },
+        "after": {
+          "channel_id": "cta_contact",
+          "before_excerpt": "",
+          "after": {
+            "cta_text": "Need a hand with your plumbing in Berlin?",
+            "contact_block_text": "Get in touch with us at Rohrfuchs Berlin. We're here to help you sort out whatever plumbing issues you might have. Give us a call or drop us an email, and we'll figure out the best way to assist you."
+          },
+          "rationale_one_liner": "The text is crafted to embody the straightforward, approachable tone of a reliable local plumber, focusing on practical help and direct communication."
+        }
+      },
+      {
+        "id": "services_copy",
+        "lane": "text",
+        "title": "Services descriptions",
+        "one_liner": "Services descriptions are not fully detailed.",
+        "priority": 8.333333333333334,
+        "severity": "high",
+        "status": "todo",
+        "finding_ids": [
+          "f-t7"
+        ],
+        "before": {
+          "excerpts": [
+            "No dedicated services section on the site."
+          ]
+        },
+        "after": {
+          "channel_id": "services_copy",
+          "before_excerpt": "No dedicated services section on the site.",
+          "after": {
+            "services": [
+              {
+                "service_name": "Leaky Tap Repairs",
+                "description": "Got a tap that's dripping? It's a common problem, and we're here to fix it. We can repair most tap issues in a single visit."
+              },
+              {
+                "service_name": "Pipe Blockage Clearing",
+                "description": "If your sinks or toilets aren't draining like they should, you might have a blockage. We have the tools to clear those pipes right up."
+              },
+              {
+                "service_name": "Heating System Checks",
+                "description": "Berlin winters can get chilly, so it's important to make sure your heating system is in working order. We offer straightforward checks and maintenance to keep everything running smoothly."
+              },
+              {
+                "service_name": "Installation of Bathroom Fixtures",
+                "description": "Whether you're renovating or just need a new fixture installed, we handle all kinds of bathroom installations with care."
+              },
+              {
+                "service_name": "Routine Plumbing Maintenance",
+                "description": "Avoid bigger issues down the line with regular plumbing check-ups. We recommend scheduling maintenance to catch problems before they start."
+              }
+            ]
+          },
+          "rationale_one_liner": "Structured service descriptions clearly outline the plumbing services offered, maintaining a local, trustworthy tone."
+        }
+      },
+      {
+        "id": "image_fixes",
+        "lane": "image",
+        "title": "Fix existing photos",
+        "one_liner": "Existing photos need relevance and context improvements.",
+        "priority": 4.5,
+        "severity": "medium",
+        "status": "todo",
+        "finding_ids": [
+          "f-i2-94360d3e-ed9f-4fc1-8fd5-a6ba2588aabb",
+          "f-i2-b84efbf5-9b08-4b58-926f-43feea8849d4",
+          "f-i2-fab437da-1d99-49a1-b934-e96aa9bda662",
+          "f-i4-67fd590c-750c-40cc-9eed-44ba67a29d2d",
+          "f-i6-5e5975d4-1ea8-41a6-b50f-e159dfa87ec4",
+          "f-i6-67fd590c-750c-40cc-9eed-44ba67a29d2d",
+          "f-i6-b84efbf5-9b08-4b58-926f-43feea8849d4",
+          "f-i6-fdb8cffd-0da1-4126-bd6d-0c8c771b579e"
+        ],
+        "before": {
+          "asset_refs": [
+            "b84efbf5-9b08-4b58-926f-43feea8849d4",
+            "fab437da-1d99-49a1-b934-e96aa9bda662",
+            "5e5975d4-1ea8-41a6-b50f-e159dfa87ec4",
+            "fdb8cffd-0da1-4126-bd6d-0c8c771b579e",
+            "94360d3e-ed9f-4fc1-8fd5-a6ba2588aabb",
+            "67fd590c-750c-40cc-9eed-44ba67a29d2d"
+          ],
+          "notes": [
+            "Image of a dog, not related to plumbing work.",
+            "No company branding or relevant content.",
+            "Contains product listings, not related to team or work.",
+            "No branding visible.",
+            "No visible branding or identity.",
+            "Text only, no human interaction or work depiction.",
+            "Cluttered and poorly framed shot.",
+            "No visible branding, lacks context."
+          ]
+        },
+        "after": {
+          "shot_brief": "Photo triage brief: relight or retake anything dim/blurry, crop out cluttered backgrounds, replace anything that reads as stock or generic with a real job photo, and make sure branding (logo, van, uniform) is visible in at least one shot.",
+          "fixes": [
+            {
+              "asset_id": "b84efbf5-9b08-4b58-926f-43feea8849d4",
+              "instruction": "review and improve — \"Image of a dog, not related to plumbing work.\""
+            },
+            {
+              "asset_id": "fab437da-1d99-49a1-b934-e96aa9bda662",
+              "instruction": "make branding visible — \"No company branding or relevant content.\""
+            },
+            {
+              "asset_id": "5e5975d4-1ea8-41a6-b50f-e159dfa87ec4",
+              "instruction": "review and improve — \"Contains product listings, not related to team or work.\""
+            },
+            {
+              "asset_id": "fdb8cffd-0da1-4126-bd6d-0c8c771b579e",
+              "instruction": "make branding visible — \"No branding visible.\""
+            },
+            {
+              "asset_id": "94360d3e-ed9f-4fc1-8fd5-a6ba2588aabb",
+              "instruction": "make branding visible — \"No visible branding or identity.\""
+            },
+            {
+              "asset_id": "67fd590c-750c-40cc-9eed-44ba67a29d2d",
+              "instruction": "replace with a real job photo — \"Text only, no human interaction or work depiction.\""
+            }
+          ],
+          "source_asset_id": "779a434f-7a17-4b13-8c43-ff318ca39ad2",
+          "enhanced_asset_id": "f181b7a2-687d-4bad-a487-3569dbffef61",
+          "edit_error": null
+        }
+      },
+      {
+        "id": "hero_headline",
+        "lane": "text",
+        "title": "Headline & first impression",
+        "one_liner": "Headline lacks engagement and clarity.",
+        "priority": 3,
+        "severity": "medium",
+        "status": "todo",
+        "finding_ids": [
+          "f-t1"
+        ],
+        "before": {
+          "excerpts": [
+            "Unsere Sanitär-Leistungen für Berlin: Rohrreinigung und Abfluss-Service Sanitär-Notdienst rund um die Uhr Beseitigung von Rohrverstopfungen Leckortung und Dichtheitsprüfung Raumtrocknung nach Wasserschäden Bad- und Sanitärinstallation Heizungswartung und Thermen-Service Klempner-Service für Berlin und Umgebung"
+          ]
+        },
+        "after": {
+          "channel_id": "hero_headline",
+          "before_excerpt": "Unsere Sanitär-Leistungen für Berlin: Rohrreinigung und Abfluss-Service Sanitär-Notdienst rund um die Uhr Beseitigung von Rohrverstopfungen Leckortung und Dichtheitsprüfung Raumtrocknung nach Wasserschäden Bad- und Sanitärinstallation Heizungswartung und Thermen-Service Klempner-Service für Berlin und Umgebung",
+          "after": {
+            "h1": "Zuverlässige Hilfe bei allen Klempnerarbeiten in Berlin.",
+            "subline": "Wir kümmern uns um wasserbezogene Schäden, Rohre und Heizung in Ihrem Zuhause.",
+            "cta_text": "Kontaktieren Sie uns für Ihr Projekt in Berlin."
+          },
+          "rationale_one_liner": "The content was rewritten to highlight the practical services offered, using straightforward language that mirrors how a craftsman would communicate, focusing on local and trustworthy aspects."
+        }
+      },
+      {
+        "id": "hero_image",
+        "lane": "image",
+        "title": "Main photo",
+        "one_liner": "Main photo lacks relevance and impact.",
+        "priority": 3,
+        "severity": "medium",
+        "status": "todo",
+        "finding_ids": [
+          "f-coverage-hero-shot"
+        ],
+        "before": {
+          "asset_refs": [],
+          "notes": [
+            "No hero shot found in the harvested/uploaded image set."
+          ]
+        },
+        "after": {
+          "shot_brief": "One confident hero shot: a friendly plumber in branded workwear mid-task on a real job, natural light, honest working atmosphere — the single photo that tells a visiting customer 'this is a real, professional local plumber, ready to help today.'",
+          "best_existing_asset_id": "779a434f-7a17-4b13-8c43-ff318ca39ad2",
+          "generated_asset_id": "299f1f23-089a-4e57-89f8-0ff8b49beaf6",
+          "generation_error": null
+        }
+      },
+      {
+        "id": "team_image",
+        "lane": "image",
+        "title": "Team / owner photo",
+        "one_liner": "Team or owner photo is missing for personal connection.",
+        "priority": 3,
+        "severity": "medium",
+        "status": "todo",
+        "finding_ids": [
+          "f-coverage-team-shot"
+        ],
+        "before": {
+          "asset_refs": [],
+          "notes": [
+            "No team shot found in the harvested/uploaded image set."
+          ]
+        },
+        "after": {
+          "shot_brief": "One team/owner portrait: 2-3 people (or the solo owner) in matching branded workwear standing together, approachable, ideally in front of the service van — the photo that makes a stranger trust you enough to call.",
+          "best_existing_asset_id": "779a434f-7a17-4b13-8c43-ff318ca39ad2",
+          "generated_asset_id": "baf37b0a-6fec-48e2-bd43-3de7775fa8d8",
+          "generation_error": null
+        }
+      },
+      {
+        "id": "promo_video",
+        "lane": "video",
+        "title": "Promo video",
+        "one_liner": "Promo video is not yet available, missing engagement.",
+        "priority": -1,
+        "severity": "low",
+        "status": "coming_soon",
+        "finding_ids": [],
+        "before": null,
+        "after": null
+      }
+    ],
+    "executive_summary": "The overall assessment highlights significant areas needing improvement, particularly with text content where performance is weak. The lack of a legal footer, business description, and clear call-to-action hinders clarity and compliance. Image-related aspects fare better but are still lacking in showcasing proofs of work and team identity, which impacts trust and professionalism. The website requires optimization to enhance visibility and effectiveness. Immediate attention to high-severity issues and a strategic focus on creating a cohesive visual and written narrative are essential.",
+    "memory_note": null,
+    "execution_mode": "REPLAY",
+    "disclaimers": [
+      "REPLAY SAMPLE: recorded from completed LIVE audit of a real Berlin business on 2026-07-18. For publication, every name, phone number, address, URL, and quoted site text has been replaced with the fictional 'Rohrfuchs Berlin' persona, and all harvested photos with synthetic placeholder images. Replay makes no live partner calls."
+    ]
+  },
+  "assets": [
+    {
+      "id": "779a434f-7a17-4b13-8c43-ff318ca39ad2",
+      "audit_id": "audit-replay-rohrfuchs-berlin-replay",
+      "kind": "harvested_image",
+      "source": "https://www.rohrfuchs-berlin.example/wp-content/themes/appointment/images/slide/auto-start.png",
+      "storage_path": "/fixtures/rohrfuchs-berlin-replay/before-1.jpg",
+      "meta": {
+        "src": "https://www.rohrfuchs-berlin.example/wp-content/themes/appointment/images/slide/auto-start.png",
+        "alt": "Rohrfuchs Klempner Berlin",
+        "bytes": 1456,
+        "width": 428,
+        "height": 264
+      },
+      "score": [
+        {
+          "id": "I1",
+          "score": 2,
+          "evidence": "Web graphic",
+          "source": "vision"
+        },
+        {
+          "id": "I2",
+          "score": 1,
+          "evidence": "Homepage slider graphic with a headline and phone-number banner overlay — marketing graphic, not a real job photo",
+          "source": "vision"
+        },
+        {
+          "id": "I3",
+          "score": 1,
+          "evidence": "No job proof",
+          "source": "vision"
+        },
+        {
+          "id": "I4",
+          "score": 2,
+          "evidence": "Banner layout",
+          "source": "vision"
+        },
+        {
+          "id": "I5",
+          "score": 1,
+          "evidence": "Large text overlay / banner",
+          "source": "vision"
+        },
+        {
+          "id": "I6",
+          "score": 1,
+          "evidence": "Logo strip",
+          "source": "vision"
+        }
+      ],
+      "label": null,
+      "status": "normalized"
+    },
+    {
+      "id": "b84efbf5-9b08-4b58-926f-43feea8849d4",
+      "audit_id": "audit-replay-rohrfuchs-berlin-replay",
+      "kind": "harvested_image",
+      "source": "https://www.rohrfuchs-berlin.example/wp-content/themes/appointment/images/slide/verstopfung.png",
+      "storage_path": "/fixtures/rohrfuchs-berlin-replay/before-2.jpg",
+      "meta": {
+        "src": "https://www.rohrfuchs-berlin.example/wp-content/themes/appointment/images/slide/verstopfung.png",
+        "alt": "Rohrfuchs Klempner Berlin",
+        "bytes": 1202,
+        "width": 346,
+        "height": 264
+      },
+      "score": [
+        {
+          "id": "I1",
+          "score": 2,
+          "evidence": "Low quality",
+          "source": "vision"
+        },
+        {
+          "id": "I2",
+          "score": 1,
+          "evidence": "Novelty stock image of a dog peering into a drain pipe with promotional text — not genuine work",
+          "source": "vision"
+        },
+        {
+          "id": "I3",
+          "score": 1,
+          "evidence": "No real work shown",
+          "source": "vision"
+        },
+        {
+          "id": "I4",
+          "score": 2,
+          "evidence": "Staged",
+          "source": "vision"
+        },
+        {
+          "id": "I5",
+          "score": 2,
+          "evidence": "Promo text overlay",
+          "source": "vision"
+        },
+        {
+          "id": "I6",
+          "score": 1,
+          "evidence": "No branding",
+          "source": "vision"
+        }
+      ],
+      "label": null,
+      "status": "normalized"
+    },
+    {
+      "id": "fab437da-1d99-49a1-b934-e96aa9bda662",
+      "audit_id": "audit-replay-rohrfuchs-berlin-replay",
+      "kind": "harvested_image",
+      "source": "https://www.rohrfuchs-berlin.example/images/tablet-sanitaer-heizung.jpg",
+      "storage_path": "/fixtures/rohrfuchs-berlin-replay/before-3.jpg",
+      "meta": {
+        "src": "https://www.rohrfuchs-berlin.example/images/tablet-sanitaer-heizung.jpg",
+        "alt": "Klempner Sanitär Heizung Berlin",
+        "bytes": 2410,
+        "width": 439,
+        "height": 531
+      },
+      "score": [
+        {
+          "id": "I1",
+          "score": 3,
+          "evidence": "Rendered graphic",
+          "source": "vision"
+        },
+        {
+          "id": "I2",
+          "score": 1,
+          "evidence": "Screenshot of a tablet displaying the services menu — a marketing graphic, not a real job photo",
+          "source": "vision"
+        },
+        {
+          "id": "I3",
+          "score": 1,
+          "evidence": "No job process or proof",
+          "source": "vision"
+        },
+        {
+          "id": "I4",
+          "score": 2,
+          "evidence": "Composed graphic",
+          "source": "vision"
+        },
+        {
+          "id": "I5",
+          "score": 1,
+          "evidence": "Heavy text overlay / screenshot",
+          "source": "vision"
+        },
+        {
+          "id": "I6",
+          "score": 2,
+          "evidence": "Logo present",
+          "source": "vision"
+        }
+      ],
+      "label": null,
+      "status": "normalized"
+    },
+    {
+      "id": "5e5975d4-1ea8-41a6-b50f-e159dfa87ec4",
+      "audit_id": "audit-replay-rohrfuchs-berlin-replay",
+      "kind": "harvested_image",
+      "source": "https://www.rohrfuchs-berlin.example/wp-content/themes/appointment/images/slide/rohrreinigung-service.png",
+      "storage_path": "/fixtures/rohrfuchs-berlin-replay/before-4.jpg",
+      "meta": {
+        "src": "https://www.rohrfuchs-berlin.example/wp-content/themes/appointment/images/slide/rohrreinigung-service.png",
+        "alt": "Rohrfuchs Rohrreinigung Berlin",
+        "bytes": 1143,
+        "width": 304,
+        "height": 264
+      },
+      "score": [
+        {
+          "id": "I1",
+          "score": 2,
+          "evidence": "Web graphic",
+          "source": "vision"
+        },
+        {
+          "id": "I2",
+          "score": 1,
+          "evidence": "Service slider with a price-list text overlay — marketing graphic, not real work",
+          "source": "vision"
+        },
+        {
+          "id": "I3",
+          "score": 1,
+          "evidence": "No proof of work",
+          "source": "vision"
+        },
+        {
+          "id": "I4",
+          "score": 1,
+          "evidence": "List layout",
+          "source": "vision"
+        },
+        {
+          "id": "I5",
+          "score": 1,
+          "evidence": "Price-list text overlay",
+          "source": "vision"
+        },
+        {
+          "id": "I6",
+          "score": 1,
+          "evidence": "Logo",
+          "source": "vision"
+        }
+      ],
+      "label": null,
+      "status": "normalized"
+    },
+    {
+      "id": "ae0fbb3f-72de-42f1-af98-38af7b0c416f",
+      "audit_id": "audit-replay-rohrfuchs-berlin-replay",
+      "kind": "harvested_image",
+      "source": "https://www.rohrfuchs-berlin.example/wp-content/uploads/rohrfuchs-gasthermenwartung-berlin.jpg",
+      "storage_path": "/fixtures/rohrfuchs-berlin-replay/before-5.jpg",
+      "meta": {
+        "src": "https://www.rohrfuchs-berlin.example/wp-content/uploads/rohrfuchs-gasthermenwartung-berlin.jpg",
+        "alt": "Rohrfuchs Gasthermenwartung Berlin",
+        "bytes": 3931,
+        "width": 800,
+        "height": 533
+      },
+      "score": [
+        {
+          "id": "I1",
+          "score": 4,
+          "evidence": "Sharp, well-exposed",
+          "source": "vision"
+        },
+        {
+          "id": "I2",
+          "score": 5,
+          "evidence": "Real on-site photo of a technician in branded workwear servicing a gas boiler — genuine job proof",
+          "source": "vision"
+        },
+        {
+          "id": "I3",
+          "score": 5,
+          "evidence": "Clear before/after job outcome",
+          "source": "vision"
+        },
+        {
+          "id": "I4",
+          "score": 4,
+          "evidence": "Clean framing",
+          "source": "vision"
+        },
+        {
+          "id": "I5",
+          "score": 4,
+          "evidence": "No text overlay",
+          "source": "vision"
+        },
+        {
+          "id": "I6",
+          "score": 2,
+          "evidence": "Some branding",
+          "source": "vision"
+        }
+      ],
+      "label": null,
+      "status": "normalized"
+    },
+    {
+      "id": "fdb8cffd-0da1-4126-bd6d-0c8c771b579e",
+      "audit_id": "audit-replay-rohrfuchs-berlin-replay",
+      "kind": "harvested_image",
+      "source": "https://www.rohrfuchs-berlin.example/images/trocknung-berlin.jpg",
+      "storage_path": "/fixtures/rohrfuchs-berlin-replay/before-6.jpg",
+      "meta": {
+        "src": "https://www.rohrfuchs-berlin.example/images/trocknung-berlin.jpg",
+        "alt": "Wasserschaden Trocknung Berlin",
+        "bytes": 1979,
+        "width": 400,
+        "height": 480
+      },
+      "score": [
+        {
+          "id": "I1",
+          "score": 3,
+          "evidence": "Good exposure",
+          "source": "vision"
+        },
+        {
+          "id": "I2",
+          "score": 4,
+          "evidence": "Real photo of drying equipment set up at a water-damage job site — genuine work in progress",
+          "source": "vision"
+        },
+        {
+          "id": "I3",
+          "score": 4,
+          "evidence": "Job process visible",
+          "source": "vision"
+        },
+        {
+          "id": "I4",
+          "score": 3,
+          "evidence": "Decent framing",
+          "source": "vision"
+        },
+        {
+          "id": "I5",
+          "score": 3,
+          "evidence": "No overlay",
+          "source": "vision"
+        },
+        {
+          "id": "I6",
+          "score": 3,
+          "evidence": "Branded equipment",
+          "source": "vision"
+        }
+      ],
+      "label": null,
+      "status": "normalized"
+    },
+    {
+      "id": "94360d3e-ed9f-4fc1-8fd5-a6ba2588aabb",
+      "audit_id": "audit-replay-rohrfuchs-berlin-replay",
+      "kind": "harvested_image",
+      "source": "https://www.rohrfuchs-berlin.example/wp-content/themes/appointment/images/slide/slider-leistung-service-quali.png",
+      "storage_path": "/fixtures/rohrfuchs-berlin-replay/before-7.jpg",
+      "meta": {
+        "src": "https://www.rohrfuchs-berlin.example/wp-content/themes/appointment/images/slide/slider-leistung-service-quali.png",
+        "alt": "Rohrfuchs Klempner Berlin",
+        "bytes": 1198,
+        "width": 300,
+        "height": 264
+      },
+      "score": [
+        {
+          "id": "I1",
+          "score": 2,
+          "evidence": "Web graphic",
+          "source": "vision"
+        },
+        {
+          "id": "I2",
+          "score": 1,
+          "evidence": "Slider graphic listing services with text overlay — marketing, not a real job photo",
+          "source": "vision"
+        },
+        {
+          "id": "I3",
+          "score": 1,
+          "evidence": "No job proof",
+          "source": "vision"
+        },
+        {
+          "id": "I4",
+          "score": 1,
+          "evidence": "Slider layout",
+          "source": "vision"
+        },
+        {
+          "id": "I5",
+          "score": 1,
+          "evidence": "Text overlay",
+          "source": "vision"
+        },
+        {
+          "id": "I6",
+          "score": 1,
+          "evidence": "Logo",
+          "source": "vision"
+        }
+      ],
+      "label": null,
+      "status": "normalized"
+    },
+    {
+      "id": "67fd590c-750c-40cc-9eed-44ba67a29d2d",
+      "audit_id": "audit-replay-rohrfuchs-berlin-replay",
+      "kind": "harvested_image",
+      "source": "https://www.rohrfuchs-berlin.example/images/rohrreinigung-berlin.jpg",
+      "storage_path": "/fixtures/rohrfuchs-berlin-replay/before-8.jpg",
+      "meta": {
+        "src": "https://www.rohrfuchs-berlin.example/images/rohrreinigung-berlin.jpg",
+        "alt": "Rohrreinigung Verstopfung Berlin",
+        "bytes": 1166,
+        "width": 400,
+        "height": 215
+      },
+      "score": [
+        {
+          "id": "I1",
+          "score": 3,
+          "evidence": "Slightly soft",
+          "source": "vision"
+        },
+        {
+          "id": "I2",
+          "score": 4,
+          "evidence": "Close-up photo of a freshly cleaned drain after service — genuine work but small, low-res",
+          "source": "vision"
+        },
+        {
+          "id": "I3",
+          "score": 3,
+          "evidence": "Outcome shown",
+          "source": "vision"
+        },
+        {
+          "id": "I4",
+          "score": 2,
+          "evidence": "Tight crop",
+          "source": "vision"
+        },
+        {
+          "id": "I5",
+          "score": 3,
+          "evidence": "No overlay",
+          "source": "vision"
+        },
+        {
+          "id": "I6",
+          "score": 2,
+          "evidence": "Little branding",
+          "source": "vision"
+        }
+      ],
+      "label": null,
+      "status": "normalized"
+    },
+    {
+      "id": "eff5a52a-fcc0-4a04-b534-98a60dc7de8a",
+      "audit_id": "audit-replay-rohrfuchs-berlin-replay",
+      "kind": "generated_image",
+      "source": null,
+      "storage_path": "/fixtures/rohrfuchs-berlin-replay/after-work-proof-images.png",
+      "meta": {
+        "prompt": "Photorealistic, warm, natural-light photo of a freshly completed plumbing repair — clean new pipework and fixtures, tools neatly organized nearby, clearly finished professional work, photorealistic, warm, natural light, honest working atmosphere, no text, no logos.",
+        "size": "1024x1024",
+        "channel": "work_proof_images",
+        "operation": "generate"
+      },
+      "score": null,
+      "label": "ai_concept",
+      "status": "generated"
+    },
+    {
+      "id": "299f1f23-089a-4e57-89f8-0ff8b49beaf6",
+      "audit_id": "audit-replay-rohrfuchs-berlin-replay",
+      "kind": "generated_image",
+      "source": null,
+      "storage_path": "/fixtures/rohrfuchs-berlin-replay/after-hero-image.png",
+      "meta": {
+        "prompt": "Photorealistic, warm, natural-light photo of a friendly professional plumber in branded workwear installing a modern bathroom fixture in a German home, honest working atmosphere, no text, no logos.",
+        "size": "1536x1024",
+        "channel": "hero_image",
+        "operation": "generate"
+      },
+      "score": null,
+      "label": "ai_concept",
+      "status": "generated"
+    },
+    {
+      "id": "baf37b0a-6fec-48e2-bd43-3de7775fa8d8",
+      "audit_id": "audit-replay-rohrfuchs-berlin-replay",
+      "kind": "generated_image",
+      "source": null,
+      "storage_path": "/fixtures/rohrfuchs-berlin-replay/after-team-image.png",
+      "meta": {
+        "prompt": "Photorealistic, warm, natural-light photo of a small plumbing team of 2-3 people in matching branded workwear standing together in front of their service van, confident and approachable, photorealistic, warm, natural light, honest working atmosphere, no text, no logos.",
+        "size": "1024x1024",
+        "channel": "team_image",
+        "operation": "generate"
+      },
+      "score": null,
+      "label": "ai_concept",
+      "status": "generated"
+    },
+    {
+      "id": "f181b7a2-687d-4bad-a487-3569dbffef61",
+      "audit_id": "audit-replay-rohrfuchs-berlin-replay",
+      "kind": "generated_image",
+      "source": null,
+      "storage_path": "/fixtures/rohrfuchs-berlin-replay/after-image-fixes.png",
+      "meta": {
+        "prompt": "Improve this real plumber photo for website use. Preserve the people, place, work, branding, and factual content. Correct lighting, clarity, crop, and distracting clutter only; do not invent work, credentials, customers, logos, or outcomes.",
+        "size": "1024x1024",
+        "channel": "image_fixes",
+        "operation": "edit",
+        "source_asset_id": "779a434f-7a17-4b13-8c43-ff318ca39ad2",
+        "note": "Publication note: the real edit output was withheld because it derived from a photograph of the source business; the committed file is a synthetic gradient placeholder."
+      },
+      "score": null,
+      "label": "enhanced",
+      "status": "generated"
+    }
+  ],
+  "preview_json": {
+    "header": {
+      "business_name": "Rohrfuchs Berlin"
+    },
+    "hero": {
+      "h1": "Zuverlässige Hilfe bei allen Klempnerarbeiten in Berlin.",
+      "subline": "Wir kümmern uns um wasserbezogene Schäden, Rohre und Heizung in Ihrem Zuhause.",
+      "cta_text": "Kontaktieren Sie uns für Ihr Projekt in Berlin.",
+      "hero_image_ref": "299f1f23-089a-4e57-89f8-0ff8b49beaf6"
+    },
+    "trust_bar": {
+      "years_in_business": null,
+      "certifications": [],
+      "review_chip": null
+    },
+    "services": [
+      {
+        "title": "Leaky Tap Repairs",
+        "description": "Got a tap that's dripping? It's a common problem, and we're here to fix it. We can repair most tap issues in a single visit."
+      },
+      {
+        "title": "Pipe Blockage Clearing",
+        "description": "If your sinks or toilets aren't draining like they should, you might have a blockage. We have the tools to clear those pipes right up."
+      },
+      {
+        "title": "Heating System Checks",
+        "description": "Berlin winters can get chilly, so it's important to make sure your heating system is in working order. We offer straightforward checks and maintenance to keep everything running smoothly."
+      }
+    ],
+    "gallery": [
+      {
+        "asset_ref": "299f1f23-089a-4e57-89f8-0ff8b49beaf6",
+        "label": "ai_concept"
+      },
+      {
+        "asset_ref": "ae0fbb3f-72de-42f1-af98-38af7b0c416f",
+        "label": null
+      },
+      {
+        "asset_ref": "baf37b0a-6fec-48e2-bd43-3de7775fa8d8",
+        "label": "ai_concept"
+      },
+      {
+        "asset_ref": "eff5a52a-fcc0-4a04-b534-98a60dc7de8a",
+        "label": "ai_concept"
+      },
+      {
+        "asset_ref": "f181b7a2-687d-4bad-a487-3569dbffef61",
+        "label": "enhanced"
+      },
+      {
+        "asset_ref": "b84efbf5-9b08-4b58-926f-43feea8849d4",
+        "label": null
+      },
+      {
+        "asset_ref": "fab437da-1d99-49a1-b934-e96aa9bda662",
+        "label": null
+      },
+      {
+        "asset_ref": "fdb8cffd-0da1-4126-bd6d-0c8c771b579e",
+        "label": null
+      }
+    ],
+    "about_team": {
+      "text": "Rohrfuchs Berlin bietet fachkundige Klempnerarbeiten in der Region Berlin an. Wir sind hier, um bei Wasserschäden, Rohrbrüchen oder anderen sanitären Notfällen zu helfen. Ganz gleich, ob es um die Beseitigung von Rohrverstopfungen geht oder um die Reinigung von Dachrinnen und Rohren – wir stehen an Ihrer Seite. Mit einer TV-Inspektion der Rohre und Kanäle können wir Probleme genau feststellen. Auch nach Wasserschäden sorgen wir mit Raum- und Gebäudetrocknung dafür, dass Ihr Zuhause trocknet. Muff und Schimmel entfernen wir ebenfalls gründlich und zuverlässig. Zusatzleistungen wie Dichtheitsprüfung, Leckortung, Heizungssupport sowie Gasthermen- und Ölheizungswartungen gehören auch zu unseren Angeboten. Wir sind Berlinern mit unserer Klempnerarbeit zur Stelle.",
+      "team_image_ref": "baf37b0a-6fec-48e2-bd43-3de7775fa8d8"
+    },
+    "contact": {
+      "phone": "+493012345678",
+      "cta": "Need a hand with your plumbing in Berlin?"
+    },
+    "legal_footer": {
+      "impressum": "Rohrfuchs Berlin operates as a straightforward plumbing service around the Berlin area. No unexpected costs – we stick to our quotes. We're qualified to handle regular issues and uncommon surprises in plumbing. We'll always be upfront about what needs doing and aim to use materials responsibly. Our work doesn't come with empty promises; just solid craftsmanship you can trust. Any personal details you share with us will be handled respectfully and kept safe. You're in steady hands with us.",
+      "datenschutz": "Clear and honest terms of service; Accurate professional credentials; Transparent pricing structure; Local service area coverage; Data privacy acknowledgment"
+    },
+    "what_changed": [
+      "Headline rewritten",
+      "About section rewritten",
+      "Services descriptions rewritten",
+      "Call-to-action added",
+      "Impressum & Datenschutz guidance added",
+      "3 images upgraded (AI concepts)",
+      "1 real photo enhanced"
+    ],
+    "before": {
+      "sections": [
+        {
+          "section": "services",
+          "text": "Unsere Sanitär-Leistungen für Berlin: Rohrreinigung und Abfluss-Service Sanitär-Notdienst rund um die Uhr Beseitigung von Rohrverstopfungen Leckortung und Dichtheitsprüfung Raumtrocknung nach Wasserschäden Bad- und Sanitärinstallation Heizungswartung und Thermen-Service Klempner-Service für Berlin und Umgebung"
+        }
+      ],
+      "original_image_refs": [
+        "779a434f-7a17-4b13-8c43-ff318ca39ad2",
+        "b84efbf5-9b08-4b58-926f-43feea8849d4",
+        "fab437da-1d99-49a1-b934-e96aa9bda662",
+        "5e5975d4-1ea8-41a6-b50f-e159dfa87ec4",
+        "ae0fbb3f-72de-42f1-af98-38af7b0c416f",
+        "fdb8cffd-0da1-4126-bd6d-0c8c771b579e",
+        "94360d3e-ed9f-4fc1-8fd5-a6ba2588aabb",
+        "67fd590c-750c-40cc-9eed-44ba67a29d2d"
+      ]
+    }
+  }
+}

@@ -1,0 +1,54 @@
+# macOS metadata
+.DS_Store
+._*
+.Spotlight-V100/
+.Trashes/
+
+# Editors and local IDE state
+.idea/
+.vscode/
+*.swp
+*.swo
+CLAUDE.local.md
+.claude/settings.local.json
+
+# Secrets and credentials
+.env
+.env.*
+!.env.example
+secrets/
+credentials/
+*.pem
+*.key
+
+# JavaScript / TypeScript
+node_modules/
+.pnpm-store/
+.yarn/
+dist/
+build/
+.next/
+out/
+coverage/
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Logs, caches, and temporary files
+*.log
+.cache/
+.tmp/
+tmp/
+
+# Local databases and memory stores
+*.db
+*.db-*
+*.sqlite
+*.sqlite3
+

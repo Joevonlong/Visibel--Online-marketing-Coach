@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Spatial Glass frontend concept for Visibel.">
+  <title>03 · Spatial Glass — Visibel</title>
+  <link rel="stylesheet" href="base.css">
+  <style>
+    :root { --ink:#13243b; --muted:#617087; --blue:#246bfd; --violet:#7657ef; --cyan:#58c6dd; --glass:rgba(255,255,255,.62); --stroke:rgba(255,255,255,.78); }
+    body { color:var(--ink); background:#eaf1ff; }
+    .aurora { position:absolute; inset:0; overflow:hidden; pointer-events:none; }
+    .orb { position:absolute; border-radius:50%; filter:blur(12px); opacity:.72; animation:float 10s ease-in-out infinite alternate; }
+    .orb.one { width:520px; height:520px; left:-130px; top:-190px; background:#acddff; }
+    .orb.two { width:470px; height:470px; right:-80px; top:12%; background:#d6c2ff; animation-delay:-3s; }
+    .orb.three { width:330px; height:330px; left:42%; bottom:-190px; background:#b8f0dd; animation-delay:-6s; }
+    @keyframes float { to { transform:translate3d(25px,22px,0) scale(1.06); } }
+    .glass { border:1px solid var(--stroke); background:var(--glass); box-shadow:0 24px 70px rgba(49,73,118,.14),inset 0 1px 0 rgba(255,255,255,.65); backdrop-filter:blur(30px) saturate(150%); -webkit-backdrop-filter:blur(30px) saturate(150%); }
+    .button { display:inline-flex; align-items:center; justify-content:center; gap:8px; min-height:48px; padding:0 21px; border:0; border-radius:999px; background:linear-gradient(135deg,var(--blue),var(--violet)); color:#fff; font-size:13px; font-weight:760; box-shadow:0 11px 27px rgba(57,93,221,.28); transition:transform 140ms ease,box-shadow 230ms ease; }
+    .button:hover { box-shadow:0 15px 35px rgba(57,93,221,.34); } .button:active { transform:scale(.97); }
+    .button.soft { min-height:38px; padding:0 14px; border:1px solid rgba(36,107,253,.13); background:rgba(255,255,255,.68); color:var(--blue); box-shadow:none; font-size:11px; }
+    .button.is-done { background:#269868; }
+    .nav { position:absolute; z-index:9; top:0; left:50%; transform:translateX(-50%); display:flex; align-items:center; justify-content:space-between; width:min(1180px,calc(100% - 40px)); height:74px; }
+    .brand { display:flex; align-items:center; gap:9px; color:inherit; font-size:13px; font-weight:800; text-decoration:none; }
+    .brand i { width:25px; height:25px; border-radius:9px; background:conic-gradient(from 220deg,var(--blue),var(--cyan),#fff,var(--violet),var(--blue)); box-shadow:inset 0 0 0 1px rgba(255,255,255,.7); }
+    .nav > span { color:var(--muted); font-size:10px; font-weight:700; }
+    .landing { position:relative; overflow:hidden; padding:128px 20px 90px; background:linear-gradient(145deg,#eff8ff,#f3edff 54%,#effbf7); }
+    .landing-content { position:relative; z-index:1; width:min(1140px,100%); margin:auto; text-align:center; }
+    .eyebrow { display:inline-flex; align-items:center; gap:8px; margin:0 0 20px; padding:8px 12px; border-radius:999px; color:#456079; font-size:10px; font-weight:780; letter-spacing:.08em; text-transform:uppercase; }
+    .eyebrow::before { content:""; width:7px; height:7px; border-radius:50%; background:#34b27b; box-shadow:0 0 0 5px rgba(52,178,123,.12); }
+    h1 { max-width:1040px; margin:0 auto; color:#152640; font-size:clamp(57px,9.5vw,116px); line-height:.87; letter-spacing:-.078em; }
+    h1 span { color:transparent; background:linear-gradient(95deg,#246bfd,#7657ef 50%,#e66db4); -webkit-background-clip:text; background-clip:text; }
+    .lead { max-width:620px; margin:27px auto 0; color:var(--muted); font-size:clamp(17px,2vw,22px); line-height:1.46; letter-spacing:-.02em; }
+    .hero-actions { display:flex; justify-content:center; gap:10px; margin-top:27px; }
+    .signal-deck { position:relative; height:300px; max-width:900px; margin:56px auto 0; perspective:900px; }
+    .signal { position:absolute; padding:21px; border-radius:23px; text-align:left; }
+    .signal small { color:var(--muted); font-size:9px; font-weight:800; letter-spacing:.1em; text-transform:uppercase; } .signal strong { display:block; margin-top:12px; font-size:23px; letter-spacing:-.04em; }
+    .signal.score { left:4%; top:42px; width:230px; transform:rotate(-5deg); } .signal.copy { left:50%; top:2px; width:330px; transform:translateX(-50%); z-index:2; } .signal.visual { right:3%; top:54px; width:240px; transform:rotate(5deg); }
+    .signal .metric { margin-top:20px; font-size:68px; font-weight:740; line-height:.8; letter-spacing:-.08em; }
+    .signal p { margin:8px 0 0; color:var(--muted); font-size:11px; line-height:1.45; }
+    .scan { height:6px; margin-top:25px; overflow:hidden; border-radius:99px; background:rgba(52,75,110,.09); } .scan::before { content:""; display:block; width:39%; height:100%; border-radius:inherit; background:linear-gradient(90deg,var(--cyan),var(--blue)); }
+    .report { position:relative; overflow:hidden; padding:104px 20px 126px; background:linear-gradient(155deg,#edf8ff,#f6f1ff 47%,#eaf8f1); }
+    .shell { position:relative; z-index:1; width:min(1140px,100%); margin:auto; }
+    .head { display:flex; align-items:flex-end; justify-content:space-between; gap:30px; margin-bottom:31px; }
+    .kicker { margin:0 0 9px; color:var(--blue); font-size:10px; font-weight:850; letter-spacing:.12em; text-transform:uppercase; }
+    h2 { max-width:800px; margin:0; font-size:clamp(42px,6vw,72px); line-height:.96; letter-spacing:-.064em; }
+    .mode { padding:8px 11px; border-radius:999px; color:#607087; font-size:9px; font-weight:800; letter-spacing:.08em; text-transform:uppercase; }
+    .insight-grid { display:grid; grid-template-columns:290px minmax(0,1fr); gap:15px; }
+    .score-orbit { position:sticky; top:22px; align-self:start; display:grid; place-items:center; min-height:410px; border-radius:30px; text-align:center; }
+    .score-ring { position:relative; display:grid; place-items:center; width:210px; height:210px; border-radius:50%; background:conic-gradient(var(--blue) 0 39%,rgba(78,101,144,.1) 39%); box-shadow:0 18px 48px rgba(67,89,139,.15); }
+    .score-ring::before { content:""; position:absolute; width:178px; height:178px; border-radius:50%; background:rgba(249,252,255,.82); backdrop-filter:blur(16px); }
+    .score-value { position:relative; z-index:1; font-size:76px; font-weight:740; line-height:.8; letter-spacing:-.08em; } .score-value small { display:block; margin-top:13px; color:var(--muted); font-size:10px; font-weight:800; letter-spacing:.09em; text-transform:uppercase; }
+    .score-note { max-width:200px; margin:-35px 0 0; color:var(--muted); font-size:11px; line-height:1.45; }
+    .action-stack { display:grid; gap:11px; }
+    .auto-strip { display:flex; justify-content:space-between; align-items:center; gap:16px; padding:17px 19px; border-radius:20px; }
+    .auto-strip strong { display:block; font-size:14px; } .auto-strip span { color:var(--muted); font-size:10px; }
+    .action-card { display:grid; grid-template-columns:42px minmax(0,1fr) auto; gap:14px; align-items:center; padding:18px; border-radius:22px; transition:transform 250ms cubic-bezier(.22,1,.36,1),background 220ms ease; }
+    .action-card:hover { transform:translateY(-2px); } .action-card.is-improved { background:rgba(236,255,246,.78); }
+    .action-icon { display:grid; place-items:center; width:42px; height:42px; border-radius:15px; background:linear-gradient(145deg,#eef4ff,#e7dcff); color:var(--violet); font-size:15px; font-weight:850; }
+    .action-card h3 { margin:0 0 4px; font-size:16px; letter-spacing:-.025em; } .action-card p { margin:0; color:var(--muted); font-size:11px; line-height:1.42; }
+    .status { display:block; margin-top:7px; color:#df7446; font-size:9px; font-weight:820; letter-spacing:.08em; text-transform:uppercase; }
+    .action-card.is-improved .status { color:#269868; }
+    .outcome { position:relative; overflow:hidden; padding:97px 20px 128px; background:linear-gradient(135deg,#e8f6ff,#f5efff 55%,#eaf9f1); }
+    .outcome-head { display:flex; justify-content:space-between; align-items:end; gap:30px; margin-bottom:27px; }
+    .outcome-head p { max-width:480px; margin:12px 0 0; color:var(--muted); font-size:14px; line-height:1.48; }
+    .ready { padding:9px 12px; border-radius:999px; color:#227e5c; font-size:10px; font-weight:800; }
+    .compare { --split:52%; position:relative; min-height:610px; overflow:hidden; border-radius:32px; box-shadow:0 35px 90px rgba(53,78,126,.2); }
+    .site { position:absolute; inset:0; }
+    .before { display:flex; flex-direction:column; justify-content:space-between; padding:39px; background:linear-gradient(rgba(36,42,49,.9),rgba(30,34,40,.96)),url('../../code/media-ad-coach/public/fixtures/sanitaer-krause-berlin/before-1.jpg') center/cover; color:#fff; }
+    .before h3 { margin:auto 0; font-size:clamp(54px,8vw,92px); line-height:.88; letter-spacing:-.07em; } .before p { color:rgba(255,255,255,.5); font-size:12px; }
+    .after { clip-path:inset(0 calc(100% - var(--split)) 0 0); display:grid; grid-template-columns:1.1fr .9fr; padding:15px; background:rgba(255,255,255,.55); }
+    .after-copy { display:flex; flex-direction:column; justify-content:center; padding:clamp(27px,5vw,60px); border-radius:23px 0 0 23px; background:#fff; }
+    .site-brand { font-size:10px; font-weight:850; letter-spacing:.12em; } .after h3 { margin:34px 0 16px; font-size:clamp(37px,5vw,64px); line-height:.93; letter-spacing:-.058em; } .after p { margin:0 0 24px; color:var(--muted); font-size:12px; line-height:1.5; }
+    .fake-cta { align-self:flex-start; padding:12px 16px; border-radius:999px; background:var(--blue); color:#fff; font-size:10px; font-weight:800; }
+    .after-photo { position:relative; border-radius:0 23px 23px 0; background:url('../../code/media-ad-coach/public/fixtures/sanitaer-krause-berlin/after-hero.jpg') center/cover; }
+    .ai { position:absolute; right:12px; bottom:12px; padding:7px 9px; border-radius:999px; background:rgba(255,255,255,.75); color:#58677b; font-size:8px; font-weight:850; text-transform:uppercase; letter-spacing:.09em; backdrop-filter:blur(12px); }
+    .compare input { position:absolute; z-index:5; inset:0; width:100%; height:100%; opacity:0; cursor:ew-resize; }
+    .divider { position:absolute; z-index:4; top:0; bottom:0; left:var(--split); width:2px; background:#fff; box-shadow:0 0 15px rgba(31,45,70,.3); transform:translateX(-1px); pointer-events:none; }
+    .divider::after { content:"↔"; position:absolute; top:50%; left:50%; display:grid; place-items:center; width:46px; height:46px; border-radius:50%; background:rgba(255,255,255,.9); color:var(--blue); box-shadow:0 12px 28px rgba(47,70,112,.23); transform:translate(-50%,-50%); backdrop-filter:blur(14px); }
+    .compare-label { position:absolute; z-index:3; top:18px; padding:7px 10px; border-radius:999px; background:rgba(28,38,52,.55); color:#fff; font-size:9px; font-weight:820; letter-spacing:.1em; text-transform:uppercase; backdrop-filter:blur(12px); } .compare-label.left { left:18px; } .compare-label.right { right:18px; background:rgba(255,255,255,.8); color:var(--ink); }
+    .decision { display:flex; align-items:center; justify-content:space-between; gap:18px; margin-top:16px; padding:20px 22px; border-radius:22px; }
+    .decision h3 { margin:0 0 4px; font-size:18px; } .decision p { margin:0; color:var(--muted); font-size:10px; }
+    @media (max-width:820px) { .signal.score { left:0; } .signal.visual { right:0; } .insight-grid { grid-template-columns:1fr; } .score-orbit { position:relative; top:0; min-height:330px; } .outcome-head { align-items:start; flex-direction:column; } .after { grid-template-columns:1fr; } .after-photo { display:none; } .after-copy { border-radius:23px; } }
+    @media (max-width:600px) { .nav > span { display:none; } .hero-actions { flex-direction:column; align-items:center; } .signal-deck { height:390px; } .signal.score { top:5px; } .signal.copy { top:125px; width:88%; } .signal.visual { top:252px; } .head,.decision { align-items:flex-start; flex-direction:column; } .action-card { grid-template-columns:38px 1fr; } .action-card .button { grid-column:2; justify-self:start; } .compare { min-height:540px; } }
+    @media (prefers-reduced-transparency:reduce) { .glass,.score-ring::before,.ai,.divider::after { background:#fff; backdrop-filter:none; -webkit-backdrop-filter:none; } }
+  </style>
+</head>
+<body>
+  <span class="prototype-note">Concept 03 · Spatial Glass</span>
+  <nav class="journey-dock" aria-label="Prototype journey"><button data-step="1"><span>1</span> <span class="step-label">Discover</span></button><button data-step="2"><span>2</span> <span class="step-label">Improve</span></button><button data-step="3"><span>3</span> <span class="step-label">Compare</span></button></nav>
+
+  <section class="screen landing" data-screen="1"><div class="aurora"><i class="orb one"></i><i class="orb two"></i><i class="orb three"></i></div><header class="nav"><a class="brand" href="index.html"><i></i>Visibel</a><span>Clarity, composed for local business.</span></header><div class="landing-content"><p class="eyebrow glass">A new view of your business</p><h1>See what customers see.<br><span>Then make it shine.</span></h1><p class="lead">One calm workspace scores your words and photos, explains what matters, and turns the best recommendations into a customer-ready page.</p><div class="hero-actions"><button class="button" data-next>Explore the sample <span>→</span></button><button class="button soft">Start my audit</button></div><div class="signal-deck"><article class="signal score glass"><small>Customer score</small><div class="metric">39</div><div class="scan"></div></article><article class="signal copy glass"><small>Top opportunity</small><strong>Lead with the service, not the name.</strong><p>Customers should know what you do in the first three seconds.</p></article><article class="signal visual glass"><small>Visual proof</small><strong>43 / 100</strong><p>Show the finished work customers want.</p></article></div></div></section>
+
+  <section class="screen report" data-screen="2"><div class="aurora"><i class="orb one"></i><i class="orb two"></i><i class="orb three"></i></div><div class="shell"><header class="head"><div><p class="kicker">Sanitär Krause · Opportunity map</p><h2>Four clear moves.<br>One stronger signal.</h2></div><span class="mode glass">Local deterministic replay</span></header><div class="insight-grid"><aside class="score-orbit glass"><div class="score-ring"><div class="score-value">39<small>Weak · fixable</small></div></div><p class="score-note">Your quality exists. The customer signals do not—yet.</p></aside><div class="action-stack"><div class="auto-strip glass"><div><strong>Let the coach assemble every fix.</strong><span>You approve. We do the work.</span></div><button class="button" data-do-all><span data-all-label>Do It For You</span> ✦</button></div><article class="action-card glass" data-action-card><span class="action-icon">Aa</span><div><h3>Turn the headline into a promise.</h3><p>“Sanitär Krause” → “Ihr Meisterbetrieb für Bad, Heizung & Rohrreinigung.”</p><span class="status" data-action-status>High impact</span></div><button class="button soft" data-action data-idle="Improve" data-done="Ready"><span data-action-label>Improve</span></button></article><article class="action-card glass" data-action-card><span class="action-icon">↗</span><div><h3>Create one obvious next step.</h3><p>Add “Jetzt anrufen — wir sind in 24 Stunden bei Ihnen.”</p><span class="status" data-action-status>High impact</span></div><button class="button soft" data-action data-idle="Add CTA" data-done="Ready"><span data-action-label>Add CTA</span></button></article><article class="action-card glass" data-action-card><span class="action-icon">◫</span><div><h3>Replace generic photos with proof.</h3><p>Generate a reviewable hero concept showing finished craft.</p><span class="status" data-action-status>High impact</span></div><button class="button soft" data-action data-idle="Create concept" data-done="Ready"><span data-action-label>Create concept</span></button></article><article class="action-card glass" data-action-card><span class="action-icon">✓</span><div><h3>Make contact details consistent.</h3><p>Align the website and directory phone numbers.</p><span class="status" data-action-status>Medium impact</span></div><button class="button soft" data-action data-idle="Correct" data-done="Ready"><span data-action-label>Correct</span></button></article><button class="button" data-next>Open the transformation <span>→</span></button></div></div></div></section>
+
+  <section class="screen outcome" data-screen="3"><div class="aurora"><i class="orb one"></i><i class="orb two"></i><i class="orb three"></i></div><div class="shell"><header class="outcome-head"><div><p class="kicker">Transformation preview</p><h2>Drag from Zero to Hero.</h2><p>Every approved improvement comes together here. The comparison is real; the page remains a preview until you decide.</p></div><span class="ready glass">● Preview ready</span></header><div class="compare glass" data-compare><div class="site before"><span class="site-brand">SANITÄR KRAUSE</span><h3>Sanitär<br>Krause</h3><p>Wir bieten Heizung, Bad und Rohrreinigung.</p></div><div class="site after"><div class="after-copy"><span class="site-brand">SANITÄR KRAUSE · BERLIN</span><h3>Meisterarbeit.<br>Wenn es zählt.</h3><p>Bad, Heizung & Rohrreinigung in Berlin. Familiengeführt seit 1998.</p><span class="fake-cta">Jetzt anrufen · 030 1234567</span></div><div class="after-photo"><span class="ai">AI concept</span></div></div><span class="compare-label left">Before</span><span class="compare-label right">After</span><span class="divider"></span><label class="sr-only" for="compare-03">Compare before and after</label><input id="compare-03" type="range" min="8" max="92" value="52"></div><div class="decision glass"><div><h3>Make this your customer-facing page?</h3><p>Preview only. No site has been deployed.</p></div><button class="button">Prepare to publish <span>→</span></button></div></div></section>
+  <script src="prototype.js"></script>
+</body>
+</html>

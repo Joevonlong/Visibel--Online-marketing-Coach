@@ -1,0 +1,153 @@
+{
+  "$schema": "urn:hdos:fixture:1.2",
+  "schema_version": "1.2",
+  "revision": 2,
+  "fixture_id": "media-ad-coach-completion-golden",
+  "recipe": "Create a REPLAY audit for the fictional Sanitär Krause Berlin profile, run analysis, improve all recorded channels, and read the assembled preview without contacting a provider.",
+  "mvp_revision": 3,
+  "contract_checksum": "3adc819532b817f7227318ce338d99a11c9788589588af5961a9b3f73fd4f3e6",
+  "truth_status": "synthetic",
+  "execution_mode": "REPLAY",
+  "evidence_policy": {
+    "claim_status": "FACT",
+    "claim_basis": "The frozen sample describes a fictional business and is authored offline. Its invariants are deterministic test assertions, not live-provider claims.",
+    "allowed_claim_statuses": ["FACT", "ASSUMPTION", "UNKNOWN"],
+    "allowed_execution_modes": ["LIVE", "LOCAL_DETERMINISTIC", "REPLAY", "HANDOFF_REQUIRED"],
+    "allowed_truth_statuses": ["observed", "synthetic", "assumed", "user_feedback"]
+  },
+  "ownership": {
+    "owner": "backend-integrator",
+    "owned_paths": ["fixture.json", "../../../code/media-ad-coach/lib/fixtures/replay-audit.json", "../../../code/media-ad-coach/public/fixtures/sanitaer-krause-berlin/**"],
+    "acceptance_commands": ["pnpm test -- tests/fixture.test.ts tests/orchestrator.test.ts tests/improve.test.ts"]
+  },
+  "assets": [
+    {
+      "asset_id": "before-home",
+      "path": "../../../code/media-ad-coach/public/fixtures/sanitaer-krause-berlin/before-1.jpg",
+      "truth_status": "synthetic",
+      "claim_status": "FACT"
+    },
+    {
+      "asset_id": "after-hero",
+      "path": "../../../code/media-ad-coach/public/fixtures/sanitaer-krause-berlin/after-hero.jpg",
+      "truth_status": "synthetic",
+      "claim_status": "FACT"
+    }
+  ],
+  "cases": [
+    {
+      "case_id": "golden",
+      "purpose": "complete_audit_and_improvement",
+      "claim_status": "FACT",
+      "truth_status": "synthetic",
+      "execution_mode": "REPLAY",
+      "input": {
+        "brand_name": "Sanitär Krause Berlin",
+        "trade": "plumber",
+        "presence": {"website_url": "https://example.invalid/sanitaer-krause", "city": "Berlin"},
+        "mode": "replay"
+      },
+      "context_before": {"provider_calls": 0, "persisted_audits": 0},
+      "dependency_condition": "offline",
+      "expected_ui_state": "golden",
+      "expected_result_status": "ok",
+      "expected_invariants": ["Overall score equals the frozen report", "Every finding has evidence and a recommendation", "Improvement assembles a preview", "No provider is contacted"],
+      "trace": {"request_id": "replay-golden", "operation_id": "create-analyze-improve", "source_artifact": "../../../code/media-ad-coach/lib/fixtures/replay-audit.json", "source_revision": 1},
+      "replay_key": "sanitaer-krause-berlin-v1"
+    },
+    {
+      "case_id": "pivot",
+      "purpose": "improve_one_channel",
+      "claim_status": "FACT",
+      "truth_status": "synthetic",
+      "execution_mode": "REPLAY",
+      "input": {"replay_key": "sanitaer-krause-berlin-v1", "channels": ["website_text"]},
+      "context_before": {"audit_status": "scored"},
+      "dependency_condition": "offline",
+      "expected_ui_state": "pivot",
+      "expected_result_status": "ok",
+      "expected_invariants": ["Only the selected channel changes to improved", "The preview remains schema-valid", "The score provenance stays REPLAY"],
+      "trace": {"request_id": "replay-pivot", "operation_id": "improve-audit", "source_artifact": "../../../code/media-ad-coach/lib/fixtures/replay-audit.json", "source_revision": 1},
+      "replay_key": "sanitaer-krause-berlin-v1"
+    },
+    {
+      "case_id": "loading",
+      "purpose": "ordered_progress",
+      "claim_status": "FACT",
+      "truth_status": "synthetic",
+      "execution_mode": "REPLAY",
+      "input": {"replay_key": "sanitaer-krause-berlin-v1", "delay_ms": 400},
+      "context_before": {"audit_status": "created"},
+      "dependency_condition": "paced_replay",
+      "expected_ui_state": "loading",
+      "expected_result_status": null,
+      "result_emitted": false,
+      "expected_transition": "golden",
+      "expected_invariants": ["Progress steps are ordered", "Polling remains available if SSE disconnects", "Duplicate submission is prevented by status"],
+      "trace": {"request_id": "replay-loading", "operation_id": "stream-audit-progress", "source_artifact": "../../../code/media-ad-coach/lib/fixtures/replay-audit.json", "source_revision": 1},
+      "replay_key": "sanitaer-krause-berlin-v1"
+    },
+    {
+      "case_id": "empty",
+      "purpose": "missing_required_presence",
+      "claim_status": "FACT",
+      "truth_status": "synthetic",
+      "execution_mode": "LOCAL_DETERMINISTIC",
+      "input": {"brand_name": "", "trade": "", "presence": {}},
+      "context_before": {},
+      "dependency_condition": "invalid_input",
+      "expected_ui_state": "empty",
+      "expected_result_status": "empty",
+      "expected_invariants": ["No audit is fabricated", "The required next input is visible"],
+      "trace": {"request_id": "fixture-empty", "operation_id": "create-audit", "source_artifact": "fixture.json", "source_revision": 1},
+      "replay_key": "invalid-empty-v1"
+    },
+    {
+      "case_id": "error",
+      "purpose": "unknown_audit",
+      "claim_status": "FACT",
+      "truth_status": "synthetic",
+      "execution_mode": "LOCAL_DETERMINISTIC",
+      "input": {"audit_id": "missing-audit"},
+      "context_before": {},
+      "dependency_condition": "not_found",
+      "expected_ui_state": "error",
+      "expected_result_status": "error",
+      "expected_error": {"code": "AUDIT_NOT_FOUND", "retryable": false, "sensitive_data_redacted": true},
+      "expected_invariants": ["The response is 404", "No sensitive value is rendered or logged", "A retry or history action remains available"],
+      "trace": {"request_id": "fixture-error", "operation_id": "read-audit", "source_artifact": "fixture.json", "source_revision": 1},
+      "replay_key": "missing-audit-v1"
+    },
+    {
+      "case_id": "degraded",
+      "purpose": "optional_provider_unavailable",
+      "claim_status": "FACT",
+      "truth_status": "synthetic",
+      "execution_mode": "LOCAL_DETERMINISTIC",
+      "input": {"provider": "cognee", "credential_present": false},
+      "context_before": {"primary_report_available": true},
+      "dependency_condition": "optional_provider_unavailable",
+      "expected_ui_state": "degraded",
+      "expected_result_status": "degraded",
+      "expected_invariants": ["The primary audit remains usable", "Memory is labelled unavailable", "No memory fact is fabricated"],
+      "trace": {"request_id": "fixture-degraded", "operation_id": "analyze-audit", "source_artifact": "fixture.json", "source_revision": 1},
+      "replay_key": "no-cognee-v1"
+    },
+    {
+      "case_id": "replay",
+      "purpose": "wifi_off_recovery",
+      "claim_status": "FACT",
+      "truth_status": "synthetic",
+      "execution_mode": "REPLAY",
+      "input": {"replay_key": "sanitaer-krause-berlin-v1", "network": "disabled"},
+      "context_before": {"provider_calls": 0},
+      "dependency_condition": "offline",
+      "expected_ui_state": "replay",
+      "expected_result_status": "ok",
+      "expected_invariants": ["REPLAY SAMPLE is visible", "No live execution is claimed", "Analysis and improvement complete from local assets", "Request provenance points to the frozen fixture"],
+      "trace": {"request_id": "replay-offline", "operation_id": "create-analyze-improve", "source_artifact": "../../../code/media-ad-coach/lib/fixtures/replay-audit.json", "source_revision": 1},
+      "replay_key": "sanitaer-krause-berlin-v1"
+    }
+  ],
+  "required_ui_states": ["golden", "pivot", "loading", "empty", "error", "degraded", "replay"]
+}

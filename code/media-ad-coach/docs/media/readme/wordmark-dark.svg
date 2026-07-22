@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="96" viewBox="0 0 420 96" role="img" aria-label="Visibel">
+  <title>Visibel</title>
+  <rect x="0" y="12" width="72" height="72" rx="20" fill="#faf8f4"/>
+  <path d="M10 48 C22 30 50 30 62 48 C50 66 22 66 10 48 Z" fill="#141310"/>
+  <circle cx="36" cy="48" r="10" fill="#faf8f4"/>
+  <circle cx="40" cy="44" r="3.2" fill="#141310"/>
+  <text x="96" y="66" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="52" font-weight="700" letter-spacing="-2" fill="#faf8f4">Visibel</text>
+</svg>

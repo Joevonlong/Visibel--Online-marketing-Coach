@@ -1,0 +1,141 @@
+:root {
+  color-scheme: light;
+  --journey-progress: 0%;
+  --system-font: ui-sans-serif, -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  min-width: 320px;
+  font-family: var(--system-font);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+button,
+input { font: inherit; }
+
+button,
+a { -webkit-tap-highlight-color: transparent; }
+
+button { cursor: pointer; }
+
+img { display: block; max-width: 100%; }
+
+.screen {
+  display: none;
+  min-height: 100svh;
+  animation: screen-in 560ms cubic-bezier(.22, 1, .36, 1) both;
+}
+
+.screen.is-active { display: block; }
+
+@keyframes screen-in {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.journey-dock {
+  position: fixed;
+  z-index: 100;
+  left: 50%;
+  bottom: max(18px, env(safe-area-inset-bottom));
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px;
+  border: 1px solid rgba(255, 255, 255, .72);
+  border-radius: 999px;
+  background: rgba(250, 250, 250, .78);
+  box-shadow: 0 12px 38px rgba(15, 23, 42, .14), inset 0 0 0 1px rgba(17, 24, 39, .04);
+  backdrop-filter: blur(24px) saturate(160%);
+  -webkit-backdrop-filter: blur(24px) saturate(160%);
+}
+
+.journey-dock button {
+  min-width: 42px;
+  min-height: 42px;
+  padding: 0 14px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: #6e6e73;
+  font-size: 12px;
+  font-weight: 650;
+  letter-spacing: -.01em;
+  transition: color 220ms ease, background 220ms ease, transform 140ms ease;
+}
+
+.journey-dock button:active { transform: scale(.96); }
+
+.journey-dock button.is-active {
+  background: #1d1d1f;
+  color: #fff;
+}
+
+.journey-dock .step-label { display: none; }
+
+.prototype-note {
+  position: fixed;
+  z-index: 101;
+  right: 18px;
+  bottom: max(18px, env(safe-area-inset-bottom));
+  padding: 7px 10px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.76);
+  color: rgba(29,29,31,.62);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+:focus-visible {
+  outline: 3px solid rgba(0, 113, 227, .32);
+  outline-offset: 3px;
+}
+
+@media (min-width: 720px) {
+  .journey-dock .step-label { display: inline; }
+}
+
+@media (max-width: 719px) {
+  .prototype-note { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  .journey-dock,
+  .prototype-note {
+    background: #fff;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+}

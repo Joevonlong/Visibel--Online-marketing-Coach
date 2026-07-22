@@ -1,0 +1,650 @@
+{
+  "$schema": "urn:hdos:run:1.2",
+  "schema_version": "1.2",
+  "run_id": "media-ad-coach-completion",
+  "revision": 4,
+  "phase": "REVIEW",
+  "phase_flow": [
+    "INTAKE",
+    "SPEC",
+    "PLAN",
+    "IMPLEMENT",
+    "SELF_TEST",
+    "REVIEW",
+    "RELIABILITY",
+    "INTEGRATE",
+    "DEMO",
+    "SUBMIT"
+  ],
+  "mode": "LOCAL_DETERMINISTIC",
+  "created_at": "2026-07-18T14:28:41.502Z",
+  "updated_at": "2026-07-18T16:10:51.375Z",
+  "evidence_policy": {
+    "claim_statuses": [
+      "FACT",
+      "ASSUMPTION",
+      "UNKNOWN"
+    ],
+    "execution_modes": [
+      "LIVE",
+      "LOCAL_DETERMINISTIC",
+      "REPLAY",
+      "HANDOFF_REQUIRED"
+    ],
+    "source_of_truth_rule": "The append-only event log is authoritative for chronological phase transitions, task lifecycle, gates, approvals, and decisions. run.json is authoritative for the current approved mission, rules, judging targets, constraints, budget, owners, and artifact pointers; only its lifecycle fields such as phase, tasks, gates, and supervision status are projections rebuilt from event history. snapshot.json is a non-authoritative rebuildable projection. mvp.json, fixture.json, and demo.md are authoritative for the frozen product contract, deterministic proof cases, and demo/submission contract respectively. Supporting artifacts are indexed evidence and do not replace any of those domain authorities."
+  },
+  "challenge": {
+    "official_inputs": [
+      "projects/AI-Hackthon-2026-07-18/docs/team-idea/final-implement-plan/feature-breakdown.md",
+      "projects/AI-Hackthon-2026-07-18/docs/team-idea/final-implement-plan/FEATURE-TRACKER.md",
+      "projects/AI-Hackthon-2026-07-18/docs/team-idea/final-implement-plan/impelemet-plan.md",
+      "projects/AI-Hackthon-2026-07-18/code/media-ad-coach/docs/TEAM-SPLIT.md"
+    ],
+    "theme": "Complete the frozen Visibel vertical slice and deliver the human-selected premium editorial frontend across the full working product.",
+    "judging_criteria": [
+      "A judge understands the evidence-backed ad-audit value within ten seconds.",
+      "The audit, improvement, persistence, replay, progress, and memory contracts work end to end.",
+      "LIVE, REPLAY, degraded, and handoff-required behavior is visibly and truthfully distinguished."
+    ],
+    "partner_requirements": [
+      "OpenAI provides vision, copy, and image capabilities in LIVE mode.",
+      "Tavily supplies cited research evidence in LIVE mode.",
+      "Cognee supplies cross-audit memory in LIVE mode with a deterministic degraded fallback."
+    ],
+    "facts": [
+      "The existing baseline passes TypeScript, 210 tests, and a production build.",
+      "The human explicitly selected the Luminous Focus reference and transferred the complete frontend refresh into this Run.",
+      "The checked-in replay fixture is the supported deterministic demo path."
+    ],
+    "assumptions": [
+      "Provider credentials may be supplied later for venue LIVE smoke tests.",
+      "Provider credentials may remain unavailable during local visual verification, so REPLAY is the deterministic proof path."
+    ],
+    "unknowns": [
+      "Venue network and provider credential availability.",
+      "The final organizer submission URL and receipt.",
+      "Public deployment authorization."
+    ],
+    "constraints": [
+      "Do not change the frozen schemas, HTTP contract, provider semantics, or persistence contract during the frontend refresh.",
+      "Do not start P2 until all P0 and P1 work is green.",
+      "Do not create cloud resources, publish a repository, deploy publicly, or submit without explicit human authorization.",
+      "Never hide a failed LIVE call behind replay data."
+    ]
+  },
+  "competition": {
+    "team_mode": "team",
+    "event_duration_minutes": null,
+    "demo_limit_seconds": null,
+    "submission_deadline": null,
+    "timeboxes": [
+      {
+        "name": "design_lock",
+        "minutes": 45,
+        "rationale": "Freeze inherited product, data, UI/API, provider, replay, and ownership contracts before implementation."
+      }
+    ],
+    "scope_drop_order": [
+      "P2 deeper memory and PDF exports",
+      "P1 optional polish that depends on unfinished Lane A",
+      "LIVE provider proof when credentials or network are unavailable"
+    ]
+  },
+  "decision": {
+    "selected": "Visibel completion slice",
+    "rationale": "Preserve the working vertical slice and frozen interfaces, then apply the human-selected editorial experience consistently across every judge-visible route while keeping unauthorized external actions as handoffs.",
+    "alternatives": [
+      "Keep the previous blue-purple interface — rejected by the human in favor of the selected Luminous Focus composition and premium neutral typography.",
+      "Start P2 immediately — rejected because the tracker explicitly gates it on all P0/P1 work being green."
+    ],
+    "approved_by": "human:user",
+    "approved_at": "2026-07-18T14:45:00.000Z"
+  },
+  "artifacts": {
+    "mvp": {
+      "path": "mvp.json",
+      "revision": 3,
+      "checksum": "3adc819532b817f7227318ce338d99a11c9788589588af5961a9b3f73fd4f3e6"
+    },
+    "fixture": {
+      "path": "fixture.json",
+      "revision": 2,
+      "checksum": "0a6034a19d02fc4338f942e5adb60275a391ba370d62a79cacaf9bf63ef8efd9"
+    },
+    "demo": {
+      "path": "demo.md",
+      "revision": 2,
+      "checksum": "a6aa2ab41ed7dd91a94c867fddd94e1f9c017eae49747b9014cc3f04779765e5"
+    }
+  },
+  "ui_api_contract_path": "ui-api-contract.json",
+  "team_plan": {
+    "coordinator": "mission-control",
+    "core_roles": [
+      "mission-control",
+      "reviewer"
+    ],
+    "staffing_mode": "progressive_specialists",
+    "max_parallel_writers": 2,
+    "activation_rule": "Activate the smallest specialist set that can prove the frozen slice. Use one owner per task and never overlap writable paths.",
+    "active_specialist_contract": {
+      "required_fields": [
+        "role",
+        "activation_reason",
+        "owner",
+        "task_ids",
+        "owned_paths",
+        "acceptance_commands",
+        "status"
+      ],
+      "status_values": [
+        "planned",
+        "active",
+        "handoff",
+        "complete"
+      ],
+      "rule": "An active specialist is a bounded assignment, not a new permanent authority. Its task packet must name non-overlapping owned paths and an executable acceptance command."
+    },
+    "active_specialists": [],
+    "serialized_surface_contract": {
+      "required_fields": [
+        "surface",
+        "current_owner",
+        "task_id",
+        "lock_reason",
+        "release_condition"
+      ],
+      "rule": "Shared contracts, dependency manifests, route shells, state schemas, and release configuration have one writer at a time."
+    },
+    "serialized_surfaces": [],
+    "handoff_gate": "A new owner may start only after the prior owner publishes outputs, acceptance evidence, unresolved risks, and the exact authoritative revisions used."
+  },
+  "supporting_artifact_index": {
+    "authority": "SUPPORTING_EVIDENCE_ONLY",
+    "rule": "Every entry must point back to an authoritative revision and event or task. Deleting this index must not make execution state unrecoverable.",
+    "item_contract": {
+      "required_fields": [
+        "artifact_id",
+        "kind",
+        "path",
+        "owner",
+        "supports",
+        "revision",
+        "claim_status",
+        "execution_mode",
+        "commit_sha",
+        "build_revision",
+        "artifact_revisions"
+      ],
+      "supports_format": "Name an authoritative artifact and revision, for example mvp.json@3 or demo.md@2."
+    },
+    "items": []
+  },
+  "tasks": [
+    {
+      "id": "BACKEND-P1",
+      "title": "Implement non-Lane-A TODO backend capabilities: real-browser capture, image edit, SSE progress, and truthful Cognee adapter",
+      "priority": "P1",
+      "status": "done",
+      "owner": {
+        "kind": "agent",
+        "id": "backend-integrator"
+      },
+      "write_paths": [
+        "projects/AI-Hackthon-2026-07-18/code/media-ad-coach/lib/pipeline/screenshot.ts",
+        "projects/AI-Hackthon-2026-07-18/code/media-ad-coach/lib/improve/image.ts",
+        "projects/AI-Hackthon-2026-07-18/code/media-ad-coach/lib/memory/cognee.ts",
+        "projects/AI-Hackthon-2026-07-18/code/media-ad-coach/app/api/audits/[id]/events/route.ts",
+        "projects/AI-Hackthon-2026-07-18/code/media-ad-coach/tests",
+        "projects/AI-Hackthon-2026-07-18/code/media-ad-coach/package.json",
+        "projects/AI-Hackthon-2026-07-18/code/media-ad-coach/pnpm-lock.yaml"
+      ],
+      "acceptance": [
+        "pnpm exec tsc --noEmit",
+        "pnpm test",
+        "pnpm build"
+      ],
+      "outputs": [
+        {
+          "path": "projects/AI-Hackthon-2026-07-18/runs/media-ad-coach-completion/evidence/local-verification-2026-07-18.md",
+          "sha256": "f206896e26d576544e6b27c4cf7017455deb2043b641d67f53c990e49429d69d",
+          "bytes": 2530
+        }
+      ],
+      "blocked_reason": null
+    },
+    {
+      "id": "EVIDENCE-P1",
+      "title": "Produce replay seed, repeatability, release-gate, tracker, and truthful handoff evidence without unauthorized publication",
+      "priority": "P1",
+      "status": "done",
+      "owner": {
+        "kind": "agent",
+        "id": "mission-control"
+      },
+      "write_paths": [
+        "projects/AI-Hackthon-2026-07-18/runs/media-ad-coach-completion/evidence",
+        "projects/AI-Hackthon-2026-07-18/runs/media-ad-coach-completion/demo.md",
+        "projects/AI-Hackthon-2026-07-18/docs/team-idea/final-implement-plan/FEATURE-TRACKER.md"
+      ],
+      "acceptance": [
+        "pnpm verify",
+        "pnpm secret:scan"
+      ],
+      "outputs": [
+        {
+          "path": "projects/AI-Hackthon-2026-07-18/runs/media-ad-coach-completion/handoff.md",
+          "sha256": "76f32e682d314bfc4d6434994cbc98342a369205533959773a960064b2348d50",
+          "bytes": 6642
+        },
+        {
+          "path": "projects/AI-Hackthon-2026-07-18/runs/media-ad-coach-completion/evidence/local-verification-2026-07-18.md",
+          "sha256": "f206896e26d576544e6b27c4cf7017455deb2043b641d67f53c990e49429d69d",
+          "bytes": 2530
+        }
+      ],
+      "blocked_reason": null
+    },
+    {
+      "id": "FRONTEND-UX-R2",
+      "title": "Implement the frozen premium editorial frontend across every judge-visible route",
+      "priority": "P0",
+      "status": "done",
+      "owner": {
+        "kind": "agent",
+        "id": "mission-control"
+      },
+      "write_paths": [
+        "projects/AI-Hackthon-2026-07-18/code/media-ad-coach/app/**",
+        "projects/AI-Hackthon-2026-07-18/code/media-ad-coach/components/**"
+      ],
+      "acceptance": [
+        "No blue or purple styling, synthetic glow, or dense low-value microcopy remains in judge-visible surfaces.",
+        "Landing, audit input, progress, report, preview, history, sample, errors, empty states, and narrow viewport remain fully usable.",
+        "Typecheck, focused tests, and production build pass without changing the frozen UI/API schema."
+      ],
+      "outputs": [
+        {
+          "path": "projects/AI-Hackthon-2026-07-18/code/media-ad-coach/app/globals.css",
+          "sha256": "d3ee1f06dad6d5b080165a56a4b258a4aeddd96896ccaa630447b29b7d13bfad",
+          "bytes": 5167
+        },
+        {
+          "path": "projects/AI-Hackthon-2026-07-18/code/media-ad-coach/app/page.tsx",
+          "sha256": "7088a1c4e2e9b78cfc78e29b1926328d5a212187724c758cd1e08804049c86ba",
+          "bytes": 3319
+        },
+        {
+          "path": "projects/AI-Hackthon-2026-07-18/code/media-ad-coach/components/report/ReportView.tsx",
+          "sha256": "bae984f9f8abb0db32f932e4688eb86d58ca5a91363e8be95f01ef7476693403",
+          "bytes": 6489
+        },
+        {
+          "path": "projects/AI-Hackthon-2026-07-18/code/media-ad-coach/tmp/frontend-ux-r2-rehearsal-final.json",
+          "sha256": "ebeab1294326b06fb4128d5c59b1fb5df7382360c6122be6b07c505ab2812b04",
+          "bytes": 1559
+        },
+        {
+          "path": "projects/AI-Hackthon-2026-07-18/code/media-ad-coach/tmp/frontend-ux-r2-visuals/landing-desktop.png",
+          "sha256": "2959a85bdb96ac9840ed5f0f205bb6c513f66f49bcba0d0429f7d1d953c04fb0",
+          "bytes": 50500
+        },
+        {
+          "path": "projects/AI-Hackthon-2026-07-18/code/media-ad-coach/tmp/frontend-ux-r2-visuals/landing-mobile.png",
+          "sha256": "e6282098ba6c6eab5e1aebd5e353a3838b783e51d916e178a023246a7f38414e",
+          "bytes": 39040
+        }
+      ],
+      "blocked_reason": null
+    }
+  ],
+  "feature_queue": {
+    "max_active_build_features": 2,
+    "frozen_feature_ids": [
+      "BACKEND-P1",
+      "EVIDENCE-P1",
+      "FRONTEND-UX-R2"
+    ],
+    "candidates": [],
+    "promotion_rule": "Human approval; in-scope addition or equal-cost replacement; material changes return to SPEC."
+  },
+  "demo_readiness": {
+    "target_viewport": "1440x900 desktop and 390px narrow",
+    "visual_evidence": [],
+    "interaction_evidence": [],
+    "required_states_verified": [],
+    "review_scores": {
+      "hierarchy": 0,
+      "consistency": 0,
+      "distinctiveness": 0,
+      "product_maturity": 0,
+      "demo_readability": 0
+    },
+    "p0_visual_defects": [],
+    "rehearsal_results": []
+  },
+  "gates": [
+    {
+      "from": "REVIEW",
+      "to": "SPEC",
+      "status": "approved",
+      "approved_by": "human:user",
+      "approved_at": "2026-07-18T15:31:27.095Z",
+      "reason": "The human explicitly authorized a material frontend experience revision based on the selected Luminous Focus reference."
+    },
+    {
+      "from": "INTAKE",
+      "to": "SPEC",
+      "status": "passed",
+      "checked_at": "2026-07-18T14:39:03.802Z",
+      "event_sequence": 2,
+      "event_id": "f2904f66-d526-4937-91c4-2ce9871075a2",
+      "legacy": false,
+      "checks": {
+        "mode": "LOCAL_DETERMINISTIC",
+        "mvpRevision": 1,
+        "mvpChecksum": "09e48556342582fe04429ce93efe92d3ff8e4d4601f8c0df72190d4c7d7c7b3d",
+        "replay": {
+          "fresh": true,
+          "status": "FRESH_UNVERIFIED",
+          "revisionMatches": true,
+          "checksumMatches": true
+        },
+        "evidence": {
+          "status": "MISSING",
+          "count": 0,
+          "replayVerified": false
+        }
+      }
+    },
+    {
+      "from": "SPEC",
+      "to": "PLAN",
+      "status": "passed",
+      "checked_at": "2026-07-18T14:39:08.304Z",
+      "event_sequence": 4,
+      "event_id": "1c84d7d3-dd97-43a1-bf3d-22596bab282c",
+      "legacy": false,
+      "checks": {
+        "mode": "LOCAL_DETERMINISTIC",
+        "mvpRevision": 1,
+        "mvpChecksum": "09e48556342582fe04429ce93efe92d3ff8e4d4601f8c0df72190d4c7d7c7b3d",
+        "replay": {
+          "fresh": true,
+          "status": "FRESH_UNVERIFIED",
+          "revisionMatches": true,
+          "checksumMatches": true
+        },
+        "evidence": {
+          "status": "MISSING",
+          "count": 0,
+          "replayVerified": false
+        }
+      }
+    },
+    {
+      "from": "PLAN",
+      "to": "IMPLEMENT",
+      "status": "passed",
+      "checked_at": "2026-07-18T14:39:34.723Z",
+      "event_sequence": 7,
+      "event_id": "6c9840c6-916d-4ea3-9e74-f4b362b090d1",
+      "legacy": false,
+      "checks": {
+        "mode": "LOCAL_DETERMINISTIC",
+        "mvpRevision": 1,
+        "mvpChecksum": "09e48556342582fe04429ce93efe92d3ff8e4d4601f8c0df72190d4c7d7c7b3d",
+        "replay": {
+          "fresh": true,
+          "status": "FRESH_UNVERIFIED",
+          "revisionMatches": true,
+          "checksumMatches": true
+        },
+        "evidence": {
+          "status": "MISSING",
+          "count": 0,
+          "replayVerified": false
+        }
+      }
+    },
+    {
+      "from": "IMPLEMENT",
+      "to": "SELF_TEST",
+      "status": "passed",
+      "checked_at": "2026-07-18T15:23:13.682Z",
+      "event_sequence": 12,
+      "event_id": "41ba8b36-2271-43ce-bdf8-f5e745413fdc",
+      "legacy": false,
+      "checks": {
+        "mode": "LOCAL_DETERMINISTIC",
+        "mvpRevision": 1,
+        "mvpChecksum": "09e48556342582fe04429ce93efe92d3ff8e4d4601f8c0df72190d4c7d7c7b3d",
+        "replay": {
+          "fresh": true,
+          "status": "FRESH_UNVERIFIED",
+          "revisionMatches": true,
+          "checksumMatches": true
+        },
+        "evidence": {
+          "status": "MISSING",
+          "count": 0,
+          "replayVerified": false
+        }
+      }
+    },
+    {
+      "from": "SELF_TEST",
+      "to": "REVIEW",
+      "status": "passed",
+      "checked_at": "2026-07-18T15:25:59.777Z",
+      "event_sequence": 15,
+      "event_id": "55679d23-f0f7-486a-aaff-a8713ea5307e",
+      "legacy": false,
+      "checks": {
+        "mode": "LOCAL_DETERMINISTIC",
+        "mvpRevision": 1,
+        "mvpChecksum": "09e48556342582fe04429ce93efe92d3ff8e4d4601f8c0df72190d4c7d7c7b3d",
+        "replay": {
+          "fresh": true,
+          "status": "FRESH_UNVERIFIED",
+          "revisionMatches": true,
+          "checksumMatches": true
+        },
+        "evidence": {
+          "status": "AVAILABLE",
+          "count": 2,
+          "replayVerified": false
+        }
+      }
+    },
+    {
+      "from": "REVIEW",
+      "to": "SPEC",
+      "status": "passed",
+      "checked_at": "2026-07-18T15:32:42.369Z",
+      "event_sequence": 17,
+      "event_id": "a9c46709-8d19-434e-acf9-f945ef746090",
+      "legacy": false,
+      "checks": {
+        "mode": "LOCAL_DETERMINISTIC",
+        "mvpRevision": 1,
+        "mvpChecksum": "09e48556342582fe04429ce93efe92d3ff8e4d4601f8c0df72190d4c7d7c7b3d",
+        "replay": {
+          "fresh": true,
+          "status": "FRESH_UNVERIFIED",
+          "revisionMatches": true,
+          "checksumMatches": true
+        },
+        "evidence": {
+          "status": "AVAILABLE",
+          "count": 2,
+          "replayVerified": false
+        }
+      }
+    },
+    {
+      "from": "SPEC",
+      "to": "PLAN",
+      "status": "passed",
+      "checked_at": "2026-07-18T15:35:00.714Z",
+      "event_sequence": 20,
+      "event_id": "e7966c55-cfaa-4b85-addc-590f21585eff",
+      "legacy": false,
+      "checks": {
+        "mode": "LOCAL_DETERMINISTIC",
+        "mvpRevision": 2,
+        "mvpChecksum": "d3eace21a7b52e11f465d678332bd95bf8148d465c818e7b024925bc30453af0",
+        "replay": {
+          "fresh": false,
+          "status": "STALE",
+          "revisionMatches": false,
+          "checksumMatches": false
+        },
+        "evidence": {
+          "status": "AVAILABLE",
+          "count": 2,
+          "replayVerified": false
+        }
+      }
+    },
+    {
+      "from": "PLAN",
+      "to": "IMPLEMENT",
+      "status": "passed",
+      "checked_at": "2026-07-18T15:35:08.082Z",
+      "event_sequence": 23,
+      "event_id": "c960f0b0-681f-44b4-bf77-23ba5a86f1ec",
+      "legacy": false,
+      "checks": {
+        "mode": "LOCAL_DETERMINISTIC",
+        "mvpRevision": 2,
+        "mvpChecksum": "d3eace21a7b52e11f465d678332bd95bf8148d465c818e7b024925bc30453af0",
+        "replay": {
+          "fresh": false,
+          "status": "STALE",
+          "revisionMatches": false,
+          "checksumMatches": false
+        },
+        "evidence": {
+          "status": "AVAILABLE",
+          "count": 2,
+          "replayVerified": false
+        }
+      }
+    },
+    {
+      "from": "IMPLEMENT",
+      "to": "SELF_TEST",
+      "status": "passed",
+      "checked_at": "2026-07-18T15:58:42.625Z",
+      "event_sequence": 26,
+      "event_id": "52ba3168-6307-4b07-9fea-82163592471f",
+      "legacy": false,
+      "checks": {
+        "mode": "LOCAL_DETERMINISTIC",
+        "mvpRevision": 3,
+        "mvpChecksum": "3adc819532b817f7227318ce338d99a11c9788589588af5961a9b3f73fd4f3e6",
+        "replay": {
+          "fresh": true,
+          "status": "FRESH_UNVERIFIED",
+          "revisionMatches": true,
+          "checksumMatches": true
+        },
+        "evidence": {
+          "status": "AVAILABLE",
+          "count": 2,
+          "replayVerified": false
+        }
+      }
+    },
+    {
+      "from": "SELF_TEST",
+      "to": "REVIEW",
+      "status": "passed",
+      "checked_at": "2026-07-18T16:10:51.366Z",
+      "event_sequence": 30,
+      "event_id": "98d8499d-9b7c-4e49-be53-550ea9c146df",
+      "legacy": false,
+      "checks": {
+        "mode": "LOCAL_DETERMINISTIC",
+        "mvpRevision": 3,
+        "mvpChecksum": "3adc819532b817f7227318ce338d99a11c9788589588af5961a9b3f73fd4f3e6",
+        "replay": {
+          "fresh": true,
+          "status": "FRESH_UNVERIFIED",
+          "revisionMatches": true,
+          "checksumMatches": true
+        },
+        "evidence": {
+          "status": "AVAILABLE",
+          "count": 5,
+          "replayVerified": false
+        }
+      }
+    }
+  ],
+  "submission_package": {
+    "status": "draft",
+    "allowed_statuses": [
+      "draft",
+      "ready",
+      "invalidated"
+    ],
+    "claim_status": "UNKNOWN",
+    "title": "",
+    "description": "",
+    "judging_language_map": [],
+    "required_artifact_ids": [],
+    "evidence_paths": [],
+    "privacy_checked": false,
+    "attribution_checked": false,
+    "owner": "mission-control",
+    "reviewed_by": null,
+    "frozen_at": null,
+    "commit_sha": null,
+    "build_revision": null,
+    "artifact_revisions": {
+      "run": 3,
+      "mvp": 2,
+      "fixture": 1,
+      "demo": 1,
+      "ui_api_contract": 1
+    },
+    "notes": []
+  },
+  "submission_receipt": {
+    "status": "not_submitted",
+    "allowed_statuses": [
+      "not_submitted",
+      "submitted",
+      "confirmed",
+      "rejected_or_needs_changes"
+    ],
+    "claim_status": "UNKNOWN",
+    "submission_url": null,
+    "submission_id": null,
+    "submitted_at": null,
+    "confirmed_by_human": false,
+    "confirmed_by": null,
+    "confirmed_at": null,
+    "commit_sha": null,
+    "build_revision": null,
+    "artifact_revisions": {
+      "run": 3,
+      "mvp": 2,
+      "fixture": 1,
+      "demo": 1,
+      "ui_api_contract": 1
+    },
+    "receipt_evidence_path": null,
+    "notes": []
+  },
+  "supervision": {
+    "last_good_gate": null,
+    "last_good_commit": null,
+    "active_task_ids": [],
+    "blockers": [],
+    "last_event_sequence": 30,
+    "next_action": "Execute the REVIEW gate."
+  }
+}

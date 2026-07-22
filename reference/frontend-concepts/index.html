@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Five frontend design directions for Visibel.">
+  <title>Visibel — Frontend Concepts</title>
+  <style>
+    :root { color-scheme: light; font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Arial, sans-serif; }
+    * { box-sizing: border-box; }
+    body { margin: 0; min-width: 320px; background: #f5f5f7; color: #1d1d1f; -webkit-font-smoothing: antialiased; }
+    a { color: inherit; text-decoration: none; }
+    .shell { width: min(1240px, calc(100% - 36px)); margin: 0 auto; padding: 76px 0 96px; }
+    .eyebrow { margin: 0 0 15px; color: #0071e3; font-size: 13px; font-weight: 750; letter-spacing: .08em; text-transform: uppercase; }
+    h1 { max-width: 920px; margin: 0; font-size: clamp(48px, 8vw, 92px); line-height: .94; letter-spacing: -.068em; }
+    .intro { max-width: 680px; margin: 28px 0 58px; color: #6e6e73; font-size: clamp(18px, 2vw, 23px); line-height: 1.42; letter-spacing: -.022em; }
+    .grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 18px; }
+    .concept { position: relative; display: flex; min-height: 400px; overflow: hidden; border-radius: 34px; padding: 28px; isolation: isolate; transition: transform 320ms cubic-bezier(.22,1,.36,1), box-shadow 320ms ease; }
+    .concept:hover { transform: translateY(-5px); box-shadow: 0 24px 64px rgba(29,29,31,.13); }
+    .concept:active { transform: scale(.992); }
+    .concept:nth-child(1), .concept:nth-child(4) { grid-column: span 7; }
+    .concept:nth-child(2), .concept:nth-child(3) { grid-column: span 5; }
+    .concept:nth-child(5) { grid-column: span 12; min-height: 340px; }
+    .meta { align-self: flex-end; position: relative; z-index: 2; max-width: 450px; }
+    .number { display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; margin-bottom: 16px; border-radius: 50%; background: rgba(255,255,255,.76); font-size: 12px; font-weight: 800; backdrop-filter: blur(16px); }
+    h2 { margin: 0 0 8px; font-size: clamp(29px, 3vw, 44px); line-height: 1; letter-spacing: -.045em; }
+    .concept p { margin: 0; max-width: 390px; font-size: 15px; line-height: 1.5; opacity: .68; }
+    .arrow { position: absolute; z-index: 3; top: 24px; right: 24px; display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; background: rgba(255,255,255,.78); color: #1d1d1f; font-size: 22px; transition: transform 240ms ease; backdrop-filter: blur(16px); }
+    .concept:hover .arrow { transform: translate(3px, -3px); }
+    .mock { position: absolute; z-index: -1; border: 1px solid rgba(255,255,255,.66); background: rgba(255,255,255,.72); box-shadow: 0 18px 50px rgba(29,29,31,.12); backdrop-filter: blur(20px); }
+    .mock::before, .mock::after { content: ""; position: absolute; border-radius: 999px; background: currentColor; opacity: .14; }
+    .mock::before { width: 45%; height: 10px; left: 16px; top: 18px; }
+    .mock::after { width: 72%; height: 7px; left: 16px; top: 38px; }
+    .c1 { background: radial-gradient(circle at 73% 28%, #fff 0 6%, transparent 35%), linear-gradient(145deg,#eef6ff,#d7ebff 55%,#fafcff); }
+    .c1 .mock { width: 48%; height: 64%; right: 6%; top: 17%; border-radius: 28px; transform: rotate(3deg); color: #087af5; }
+    .c2 { background: linear-gradient(145deg,#fbf1df,#f5cdb2); color: #34261f; }
+    .c2 .mock { width: 62%; height: 52%; right: -10%; top: 8%; border-radius: 120px 0 0 120px; color: #c94d37; }
+    .c3 { background: radial-gradient(circle at 20% 0,#fff 0,transparent 38%), linear-gradient(135deg,#dcdcff,#e4f2ff 52%,#e8fff5); }
+    .c3 .mock { width: 56%; height: 58%; right: 5%; top: 10%; border-radius: 30px; transform: perspective(500px) rotateY(-8deg) rotateZ(-4deg); color: #6e5cff; }
+    .c4 { background: #f3efdf; color: #1b1a17; }
+    .c4::before { content:"THE PROOF"; position:absolute; right:-28px; top:56px; font: 900 clamp(50px,7vw,100px)/.8 Georgia,serif; letter-spacing:-.08em; color:#e5442e; transform:rotate(-7deg); opacity:.84; }
+    .c4 .mock { width: 42%; height: 58%; right: 7%; bottom: 8%; border-radius: 3px; transform: rotate(2deg); color: #e5442e; }
+    .c5 { background: linear-gradient(120deg,#17161c 0 38%,#6049eb 38% 68%,#f2d6ff 68%); color: #fff; }
+    .c5 .mock { width: 32%; height: 74%; right: 11%; top: 13%; border-radius: 26px; transform: rotate(-3deg); color: #6d4cff; }
+    .c5 .meta { max-width: 500px; }
+    .c5 .number, .c5 .arrow { color: #17161c; }
+    .footer { display:flex; justify-content:space-between; gap:24px; margin-top:42px; color:#86868b; font-size:12px; }
+    @media (max-width: 800px) { .concept, .concept:nth-child(n) { grid-column: span 12; min-height: 360px; } .shell { padding-top: 48px; } .footer { flex-direction:column; } }
+    @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <p class="eyebrow">Visibel · Design study</p>
+    <h1>Five ways to make the transformation feel inevitable.</h1>
+    <p class="intro">Each direction tells the same three-step story—promise, suggested actions, proof—using the frozen product contract and the real replay fixture.</p>
+    <section class="grid" aria-label="Design concepts">
+      <a class="concept c1" href="01-luminous-focus.html">
+        <span class="arrow" aria-hidden="true">↗</span><div class="mock"></div>
+        <div class="meta"><span class="number">01</span><h2>Luminous Focus</h2><p>Quiet, precise and outcome-first. The safest production foundation.</p></div>
+      </a>
+      <a class="concept c2" href="02-warm-human.html">
+        <span class="arrow" aria-hidden="true">↗</span><div class="mock"></div>
+        <div class="meta"><span class="number">02</span><h2>Warm Human</h2><p>Local-business trust with editorial warmth and friendly momentum.</p></div>
+      </a>
+      <a class="concept c3" href="03-spatial-glass.html">
+        <span class="arrow" aria-hidden="true">↗</span><div class="mock"></div>
+        <div class="meta"><span class="number">03</span><h2>Spatial Glass</h2><p>A dimensional AI assistant with functional translucent layers.</p></div>
+      </a>
+      <a class="concept c4" href="04-editorial-proof.html">
+        <span class="arrow" aria-hidden="true">↗</span><div class="mock"></div>
+        <div class="meta"><span class="number">04</span><h2>Editorial Proof</h2><p>Evidence becomes the hero: direct, memorable and judge-readable.</p></div>
+      </a>
+      <a class="concept c5" href="05-studio-canvas.html">
+        <span class="arrow" aria-hidden="true">↗</span><div class="mock"></div>
+        <div class="meta"><span class="number">05</span><h2>Studio Canvas</h2><p>A confident creative workspace for turning every suggestion into a finished brand.</p></div>
+      </a>
+    </section>
+    <footer class="footer"><span>Local HTML · no external dependencies</span><span>Use ← / → inside a concept to move through the journey</span></footer>
+  </main>
+</body>
+</html>

@@ -1,0 +1,180 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-stack-sans);
+  --font-mono: var(--font-stack-mono);
+  --font-heading: var(--font-sans);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+
+  /* Editorial product tokens. The interface deliberately stays neutral:
+     warm paper, near-black ink and a restrained moss status colour. */
+  --color-surface: var(--surface);
+  --color-surface-alt: var(--surface-alt);
+  --color-ink: var(--ink);
+  --color-ink-secondary: var(--ink-secondary);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-hairline: var(--hairline);
+
+  /* FEA-108: Google-surface accents — used ONLY inside the Maps / Search
+     diagnostic mockups so they read as Google-flavoured, never to re-skin the
+     product. Muted Material values that sit on warm paper. */
+  --color-google-blue: var(--google-blue);
+  --color-google-green: var(--google-green);
+  --color-google-yellow: var(--google-yellow);
+  --color-google-red: var(--google-red);
+
+  /* FEA-109: semantic grade scale (alarm -> healthy), warm-paper native.
+     Always paired with a numeric value + word label, never colour alone. */
+  --color-grade-low: var(--grade-low);
+  --color-grade-mid: var(--grade-mid);
+  --color-grade-high: var(--grade-high);
+
+  --text-display: clamp(3.75rem, 2.35rem + 6.5vw, 7.5rem);
+  --text-display--line-height: 0.92;
+  --text-display--letter-spacing: -0.065em;
+  --text-display--font-weight: 650;
+
+  --text-section-title: clamp(2.25rem, 1.85rem + 1.7vw, 3.5rem);
+  --text-section-title--line-height: 1;
+  --text-section-title--letter-spacing: -0.045em;
+  --text-section-title--font-weight: 650;
+
+  --text-body: 1.125rem;
+  --text-body--line-height: 1.55;
+  --text-body--letter-spacing: 0em;
+}
+
+:root {
+  --surface: #fbfaf6;
+  --surface-alt: #f0eee7;
+  --ink: #191916;
+  --ink-secondary: #6c6a63;
+  --accent-brand: #191916;
+  --success: #53664f;
+  --success-foreground: #fbfaf6;
+  --hairline: #dcd9cf;
+
+  /* Google Material text palette (muted for a warm-paper backdrop). */
+  --google-blue: #1a73e8;
+  --google-green: #188038;
+  --google-yellow: #f9ab00;
+  --google-red: #d93025;
+
+  /* Grade scale — warm alarm red, ochre amber, moss-leaning healthy green. */
+  --grade-low: #b8462f;
+  --grade-mid: #b0812e;
+  --grade-high: #4f7a4f;
+
+  --font-stack-sans: "Helvetica Neue", Helvetica, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  --font-stack-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas,
+    "Liberation Mono", monospace;
+
+  /* Keep shadcn primitives on the same restrained neutral system. */
+  --background: var(--surface);
+  --foreground: var(--ink);
+  --card: var(--surface);
+  --card-foreground: var(--ink);
+  --popover: var(--surface);
+  --popover-foreground: var(--ink);
+  --primary: var(--accent-brand);
+  --primary-foreground: #fbfaf6;
+  --secondary: var(--surface-alt);
+  --secondary-foreground: var(--ink);
+  --muted: var(--surface-alt);
+  --muted-foreground: var(--ink-secondary);
+  --accent: var(--accent-brand);
+  --accent-foreground: #fbfaf6;
+  --destructive: #a84d42;
+  --border: var(--hairline);
+  --input: var(--hairline);
+  --ring: var(--accent-brand);
+  --chart-1: oklch(0.87 0 0);
+  --chart-2: oklch(0.556 0 0);
+  --chart-3: oklch(0.439 0 0);
+  --chart-4: oklch(0.371 0 0);
+  --chart-5: oklch(0.269 0 0);
+  --radius: 0.625rem;
+  --sidebar: var(--surface-alt);
+  --sidebar-foreground: var(--ink);
+  --sidebar-primary: var(--accent-brand);
+  --sidebar-primary-foreground: #fbfaf6;
+  --sidebar-accent: var(--surface);
+  --sidebar-accent-foreground: var(--ink);
+  --sidebar-border: var(--hairline);
+  --sidebar-ring: var(--accent-brand);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-surface text-ink antialiased;
+    min-height: 100vh;
+  }
+  html {
+    @apply font-sans;
+    background: var(--surface);
+    scroll-behavior: smooth;
+  }
+  ::selection {
+    background: var(--ink);
+    color: var(--surface);
+  }
+}
+
+/* Motion: 200-300ms ease-out is applied per-component via Tailwind's
+   `duration-*`/`ease-out` utilities. This is the global reduced-motion
+   override (§6.1): shorten every transition/animation to effectively
+   instant instead of removing feedback entirely. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

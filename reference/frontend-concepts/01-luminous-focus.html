@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Luminous Focus frontend concept for Visibel.">
+  <title>01 · Luminous Focus — Visibel</title>
+  <link rel="stylesheet" href="base.css">
+  <style>
+    :root { --blue: #087af5; --ink: #17171a; --muted: #6e6e73; --line: rgba(29,29,31,.1); --surface: #f5f5f7; }
+    body { background: #fff; color: var(--ink); }
+    .topbar { position:absolute; z-index:10; top:0; left:0; right:0; display:flex; align-items:center; justify-content:space-between; width:min(1180px,calc(100% - 36px)); height:68px; margin:auto; }
+    .brand { display:flex; align-items:center; gap:9px; color:inherit; font-size:14px; font-weight:700; letter-spacing:-.02em; text-decoration:none; }
+    .brand-mark { width:22px; height:22px; border-radius:7px; background:linear-gradient(145deg,#80d1ff,#087af5 55%,#6a5cff); box-shadow:inset 0 0 0 1px rgba(255,255,255,.4),0 4px 12px rgba(8,122,245,.2); }
+    .nav-note { color:var(--muted); font-size:12px; font-weight:600; }
+    .button { display:inline-flex; align-items:center; justify-content:center; gap:8px; min-height:48px; padding:0 21px; border:0; border-radius:999px; background:var(--blue); color:#fff; font-size:14px; font-weight:700; letter-spacing:-.015em; box-shadow:0 8px 24px rgba(8,122,245,.22); transition:transform 140ms ease,box-shadow 240ms ease,background 240ms ease; }
+    .button:hover { background:#006ee6; box-shadow:0 12px 30px rgba(8,122,245,.28); }
+    .button:active { transform:scale(.97); }
+    .button.secondary { background:#fff; color:var(--ink); border:1px solid var(--line); box-shadow:none; }
+    .button.compact { min-height:38px; padding:0 15px; font-size:12px; }
+    .button.is-done { background:#1f9d55; }
+    .landing { position:relative; overflow:hidden; padding:130px 18px 120px; background:radial-gradient(circle at 50% 34%,rgba(124,195,255,.2),transparent 28%),linear-gradient(#fff,#fbfdff 68%,#f6f8fb); }
+    .landing::before { content:""; position:absolute; width:620px; height:620px; left:50%; top:80px; transform:translateX(-50%); border-radius:50%; background:radial-gradient(circle,rgba(8,122,245,.1),rgba(255,255,255,0) 67%); filter:blur(18px); pointer-events:none; }
+    .hero { position:relative; z-index:1; max-width:1000px; margin:0 auto; text-align:center; }
+    .eyebrow { margin:0 0 18px; color:var(--blue); font-size:13px; font-weight:760; letter-spacing:.11em; text-transform:uppercase; }
+    h1 { max-width:960px; margin:0 auto; font-size:clamp(58px,9vw,112px); line-height:.87; letter-spacing:-.075em; }
+    h1 .glow { display:block; padding-bottom:.08em; color:transparent; background:linear-gradient(95deg,#168cf8 12%,#6657f5 55%,#e460e9 92%); -webkit-background-clip:text; background-clip:text; }
+    .hero-copy { max-width:590px; margin:28px auto 0; color:var(--muted); font-size:clamp(18px,2.3vw,23px); line-height:1.42; letter-spacing:-.025em; }
+    .hero-actions { display:flex; align-items:center; justify-content:center; gap:12px; margin-top:30px; }
+    .micro-proof { display:flex; align-items:center; justify-content:center; gap:8px; margin-top:15px; color:#86868b; font-size:11px; }
+    .micro-proof .stars { color:#f4a51c; letter-spacing:1px; }
+    .promise-grid { position:relative; z-index:1; display:grid; grid-template-columns:repeat(3,1fr); gap:14px; width:min(880px,100%); margin:72px auto 0; text-align:left; }
+    .promise { min-height:164px; padding:22px; border:1px solid rgba(255,255,255,.82); border-radius:26px; background:rgba(255,255,255,.74); box-shadow:0 16px 50px rgba(38,80,118,.08); backdrop-filter:blur(18px); }
+    .promise-icon { display:grid; place-items:center; width:34px; height:34px; margin-bottom:25px; border-radius:11px; background:#eef6ff; color:var(--blue); font-size:16px; font-weight:800; }
+    .promise h3 { margin:0 0 5px; font-size:16px; letter-spacing:-.025em; }
+    .promise p { margin:0; color:var(--muted); font-size:12px; line-height:1.45; }
+    .report { padding:108px 18px 126px; background:#f5f5f7; }
+    .report-shell { width:min(1120px,100%); margin:0 auto; }
+    .section-head { display:flex; align-items:flex-end; justify-content:space-between; gap:30px; margin-bottom:34px; }
+    .kicker { margin:0 0 9px; color:var(--blue); font-size:11px; font-weight:800; letter-spacing:.11em; text-transform:uppercase; }
+    h2 { max-width:700px; margin:0; font-size:clamp(40px,6vw,68px); line-height:.98; letter-spacing:-.058em; }
+    .replay { flex:0 0 auto; padding:8px 11px; border:1px solid var(--line); border-radius:999px; background:#fff; color:var(--muted); font-size:10px; font-weight:750; letter-spacing:.06em; }
+    .report-grid { display:grid; grid-template-columns:320px minmax(0,1fr); gap:16px; align-items:start; }
+    .score-card { position:sticky; top:24px; overflow:hidden; padding:27px; border-radius:30px; background:#17171a; color:#fff; }
+    .score-card::after { content:""; position:absolute; width:250px; height:250px; right:-95px; bottom:-120px; border-radius:50%; background:#087af5; filter:blur(4px); opacity:.9; }
+    .score-label { position:relative; z-index:1; color:rgba(255,255,255,.58); font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.09em; }
+    .score { position:relative; z-index:1; margin:20px 0 8px; font-size:100px; font-weight:720; line-height:.8; letter-spacing:-.09em; }
+    .score small { font-size:26px; color:rgba(255,255,255,.42); letter-spacing:-.05em; }
+    .band { position:relative; z-index:1; display:inline-flex; padding:6px 9px; border-radius:999px; background:rgba(255,255,255,.12); color:#ffd59a; font-size:11px; font-weight:760; }
+    .score-insight { position:relative; z-index:1; margin:27px 0 0; color:rgba(255,255,255,.68); font-size:13px; line-height:1.5; }
+    .lane-row { position:relative; z-index:1; display:grid; grid-template-columns:1fr auto; gap:9px; margin-top:24px; padding-top:17px; border-top:1px solid rgba(255,255,255,.12); font-size:12px; }
+    .lane-row + .lane-row { margin-top:11px; padding-top:0; border:0; }
+    .lane-row span { color:rgba(255,255,255,.55); }
+    .lane-row strong { font-variant-numeric:tabular-nums; }
+    .actions { display:grid; gap:12px; }
+    .action-intro { display:flex; align-items:center; justify-content:space-between; gap:18px; padding:18px 20px; border:1px solid var(--line); border-radius:22px; background:#fff; }
+    .action-intro strong { display:block; margin-bottom:3px; font-size:15px; letter-spacing:-.02em; }
+    .action-intro span { color:var(--muted); font-size:11px; }
+    .action-card { position:relative; overflow:hidden; padding:20px; border:1px solid transparent; border-radius:24px; background:#fff; transition:border-color 240ms ease,transform 260ms cubic-bezier(.22,1,.36,1); }
+    .action-card:hover { transform:translateY(-2px); border-color:rgba(8,122,245,.2); }
+    .action-top { display:grid; grid-template-columns:38px minmax(0,1fr) auto; gap:13px; align-items:start; }
+    .action-number { display:grid; place-items:center; width:38px; height:38px; border-radius:13px; background:#f2f6fb; color:var(--blue); font-size:12px; font-weight:800; }
+    .action-title h3 { margin:1px 0 4px; font-size:17px; letter-spacing:-.028em; }
+    .action-title p { margin:0; color:var(--muted); font-size:12px; line-height:1.45; }
+    .impact { color:#d0572a; font-size:10px; font-weight:800; text-transform:uppercase; letter-spacing:.07em; }
+    .copy-swap { display:grid; grid-template-columns:1fr 28px 1fr; gap:10px; align-items:center; margin:17px 0 0 51px; padding:14px; border-radius:17px; background:#f7f7f8; }
+    .copy-swap div { min-width:0; }
+    .copy-swap small { display:block; margin-bottom:5px; color:#86868b; font-size:9px; font-weight:750; letter-spacing:.08em; text-transform:uppercase; }
+    .copy-swap p { margin:0; overflow:hidden; color:#56565b; font-size:11px; line-height:1.35; text-overflow:ellipsis; }
+    .copy-swap .after-copy { color:var(--ink); font-weight:650; }
+    .swap-arrow { color:#b4b4b8; text-align:center; }
+    .action-card.is-improved { border-color:rgba(31,157,85,.24); }
+    .action-card.is-improved .action-number { background:#eaf8f0; color:#1f9d55; }
+    .action-card.is-improved .impact { color:#1f9d55; }
+    .outcome { padding:100px 18px 128px; background:#fff; }
+    .outcome-shell { width:min(1180px,100%); margin:auto; }
+    .outcome-head { display:grid; grid-template-columns:1fr auto; gap:30px; align-items:end; margin-bottom:30px; }
+    .outcome-head p { max-width:440px; margin:13px 0 0; color:var(--muted); font-size:16px; line-height:1.48; }
+    .result-pill { align-self:center; display:flex; align-items:center; gap:9px; padding:10px 14px; border-radius:999px; background:#eaf8f0; color:#177d45; font-size:11px; font-weight:760; }
+    .result-pill::before { content:""; width:7px; height:7px; border-radius:50%; background:#27ae60; box-shadow:0 0 0 5px rgba(39,174,96,.12); }
+    .compare { --split:50%; position:relative; min-height:590px; overflow:hidden; border-radius:34px; background:#e9edf1; box-shadow:0 25px 70px rgba(29,29,31,.14); }
+    .site { position:absolute; inset:0; padding:34px; }
+    .site-before { background:linear-gradient(rgba(29,32,37,.84),rgba(29,32,37,.94)),url('../../code/media-ad-coach/public/fixtures/sanitaer-krause-berlin/before-1.jpg') center/cover; color:#fff; }
+    .site-after { clip-path:inset(0 calc(100% - var(--split)) 0 0); background:#f9fbff; color:#132130; }
+    .site-after-grid { display:grid; grid-template-columns:1.05fr .95fr; height:100%; overflow:hidden; border-radius:22px; background:#fff; box-shadow:0 12px 40px rgba(29,29,31,.12); }
+    .site-copy { display:flex; flex-direction:column; justify-content:center; padding:8%; }
+    .site-logo { position:absolute; top:48px; left:52px; font-size:12px; font-weight:800; }
+    .site-before h3 { max-width:500px; margin:auto 0; font-size:clamp(42px,7vw,82px); line-height:.92; letter-spacing:-.06em; }
+    .site-before p { margin:-170px 0 0; color:rgba(255,255,255,.5); font-size:13px; }
+    .site-after h3 { margin:0; font-size:clamp(32px,4.3vw,58px); line-height:.95; letter-spacing:-.055em; }
+    .site-after p { margin:17px 0 23px; color:#687381; font-size:13px; line-height:1.5; }
+    .fake-cta { align-self:flex-start; padding:12px 16px; border-radius:999px; background:#087af5; color:#fff; font-size:11px; font-weight:760; }
+    .after-image { position:relative; background:url('../../code/media-ad-coach/public/fixtures/sanitaer-krause-berlin/after-hero.jpg') center/cover; }
+    .ai-label { position:absolute; right:14px; bottom:14px; padding:7px 9px; border-radius:999px; background:rgba(255,255,255,.82); color:#555; font-size:9px; font-weight:800; text-transform:uppercase; letter-spacing:.08em; backdrop-filter:blur(12px); }
+    .compare input { position:absolute; z-index:5; inset:0; width:100%; height:100%; margin:0; opacity:0; cursor:ew-resize; }
+    .divider { position:absolute; z-index:4; top:0; bottom:0; left:var(--split); width:2px; background:#fff; box-shadow:0 0 12px rgba(0,0,0,.28); transform:translateX(-1px); pointer-events:none; }
+    .divider::after { content:"↔"; position:absolute; top:50%; left:50%; display:grid; place-items:center; width:44px; height:44px; border-radius:50%; background:#fff; color:#17171a; font-size:17px; font-weight:700; box-shadow:0 8px 24px rgba(0,0,0,.2); transform:translate(-50%,-50%); }
+    .compare-label { position:absolute; z-index:3; top:18px; padding:7px 10px; border-radius:999px; background:rgba(0,0,0,.48); color:#fff; font-size:10px; font-weight:800; letter-spacing:.08em; text-transform:uppercase; backdrop-filter:blur(8px); }
+    .compare-label.before { left:18px; } .compare-label.after { right:18px; background:rgba(255,255,255,.85); color:#1d1d1f; }
+    .publish-card { display:grid; grid-template-columns:1fr auto; gap:24px; align-items:center; margin-top:18px; padding:22px 24px; border:1px solid var(--line); border-radius:24px; background:#fff; }
+    .publish-card h3 { margin:0 0 5px; font-size:20px; letter-spacing:-.03em; }
+    .publish-card p { margin:0; color:var(--muted); font-size:12px; }
+    @media (max-width:800px) { .promise-grid { grid-template-columns:1fr; max-width:500px; } .promise { min-height:0; } .report-grid { grid-template-columns:1fr; } .score-card { position:relative; top:0; } .outcome-head,.publish-card { grid-template-columns:1fr; } .site-after-grid { grid-template-columns:1fr; } .after-image { display:none; } .compare { min-height:520px; } }
+    @media (max-width:560px) { .nav-note { display:none; } .hero-actions { flex-direction:column; } .hero-actions .button { width:100%; max-width:300px; } .section-head { align-items:flex-start; flex-direction:column; } .action-top { grid-template-columns:34px minmax(0,1fr); } .action-top .button { grid-column:2; justify-self:start; } .copy-swap { grid-template-columns:1fr; margin-left:0; } .swap-arrow { transform:rotate(90deg); } .outcome { padding-inline:10px; } .site { padding:20px; } .site-logo { top:32px; left:36px; } }
+  </style>
+</head>
+<body>
+  <span class="prototype-note">Concept 01 · Luminous</span>
+  <nav class="journey-dock" aria-label="Prototype journey">
+    <button data-step="1"><span>1</span> <span class="step-label">Promise</span></button>
+    <button data-step="2"><span>2</span> <span class="step-label">Actions</span></button>
+    <button data-step="3"><span>3</span> <span class="step-label">Proof</span></button>
+  </nav>
+
+  <section class="screen landing" data-screen="1">
+    <header class="topbar"><a class="brand" href="index.html"><span class="brand-mark"></span>Visibel</a><span class="nav-note">A clearer business starts here.</span></header>
+    <div class="hero">
+      <p class="eyebrow">See what customers see</p>
+      <h1>From zero.<span class="glow">To Hero.</span></h1>
+      <p class="hero-copy">Show us your business. We’ll score the words and photos customers see—then turn every weak spot into your next best move.</p>
+      <div class="hero-actions"><button class="button" data-next>See the sample report <span aria-hidden="true">→</span></button><button class="button secondary">Start my audit</button></div>
+      <div class="micro-proof"><span class="stars">★★★★★</span><span>Built for local businesses, not marketers</span></div>
+      <div class="promise-grid">
+        <article class="promise"><span class="promise-icon">01</span><h3>See your score</h3><p>One honest view of the text and images customers judge first.</p></article>
+        <article class="promise"><span class="promise-icon">02</span><h3>Know what to fix</h3><p>Evidence-backed actions, ordered by the impact they can make.</p></article>
+        <article class="promise"><span class="promise-icon">03</span><h3>See the after</h3><p>Approve the improvements and preview the transformation.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="screen report" data-screen="2">
+    <div class="report-shell">
+      <header class="section-head"><div><p class="kicker">Sanitär Krause Berlin</p><h2>Four moves to look ready for business.</h2></div><span class="replay">Replay sample</span></header>
+      <div class="report-grid">
+        <aside class="score-card"><span class="score-label">Customer-facing score</span><div class="score">39<small>/100</small></div><span class="band">Weak · high opportunity</span><p class="score-insight">The trust is real. Customers just can’t see it yet.</p><div class="lane-row"><span>Words</span><strong>34</strong></div><div class="lane-row"><span>Images</span><strong>43</strong></div></aside>
+        <div class="actions">
+          <div class="action-intro"><div><strong>4 things stand between you and Hero.</strong><span>You approve. We do the work.</span></div><button class="button compact" data-do-all><span data-all-label>Do It For You</span> <span aria-hidden="true">✦</span></button></div>
+          <article class="action-card" data-action-card>
+            <div class="action-top"><span class="action-number">01</span><div class="action-title"><h3>Make the first sentence sell</h3><p>Your homepage says your name—and nothing else.</p></div><button class="button secondary compact" data-action data-idle="Improve It" data-done="Improved"><span data-action-label>Improve It</span></button></div>
+            <div class="copy-swap"><div><small>Before</small><p>Sanitär Krause</p></div><span class="swap-arrow">→</span><div><small>Suggested</small><p class="after-copy">Ihr Meisterbetrieb für Bad, Heizung & Rohrreinigung in Berlin</p></div></div>
+          </article>
+          <article class="action-card" data-action-card>
+            <div class="action-top"><span class="action-number">02</span><div class="action-title"><h3>Give visitors one obvious next step</h3><p>No call-to-action exists on the current page.</p></div><button class="button secondary compact" data-action data-idle="Improve It" data-done="Improved"><span data-action-label>Improve It</span></button></div>
+            <div class="copy-swap"><div><small>Before</small><p>Phone number in footer only</p></div><span class="swap-arrow">→</span><div><small>Suggested</small><p class="after-copy">Jetzt anrufen — wir sind in 24 Stunden bei Ihnen</p></div></div>
+          </article>
+          <article class="action-card" data-action-card>
+            <div class="action-top"><span class="action-number">03</span><div class="action-title"><h3>Show the work, not the van</h3><p>Your photos don’t prove what you can do.</p></div><button class="button secondary compact" data-action data-idle="Create concept" data-done="Ready"><span data-action-label>Create concept</span></button></div>
+          </article>
+          <article class="action-card" data-action-card>
+            <div class="action-top"><span class="action-number">04</span><div class="action-title"><h3>Make your details match everywhere</h3><p>Website and directory phone numbers disagree.</p></div><button class="button secondary compact" data-action data-idle="Fix details" data-done="Corrected"><span data-action-label>Fix details</span></button></div>
+          </article>
+          <button class="button" data-next>See your new page <span aria-hidden="true">→</span></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="screen outcome" data-screen="3">
+    <div class="outcome-shell">
+      <header class="outcome-head"><div><p class="kicker">The outcome</p><h2>Sanitär Krause,<br>from Zero to Hero.</h2><p>Seven improvements assembled into one customer-ready page. Drag to compare.</p></div><span class="result-pill">Preview ready</span></header>
+      <div class="compare" data-compare>
+        <div class="site site-before"><span class="site-logo">SANITÄR KRAUSE</span><h3>Sanitär<br>Krause</h3><p>Wir bieten: Heizung, Bad, Rohrreinigung.</p></div>
+        <div class="site site-after"><div class="site-after-grid"><div class="site-copy"><span class="site-logo">SANITÄR KRAUSE · BERLIN</span><h3>Meisterarbeit.<br>Wenn es zählt.</h3><p>Bad, Heizung & Rohrreinigung in Berlin. Familiengeführt seit 1998.</p><span class="fake-cta">Jetzt anrufen: 030 1234567</span></div><div class="after-image"><span class="ai-label">AI concept</span></div></div></div>
+        <span class="compare-label before">Before</span><span class="compare-label after">After</span><span class="divider"></span><label class="sr-only" for="compare-01">Compare before and after</label><input id="compare-01" type="range" min="8" max="92" value="50">
+      </div>
+      <div class="publish-card"><div><h3>Ready to put your best business forward?</h3><p>This is a preview—not a deployed website. You stay in control.</p></div><button class="button">Publish this for me <span aria-hidden="true">→</span></button></div>
+    </div>
+  </section>
+  <script src="prototype.js"></script>
+</body>
+</html>
